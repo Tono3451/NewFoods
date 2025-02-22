@@ -8,5 +8,12 @@
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+    background: #566573;
+}
+
+.button:active {
+    transform: scale(0.95);
 }
