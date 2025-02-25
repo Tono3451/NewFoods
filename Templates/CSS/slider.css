@@ -1,57 +1,50 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Para centrar en la pantalla */
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: #f9f9ff; /* Fondo claro */
-}
-
-.slider-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-/* Estilo de los inputs tipo range */
-.slider-container input[type="range"] {
-    -webkit-appearance: none; /* Quita estilos por defecto en Chrome/Safari */
-    width: 180px;
-    background: transparent;
-    outline: none;
-}
-
-/* Estilo de la "pista" por donde se desliza (track) */
-.slider-container input[type="range"]::-webkit-slider-runnable-track {
-    height: 4px;
-    background: #e4d8fb; /* Lila muy claro */
-    border-radius: 2px;
-}
-
-/* El "dedo" o perilla (thumb) */
-.slider-container input[type="range"]::-webkit-slider-thumb {
+.PB-range-slider {
     -webkit-appearance: none;
-    height: 14px;
-    width: 14px;
-    border-radius: 50%;
-    background: #c2aef3; /* Lila pastel */
-    border: 2px solid #9a84de; /* Borde un poco más oscuro */
-    cursor: pointer;
-    margin-top: -5px; /* Ajusta verticalmente para centrar */
+    width: 100%;
+    height: 4px;
+    border-radius: 5px;
+    background: #D5DBE1;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
 }
 
-/* Para navegadores Firefox */
-.slider-container input[type="range"]::-moz-range-thumb {
-    height: 14px;
-    width: 14px;
+.PB-range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
-    background: #c2aef3;
+    background-color: #000000;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.PB-range-slider::-webkit-slider-thumb:hover {
+    box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.16);
+    transition: 0.3s ease-in-out;
+}
+
+.PB-range-slider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #000000;
+    cursor: pointer;
+}
+
+.PB-range-slider-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #C6CACE;
+    box-shadow: 0px 1px 2px 0px #1F1E241F;
+}
+
+.PB-range-slidervalue {
+    font-weight: 600;
 }
