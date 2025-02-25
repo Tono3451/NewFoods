@@ -1,0 +1,57 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Para centrar en la pantalla */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #f9f9ff; /* Fondo claro */
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Estilo de los inputs tipo range */
+.slider-container input[type="range"] {
+    -webkit-appearance: none; /* Quita estilos por defecto en Chrome/Safari */
+    width: 180px;
+    background: transparent;
+    outline: none;
+}
+
+/* Estilo de la "pista" por donde se desliza (track) */
+.slider-container input[type="range"]::-webkit-slider-runnable-track {
+    height: 4px;
+    background: #e4d8fb; /* Lila muy claro */
+    border-radius: 2px;
+}
+
+/* El "dedo" o perilla (thumb) */
+.slider-container input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background: #c2aef3; /* Lila pastel */
+    border: 2px solid #9a84de; /* Borde un poco más oscuro */
+    cursor: pointer;
+    margin-top: -5px; /* Ajusta verticalmente para centrar */
+}
+
+/* Para navegadores Firefox */
+.slider-container input[type="range"]::-moz-range-thumb {
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background: #c2aef3;
+}
