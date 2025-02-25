@@ -26,11 +26,35 @@
 #search_button {
     position: absolute;
     top: 90px;
-    right: 40px;
+    right: 30px;
+    cursor: pointer;
+    border: 1px solid #444;
+    display: flex;
+    border-radius: 6px;
+}
+
+#search_button:hover{
+    background: #e0e0e0;
+}
+
+#search_button:active {
+    transform: scale(0.95);
 }
 
 #configuration_button {
     position: absolute;
     top: 10px;
-    right: 20px;
+    right: 10px;
+    cursor: pointer;
+    border: 1px solid #444;
+    display: flex;
+    border-radius: 6px;
+}
+
+#configuration_button:hover{
+    background: #e0e0e0;
+}
+
+#configuration_button:active {
+    transform: scale(0.95);
 }
