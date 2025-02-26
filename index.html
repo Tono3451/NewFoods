@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="description" content="Main page">
+  <meta name="keywords" content="HTML5, CSS3, JavaScript">
+
+  <title>Main page</title>
+
+  <script src="Templates/Script/xlu-include-file.js"></script>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="Templates/CSS/header.css">
+  <link rel="stylesheet" href="Templates/CSS/footer.css">
+  <link rel="stylesheet" href="Templates/CSS/button.css">
+  <link rel="stylesheet" href="Templates/CSS/ImageTitleTextHorizontal.css">
+
+</head>
+<body>
+<div id="wrapper">
+  <header id="main_header" xlu-include-file="Templates/HTML/header.html"></header>
+
+  <div class="button-container">
+    <div xlu-include-file="Templates/HTML/button.html"></div>
+    <div xlu-include-file="Templates/HTML/button.html"></div>
+    <div xlu-include-file="Templates/HTML/button.html"></div>
+  </div>
+
+  <div class="image-container">
+    <div xlu-include-file="Templates/HTML/ImageTitleTextHorizontal.html"></div>
+    <div xlu-include-file="Templates/HTML/ImageTitleTextHorizontal.html"></div>
+  </div>
+</div>
+
+<footer id="main_footer" xlu-include-file="Templates/HTML/footer.html"></footer>
+
+<script>
+
+  xLuIncludeFile();
+
+</script>
+
+</body>
+</html>
