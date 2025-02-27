@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#avatar {
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+.gallery {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.labels {
+    text-align: center;
+    margin-bottom: 10px;
+    display: compact;
+    padding: 10px;
+    top: 30px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    justify-items: center;
+}
+
+.image {
+    width: 60%;
+    max-width: 1000px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+}
+
