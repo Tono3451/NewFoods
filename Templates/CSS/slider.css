@@ -1,7 +1,17 @@
 .PB-range-slider-div {
-    margin: auto;
+    display: flex; /* Usamos flexbox para alinear los elementos */
+    align-items: center; /* Centra verticalmente el input y el texto */
+    gap: 10px; /* Espacio entre el input y el texto */
+    width: 100%; /* Ajusta el ancho del contenedor */
+    max-width: 300px; /* Ancho máximo del contenedor (opcional) */
 }
 
 .PB-range-slider {
-    width: 30%;
+    flex-grow: 1; /* Hace que el input ocupe el espacio disponible */
+}
+
+.PB-range-slidervalue {
+    margin: 0; /* Elimina el margen predeterminado del párrafo */
+    width: 50px; /* Ancho fijo para el texto (ajusta según necesites) */
+    text-align: right; /* Alinea el texto a la derecha */
 }

@@ -14,25 +14,26 @@ body {
 
 .search_container {
     background: white;
-    padding: 20px;
+    padding: 100px;
     display: flex;
     flex-direction: column;
     gap: 100px;
     justify-content: center;
-    align-items: center;
+    text-align: center;
+    align-self: center;
 }
 
 .input-group {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 30px;
     width: 100%;
     justify-content: center;
 }
 
 h2 {
     margin: 0;
-    width: 150px;
+    width: 200px;
     text-align: right;
 }
 

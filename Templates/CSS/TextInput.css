@@ -2,9 +2,8 @@
 .card {
     background-color: #eee6f1;
     border-radius: 8px;
-    width: 280px;
-    padding: 16px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 250px;
+    padding: 10px;
     box-sizing: border-box;
 }
 
