@@ -1,15 +1,5 @@
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
 #main_footer {
+    position: relative;
     background-color: #900C3F;
     color: white;
     padding: 20px 0;
