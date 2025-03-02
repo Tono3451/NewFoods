@@ -8,6 +8,12 @@
     padding: 15px 30px;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+    font: inherit;
+}
+
 #buttons_group {
     position: absolute;
     top: 80px;
@@ -21,6 +27,7 @@
 .buttons{
     cursor: pointer;
     border-radius: 5px;
+    height: 28px;
 
 }
 
