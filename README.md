@@ -77,7 +77,7 @@ Además, gracias a nuestro sistema inteligente de análisis nutricional, recibir
 #### Archivos donde se carga ->  CreateRecipePage.html
 ![Create Recipe Page](/images/block-add-text.png)
 ### Botón:
-#### Archivos donde se carga ->  index.html, loginPage.html, registerPage.html
+#### Archivos donde se carga ->  index.html, searchPage.html, loginPage.html, registerPage.html
 ![Header](/images/boton.png)
 ### Entrada desplegable:
 #### Archivos donde se carga ->  searchPage.html
