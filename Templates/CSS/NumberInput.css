@@ -1,0 +1,13 @@
+
+.caja-numeros {
+    width: 100px;
+    padding: 8px;
+    font-size: 14px;
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+    outline: none;
+}
+.caja-numeros:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
