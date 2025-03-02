@@ -31,7 +31,7 @@ Además, gracias a nuestro sistema inteligente de análisis nutricional, recibir
     - Se podrán visualizar las publicaciones subidas por el usuario, las guardadas y un itinerario semanal con las recetas de las comidas diarias.
     - Los usuarios podrán ver, a partir del itinerario semanal, las calorías que consumirán esa semana y a partir de los datos del usuario (peso, altura) las calorías recomendadas que debería consumir.
 
-## Listado de páginas htm, Mockups y Stroyboard:
+## Listado de páginas html, Mockups y Stroyboard:
 ### Storyboard:
 ![Storyboard](/images/storyboard.png)
 ### Mockups:
