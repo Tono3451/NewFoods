@@ -1,0 +1,68 @@
+.table {
+    table-layout: auto;
+    border-collapse: collapse;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    height: 80vh;
+}
+
+th, td {
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+    width: 80px;
+}
+
+td figure {
+    margin: 0;
+    display: inline-block;
+    text-align: center;
+    height: auto;
+}
+
+.labels {
+    text-align: center;
+    margin-bottom: 10px;
+    top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    padding: 20px 0;
+}
+
+label {
+    display: inline-block;
+    margin: 10px;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.separator {
+    width: 80%;
+    margin: 10px auto;
+    border: none;
+    border-top: 2px solid #ccc;
+}
+
+.button-label{
+    background-color: #581845;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 200px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.button-label:hover{
+    background: #566573;
+}
+
+.button-label:active {
+    transform: scale(0.95);
+}

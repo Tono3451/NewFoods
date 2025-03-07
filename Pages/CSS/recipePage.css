@@ -74,7 +74,7 @@ ol {
 
 .icon {
     border: none;
-    background: #ffeb3b;
+    background: white;
     font-size: 24px;
     padding: 10px;
     border-radius: 50%;
@@ -83,7 +83,7 @@ ol {
 }
 
 .icon:hover {
-    background: #fdd835;
+    background: #f3f3f3;
 }
 
 .icon:active {

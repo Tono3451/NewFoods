@@ -1,0 +1,36 @@
+.upload-container {
+    text-align: center;
+}
+
+.drop-zone {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.drop-zone.dragover {
+    border-color: #000;
+}
+
+.drop-zone span {
+    display: block;
+    margin: 10px 0;
+    color: #666;
+}
+
+.file-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.file-label:hover {
+    background-color: #0056b3;
+}
