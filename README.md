@@ -33,34 +33,34 @@ Además, gracias a nuestro sistema inteligente de análisis nutricional, recibir
 
 ## Listado de páginas html, Mockups y Stroyboard:
 ### Storyboard:
-![Storyboard](/images/storyboard.png)
+![Storyboard](/mockups/storyboard.png)
 ### Mockups:
 #### Main
 ##### Implementado por: index.html
-![Index.html](/images/main.png)
+![Index.html](/mockups/main.png)
 #### Perfil
 ##### Implementado por: profile.html
-![Perfil](/images/perfil1.png)
+![Perfil](/mockups/perfil1.png)
 ##### Implementado por: profile.html
-![Perfil](/images/perfil2.png)
+![Perfil](/mockups/perfil2.png)
 ##### Implementado por: profile2.html
-![Perfil](/images/perfil3.png)
+![Perfil](/mockups/perfil3.png)
 #### Búsqueda
 ##### Implementado por: searchPage.html
-![Búsqueda](/images/busqueda.png)
+![Búsqueda](/mockups/busqueda.png)
 ##### Implementado por: resultsPage.html
-![Búsqueda](/images/resultados.png)
+![Búsqueda](/mockups/resultados.png)
 #### Login y Registro
 ##### Implementado por: loginPage.html
-![Login](/images/login.png)
+![Login](/mockups/login.png)
 ##### Implementado por: registerPage.html
-![Registro](/images/register.png)
+![Registro](/mockups/register.png)
 #### Crear receta
 ##### Implementado por: CreateRecipePage.html
-![Crear receta](/images/crear-receta.png)
+![Crear receta](/mockups/crear-receta.png)
 #### Ver receta
 ##### Implementado por: recipePage.html
-![Ver receta](/images/ver-receta.png)
+![Ver receta](/mockups/ver-receta.png)
 
 
 ## Listado de templates:
