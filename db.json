@@ -1,0 +1,52 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "image": "https://via.placeholder.com/150",
+      "title": "Ensalada Mediterránea",
+      "subtitle": "Fresca y saludable",
+      "description": "Una deliciosa ensalada con ingredientes frescos como tomate, pepino, aceitunas y queso feta.",
+      "link": "/NewFoods/Pages/HTML/recipePage.html"
+    },
+    {
+      "id": 2,
+      "image": "https://via.placeholder.com/150",
+      "title": "Pasta Carbonara",
+      "subtitle": "Clásico italiano",
+      "description": "Pasta al dente con una cremosa salsa de huevo, queso y panceta crujiente.",
+      "link": "/NewFoods/Pages/HTML/recipePage.html"
+    },
+    {
+      "id": 3,
+      "image": "https://via.placeholder.com/150",
+      "title": "Sushi Variado",
+      "subtitle": "Delicia japonesa",
+      "description": "Una selección de nigiri, maki y sashimi con pescado fresco y arroz perfectamente sazonado.",
+      "link": "/NewFoods/Pages/HTML/recipePage.html"
+    },
+    {
+      "id": 4,
+      "image": "https://via.placeholder.com/150",
+      "title": "Tacos al Pastor",
+      "subtitle": "Sabor mexicano",
+      "description": "Tacos de cerdo marinado con piña, cebolla y cilantro, servidos en tortillas de maíz.",
+      "link": "/NewFoods/Pages/HTML/recipePage.html"
+    },
+    {
+      "id": 5,
+      "image": "https://via.placeholder.com/150",
+      "title": "Paella Valenciana",
+      "subtitle": "Tradición española",
+      "description": "Arroz con mariscos, pollo y verduras, sazonado con azafrán y cocinado a la perfección.",
+      "link": "/NewFoods/Pages/HTML/recipePage.html"
+    },
+    {
+      "id": 6,
+      "image": "https://via.placeholder.com/150",
+      "title": "Hamburguesa Gourmet",
+      "subtitle": "Clásico reinventado",
+      "description": "Carne de res jugosa con queso cheddar, bacon crujiente y salsa especial en pan brioche.",
+      "link": "/NewFoods/Pages/HTML/recipePage.html"
+    }
+  ]
+}

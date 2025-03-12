@@ -41,10 +41,38 @@
 
 <footer id="main_footer" xlu-include-file="Templates/HTML/footer.html"></footer>
 
+  <script>
+    fetch('http://localhost:3000/recipes')
+            .then(response => response.json())
+            .then(data => {
+              const container = document.querySelector('.image-container');
+              container.innerHTML = ''; // Limpia contenido previo
+
+              data.forEach(recipe => {
+                fetch('Templates/HTML/ImageTitleTextHorizontal.html')
+                        .then(response => response.text())
+                        .then(template => {
+                          const tempDiv = document.createElement('div');
+                          tempDiv.innerHTML = template.trim();
+
+                          const cardLink = tempDiv.querySelector('.card-link');
+                          cardLink.href = recipe.link;
+                          cardLink.querySelector('img').src = recipe.image;
+                          cardLink.querySelector('img').alt = recipe.title;
+                          cardLink.querySelector('h3').textContent = recipe.title;
+                          cardLink.querySelector('.subtitle').textContent = recipe.subtitle;
+                          cardLink.querySelector('.text').textContent = recipe.description;
+
+                          container.appendChild(cardLink);
+                        });
+              });
+            })
+            .catch(error => console.error('Error cargando recetas:', error));
+
+  </script>
+
 <script>
-
   xLuIncludeFile();
-
 </script>
 </div>
 </body>
