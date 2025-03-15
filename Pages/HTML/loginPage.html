@@ -41,18 +41,20 @@
 
 
 <script>
-    fetch('/login.json')
-        .then(response => response.json())
-        .then(data => {
-            const loginData = data.login;
+    setTimeout(function () {
+        fetch('/login.json')
+            .then(response => response.json())
+            .then(data => {
+                const loginData = data.login;
 
-            document.querySelector('#login-title').textContent = loginData.title;
-            document.querySelector('#email').textContent = loginData.email;
-            document.querySelector('#password').textContent = loginData.password;
-            document.getElementById('login-button').querySelector('.button').textContent = loginData["log-in-button"];
-            document.getElementById('create-account-button').querySelector('.button').textContent = loginData["create-account-button"];
-        })
-        .catch(error => console.error('Error cargando datos del login:', error));
+                document.querySelector('#login-title').textContent = loginData.title;
+                document.querySelector('#email').textContent = loginData.email;
+                document.querySelector('#password').textContent = loginData.password;
+                document.getElementById('login-button').querySelector('.button').textContent = loginData["log-in-button"];
+                document.getElementById('create-account-button').querySelector('.button').textContent = loginData["create-account-button"];
+            })
+            .catch(error => console.error('Error cargando datos del login:', error));
+    }, 30);
 </script>
 
 </body>
