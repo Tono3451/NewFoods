@@ -15,23 +15,23 @@
 <div id="wrapper">
 
     <div class="login_container">
-        <h2>Lorem ipsum</h2>
+        <h2 id="login-title">Lorem ipsum</h2>
 
         <div class="input-group">
-            <h3>Lorem ipsum</h3>
+            <h3 id="email">Lorem ipsum</h3>
             <div class="input-container" xlu-include-file="../../Templates/HTML/TextInput.html"></div>
         </div>
 
         <div class="input-group">
-            <h3>Lorem ipsum</h3>
+            <h3 id="password">Lorem ipsum</h3>
             <div class="input-container" xlu-include-file="../../Templates/HTML/TextInput.html"></div>
         </div>
 
-        <a href="/NewFoods/index.html">
-        <div xlu-include-file="../../Templates/HTML/button.html"></div>
+        <a href="/index.html">
+        <div id="login-button" xlu-include-file="../../Templates/HTML/button.html"></div>
         </a>
         <a href="registerPage.html">
-        <div xlu-include-file="../../Templates/HTML/button.html"></div>
+        <div id="create-account-button" xlu-include-file="../../Templates/HTML/button.html"></div>
         <br>
         </a>
     </div>
@@ -39,9 +39,30 @@
     <footer id="main_footer" xlu-include-file="../../Templates/HTML/footer.html"></footer>
 </div>
 
+
+<script>
+    setTimeout(function () {
+        fetch('/login.json')
+            .then(response => response.json())
+            .then(data => {
+                const loginData = data.login;
+
+                document.querySelector('#login-title').textContent = loginData.title;
+                document.querySelector('#email').textContent = loginData.email;
+                document.querySelector('#password').textContent = loginData.password;
+                document.getElementById('login-button').querySelector('.button').textContent = loginData["log-in-button"];
+                document.getElementById('create-account-button').querySelector('.button').textContent = loginData["create-account-button"];
+            })
+            .catch(error => console.error('Error cargando datos del login:', error));
+    }, 30);
+</script>
+
 </body>
+
 
 <script>
     xLuIncludeFile();
 </script>
+
+
 </html>

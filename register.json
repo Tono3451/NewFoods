@@ -1,0 +1,13 @@
+{
+  "register": {
+    "title": "Registrarse",
+    "user": "Nombre",
+    "correo": "Correo",
+    "contraseña": "Contraseña",
+    "confirmar": "Confirmar contraseña",
+    "ejemplo-nombre": "Nombre1234",
+    "ejemplo-correo": "correo@gmail.com",
+    "ejemplo-contraseña": "123456789",
+    "boton-crear-cuenta": "Crear cuenta"
+  }
+}

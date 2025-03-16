@@ -15,35 +15,58 @@
 <div id="wrapper">
 
     <div class="register_container">
-        <h2>Lorem ipsum</h2>
+        <h2 id="register-title">Lorem ipsum</h2>
 
         <div class="input-group">
-            <h3>Lorem ipsum</h3>
-            <div class="input-container" xlu-include-file="/Templates/HTML/TextInput.html"></div>
+            <h3 id="text1">Lorem ipsum</h3>
+            <div class="input-container" id="nombre" xlu-include-file="/Templates/HTML/TextInput.html"></div>
         </div>
 
         <div class="input-group">
-            <h3>Lorem ipsum</h3>
-            <div class="input-container" xlu-include-file="/Templates/HTML/TextInput.html"></div>
+            <h3 id="text2">Lorem ipsum</h3>
+            <div class="input-container" id="correo" xlu-include-file="/Templates/HTML/TextInput.html"></div>
         </div>
 
         <div class="input-group">
-            <h3>Lorem ipsum</h3>
-            <div class="input-container" xlu-include-file="/Templates/HTML/TextInput.html"></div>
+            <h3 id="text3">Lorem ipsum</h3>
+            <div class="input-container" id="contraseña" xlu-include-file="/Templates/HTML/TextInput.html"></div>
         </div>
 
         <div class="input-group">
-            <h3>Lorem ipsum</h3>
-            <div class="input-container" xlu-include-file="/Templates/HTML/TextInput.html"></div>
+            <h3 id="text4">Lorem ipsum</h3>
+            <div class="input-container" id="confirmar" xlu-include-file="/Templates/HTML/TextInput.html"></div>
         </div>
         <a href="/NewFoods/index.html">
-        <div xlu-include-file="/Templates/HTML/button.html"></div>
+        <div xlu-include-file="/Templates/HTML/button.html" id="crear-cuenta"></div>
         </a>
         <br>
     </div>
 
     <footer id="main_footer" xlu-include-file="/Templates/HTML/footer.html"></footer>
 </div>
+
+<script>
+    setTimeout(function () {
+        fetch('/register.json')
+            .then(response => response.json())
+            .then(data => {
+                const registerData = data.register;
+
+                document.querySelector('#register-title').textContent = registerData.title;
+                document.querySelector('#text1').textContent = registerData.user;
+                document.querySelector('#text2').textContent = registerData.correo;
+                document.getElementById('text3').textContent = registerData.contraseña;
+                document.getElementById('text4').textContent = registerData.confirmar;
+                document.getElementById('nombre').querySelector('.text-input').placeholder = registerData["ejemplo-nombre"];
+                document.getElementById('correo').querySelector('.text-input').placeholder = registerData["ejemplo-correo"];
+                document.getElementById('contraseña').querySelector('.text-input').placeholder = registerData["ejemplo-contraseña"];
+                document.getElementById('confirmar').querySelector('.text-input').placeholder = registerData["ejemplo-contraseña"];
+                document.getElementById('crear-cuenta').querySelector('.button').textContent = registerData["boton-crear-cuenta"];
+
+            })
+            .catch(error => console.error('Error cargando datos del register:', error));
+    }, 30);
+</script>
 
 </body>
 

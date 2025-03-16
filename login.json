@@ -1,0 +1,9 @@
+{
+  "login": {
+    "title": "Inicia sesión",
+    "email": "correo",
+    "password": "contraseña",
+    "log-in-button": "Iniciar Sesión",
+    "create-account-button": "Crear cuenta"
+  }
+}
