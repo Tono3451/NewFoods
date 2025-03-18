@@ -1,43 +1,87 @@
-body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+@media screen  and (min-width: 40em) {
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #wrapper {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .register_container {
+        background: white;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+        justify-content: center;
+        align-self: center;
+        text-align: center;
+    }
+
+    .input-group {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        width: 73%;
+        justify-content: center;
+    }
+
+    h3 {
+        margin: 0;
+        width: 150px;
+        text-align: right;
+    }
+
+    #main_footer {
+        text-align: center;
+        padding: 10px;
+    }
 }
 
-#wrapper {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
+@media screen  and (max-width: 40em) {
+    .register_container {
+        width: 90%;
+        padding: 15px;
+        gap: 50px;
+        align-self: center;
+        text-align: center;
+        justify-content: center;
+    }
 
-.register_container {
-    background: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 100px;
-    justify-content: center;
-    align-self: center;
-    text-align: center;
-}
+    .input-group {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        align-self: center;
+    }
 
-.input-group {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    width: 73%;
-    justify-content: center;
-}
+    h3 {
+        width: 100%;
+        text-align: center;
+    }
 
-h3 {
-    margin: 0;
-    width: 150px;
-    text-align: right;
-}
+    #main_footer {
+        text-align: center;
+        padding: 10px;
+    }
 
-#main_footer {
-    text-align: center;
-    padding: 10px;
+    h2 {
+        align-content: center;
+        text-align: center;
+    }
+
+    #crear-cuenta {
+        padding: 15px;
+        align-self: center;
+        align-items: center;
+    }
 }

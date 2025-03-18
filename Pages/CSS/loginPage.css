@@ -1,44 +1,105 @@
-body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+@media screen and (min-width: 40em) {
+
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #wrapper {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .login_container {
+        background: white;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+        justify-content: center;
+        align-self: center;
+        text-align: center;
+        width: 75%;
+    }
+
+    .input-group {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        width: 88%;
+        justify-content: center;
+    }
+
+    h3 {
+        margin: 0;
+        width: 150px;
+        text-align: right;
+    }
+
+    #main_footer {
+        text-align: center;
+        padding: 10px;
+    }
+
 }
 
-#wrapper {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
+@media screen and (max-width: 40em) {
+    .login_container {
+        width: 90%;
+        padding: 15px;
+        gap: 50px;
+        justify-content: center;
+        align-self: center;
+        text-align: center;
+    }
 
-.login_container {
-    background: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 100px;
-    justify-content: center;
-    align-self: center;
-    text-align: center;
-    width: 75%;
-}
+    .input-group {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        align-content: center;
+        justify-items: center;
+    }
 
-.input-group {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    width: 88%;
-    justify-content: center;
-}
+    h3 {
+        width: 100%;
+        text-align: center;
+    }
 
-h3 {
-    margin: 0;
-    width: 150px;
-    text-align: right;
-}
+    h2 {
+        width: 100%;
+        text-align: center;
+    }
 
-#main_footer {
-    text-align: center;
-    padding: 10px;
+    #main_footer {
+        text-align: center;
+        padding: 10px;
+        top: 0;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    #login-button {
+        padding: 15px;
+        gap: 10px;
+        align-items: center;
+        align-self: center;
+    }
+
+    #create-account-button {
+        padding: 15px;
+        gap: 10px;
+        align-items: center;
+        align-self: center;
+    }
+
 }
