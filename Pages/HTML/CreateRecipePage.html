@@ -13,59 +13,59 @@
 
   <div id="wrapper">
     <!-- Titulo de crear una receta -->
-    <h1>Lorem ipsum</h1>
+    <h1>Crear receta</h1>
 
     <!-- Insertar imagen -->
     <div class="section-group">
-      <h2>Lorem ipsum</h2>
+      <h2>Subir imagen</h2>
       <div class="image-input-container" xlu-include-file="../../Templates/HTML/GetImage.html"></div>
     </div>
 
     <!-- Descricion de la receta -->
     <div class="section-group">
-      <h2>Lorem ipsum</h2>
+      <h2>Breve descripción</h2>
       <div class="description-text" xlu-include-file="../../Templates/HTML/TextInput2.html"></div>
     </div>
 
     <!-- Ingredientes -->
     <div class="section-group">
-      <h2>Lorem ipsum</h2>
+      <h2>Ingredientes</h2>
       <div class="add-text-block" xlu-include-file="../../Templates/HTML/BlockAddText.html"></div>
     </div>
 
     <!-- Información nutricional -->
     <div class="section-group">
-      <h2>Lorem ipsum</h2>
+      <h2>Información nutricional</h2>
       <!-- Carbohidratos -->
       <div class="input-nutricional-information">
-        <h3>Lorem ipsum:</h3>
+        <h3>Carbohidratos:</h3>
         <div class="num-input" xlu-include-file="../../Templates/HTML/NumberInput.html"></div>
       </div>
       <!-- Proteinas -->
       <div class="input-nutricional-information">
-        <h3>Lorem ipsum:</h3>
+        <h3>Proteinas:</h3>
         <div class="num-input" xlu-include-file="../../Templates/HTML/NumberInput.html"></div>
       </div>
       <!-- Grasas -->
       <div class="input-nutricional-information">
-        <h3>Lorem ipsum:</h3>
+        <h3>Grasas:</h3>
         <div class="num-input" xlu-include-file="../../Templates/HTML/NumberInput.html"></div>
       </div>
       <!-- Fibras -->
       <div class="input-nutricional-information">
-        <h3>Lorem ipsum:</h3>
+        <h3>Fibras:</h3>
         <div class="num-input" xlu-include-file="../../Templates/HTML/NumberInput.html"></div>
       </div>
       <!-- Calorias -->
       <div class="input-nutricional-information">
-        <h3>Lorem ipsum:</h3>
+        <h3>Calorias:</h3>
         <div class="num-input" xlu-include-file="../../Templates/HTML/NumberInput.html"></div>
       </div>
     </div>
 
     <!-- Descricion de la receta -->
     <div class="section-group">
-      <h2>Lorem ipsum</h2>
+      <h2>Pasos a seguir</h2>
       <div class="description-text" xlu-include-file="../../Templates/HTML/TextInput2.html"></div>
     </div>
 
@@ -77,6 +77,12 @@
 
 
 </body>
+
+<script>
+  setTimeout(function () {
+    document.getElementById('button-finish-form').querySelector('.button').textContent = "Crear";
+  }, 200);
+</script>
 
 <script>
   xLuIncludeFile();

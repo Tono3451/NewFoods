@@ -23,13 +23,13 @@
   <main>
   <div class="button-container">
     <a href="index.html">
-      <div xlu-include-file="Templates/HTML/button.html"></div>
+      <div id="button1" xlu-include-file="../../Templates/HTML/button.html"></div>
     </a>
     <a href="index.html">
-      <div xlu-include-file="Templates/HTML/button.html"></div>
+      <div id="button2" xlu-include-file="../../Templates/HTML/button.html"></div>
     </a>
     <a href="index.html">
-      <div xlu-include-file="Templates/HTML/button.html"></div>
+      <div id="button3" xlu-include-file="../../Templates/HTML/button.html"></div>
     </a>
   </div>
 
@@ -40,6 +40,14 @@
   </main>
 
 <footer id="main_footer" xlu-include-file="Templates/HTML/footer.html"></footer>
+
+  <script>
+    setTimeout(function () {
+                document.getElementById('button1').querySelector('.button').textContent = "Populares";
+                document.getElementById('button2').querySelector('.button').textContent = "Recientes";
+                document.getElementById('button3').querySelector('.button').textContent = "Mas vistas";
+    }, 200);
+  </script>
 
   <script>
     fetch('http://localhost:3000/recipes')

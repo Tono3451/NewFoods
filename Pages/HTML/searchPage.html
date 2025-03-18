@@ -20,28 +20,28 @@
 
     <div class="search_container">
         <div class="input-group">
-            <h2>Lorem ipsum</h2>
-            <div class="input-container" xlu-include-file="/Templates/HTML/TextInput.html"></div>
+            <h2 id="text1">Lorem ipsum</h2>
+            <div class="input-container" id="nombre" xlu-include-file="/Templates/HTML/TextInput.html"></div>
         </div>
 
         <div class="input-group">
-            <h2>Lorem ipsum</h2>
-            <div class="input-container" xlu-include-file="/Templates/HTML/TextInput.html"></div>
+            <h2 id="text2">Lorem ipsum</h2>
+            <div class="input-container" id="ingredientes" xlu-include-file="/Templates/HTML/TextInput.html"></div>
         </div>
 
         <div class="input-group">
-            <h2>Lorem ipsum</h2>
-            <div class="input-container" xlu-include-file="/Templates/HTML/dropdownInput.html"></div>
+            <h2 id="text3">Lorem ipsum</h2>
+            <div class="input-container" id="dificultad" xlu-include-file="/Templates/HTML/dropdownInput.html"></div>
         </div>
 
         <div class="input-group">
-            <h2>Lorem ipsum</h2>
-            <div class="input-container" xlu-include-file="/Templates/HTML/slider.html"></div>
+            <h2 id="text4">Lorem ipsum</h2>
+            <div class="input-container" id="duración" xlu-include-file="/Templates/HTML/slider.html"></div>
         </div>
 
         <a href="resultsPage.html">
         <div class="input-group">
-            <div class="input-container" xlu-include-file="/Templates/HTML/button.html"></div>
+            <div class="input-container" id="buscar" xlu-include-file="/Templates/HTML/button.html"></div>
         </div>
         </a>
 
@@ -50,6 +50,18 @@
     <footer id="main_footer" xlu-include-file="/Templates/HTML/footer.html"></footer>
 
 </div>
+
+<script>
+    setTimeout(function () {
+        document.getElementById('text1').textContent = "Nombre receta";
+        document.getElementById('text2').textContent = "Ingredientes";
+        document.getElementById('text3').textContent = "Dificultad";
+        document.getElementById('text4').textContent = "Duración";
+        document.getElementById('nombre').querySelector('.text-input').placeholder = "Tortilla de patatas";
+        document.getElementById('ingredientes').querySelector('.text-input').placeholder = "Cebolla";
+        document.getElementById('buscar').querySelector('.button').textContent = "Buscar";
+    }, 75);
+</script>
 
 <script>
     xLuIncludeFile();
