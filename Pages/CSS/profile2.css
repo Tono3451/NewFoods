@@ -1,68 +1,143 @@
-.table {
-    table-layout: auto;
-    border-collapse: collapse;
-    justify-content: center;
-    text-align: center;
-    width: 80%;
-    margin: auto;
-    height: 80vh;
+@media screen and (min-width: 40em) {
+
+    .table {
+        table-layout: auto;
+        border-collapse: collapse;
+        justify-content: center;
+        text-align: center;
+        width: 80%;
+        margin: auto;
+        height: 80vh;
+    }
+
+    th, td {
+        padding: 5px;
+        text-align: center;
+        font-size: 14px;
+        width: 80px;
+    }
+
+    td figure {
+        margin: 0;
+        display: inline-block;
+        text-align: center;
+        height: auto;
+    }
+
+    .labels {
+        text-align: center;
+        margin-bottom: 10px;
+        top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 70px;
+        padding: 20px 0;
+    }
+
+    label {
+        display: inline-block;
+        margin: 10px;
+        font-size: 16px;
+        vertical-align: middle;
+    }
+
+    .separator {
+        width: 80%;
+        margin: 10px auto;
+        border: none;
+        border-top: 2px solid #ccc;
+    }
+
+    .button-label {
+        background-color: #581845;
+        border: none;
+        color: white;
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: bold;
+        width: 200px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .button-label:hover {
+        background: #566573;
+    }
+
+    .button-label:active {
+        transform: scale(0.95);
+    }
+
 }
 
-th, td {
-    padding: 5px;
-    text-align: center;
-    font-size: 14px;
-    width: 80px;
-}
+@media screen and (max-width: 40em) {
 
-td figure {
-    margin: 0;
-    display: inline-block;
-    text-align: center;
-    height: auto;
-}
+    .table {
+        width: 100%;
+        font-size: 12px;
+        height: auto;
+    }
 
-.labels {
-    text-align: center;
-    margin-bottom: 10px;
-    top: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 70px;
-    padding: 20px 0;
-}
+    .labels {
+        display: flex;
+        gap: 20px;
+        padding: 10px;
+        margin: 10px;
+        justify-content: center;
+    }
 
-label {
-    display: inline-block;
-    margin: 10px;
-    font-size: 16px;
-    vertical-align: middle;
-}
+    .button-label {
+        background-color: #581845;
+        border: none;
+        color: white;
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: bold;
+        width: 200px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
 
-.separator {
-    width: 80%;
-    margin: 10px auto;
-    border: none;
-    border-top: 2px solid #ccc;
-}
+    .button-label:hover {
+        background: #566573;
+    }
 
-.button-label{
-    background-color: #581845;
-    border: none;
-    color: white;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: bold;
-    width: 200px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
+    .button-label:active {
+        transform: scale(0.95);
+    }
 
-.button-label:hover{
-    background: #566573;
-}
+    thead {
+        display: none;
+    }
 
-.button-label:active {
-    transform: scale(0.95);
+    tbody {
+        display: block;
+        width: 100%;
+    }
+
+    tr {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 2px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    td {
+        display: flex;
+        justify-content: center;
+        padding: 8px;
+        width: 100%;
+        text-align: center;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: capitalize;
+        color: #581845;
+    }
+
 }

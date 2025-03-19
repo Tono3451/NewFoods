@@ -1,59 +1,120 @@
-#avatar {
-    position: relative;
-    top: 10px;
-    left: 10px;
+@media screen and (min-width: 40em) {
+
+    #avatar {
+        position: relative;
+        top: 10px;
+        left: 10px;
+    }
+
+    .gallery {
+        padding: 10px;
+        margin: 10px;
+        border-radius: 10px;
+    }
+
+    .labels {
+        text-align: center;
+        margin-bottom: 10px;
+        top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 70px;
+        padding: 20px 0;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+        justify-items: center;
+    }
+
+    .image {
+        width: 60%;
+        max-width: 1000px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        position: relative;
+        border-radius: 5px;
+    }
+
+    .button-label {
+        background-color: #581845;
+        border: none;
+        color: white;
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: bold;
+        width: 200px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .button-label:hover {
+        background: #566573;
+    }
+
+    .button-label:active {
+        transform: scale(0.95);
+    }
+
 }
 
-.gallery {
-    padding: 10px;
-    margin: 10px;
-    border-radius: 10px;
-}
+@media screen and (max-width: 40em) {
 
-.labels {
-    text-align: center;
-    margin-bottom: 10px;
-    top: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 70px;
-    padding: 20px 0;
-}
+    #avatar {
+        position: relative;
+        top: 10px;
+        left: 10px;
+    }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
-    justify-items: center;
-}
+    .labels {
+        display: flex;
+        gap: 20px;
+        padding: 10px;
+        margin: 10px;
+        justify-content: center;
+    }
 
-.image {
-    width: 60%;
-    max-width: 1000px;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    position: relative;
-    border-radius: 5px;
-}
+    .button-label {
+        background-color: #581845;
+        border: none;
+        color: white;
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: bold;
+        width: 200px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
 
-.button-label{
-    background-color: #581845;
-    border: none;
-    color: white;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: bold;
-    width: 200px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
+    .button-label:hover {
+        background: #566573;
+    }
 
-.button-label:hover{
-    background: #566573;
-}
+    .button-label:active {
+        transform: scale(0.95);
+    }
 
-.button-label:active {
-    transform: scale(0.95);
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .image {
+        width: 70%;
+        max-width: 400px;
+        height: auto;
+        justify-self: center;
+    }
+
+    .button-label {
+        width: 100%;
+        padding: 10px;
+    }
 }
