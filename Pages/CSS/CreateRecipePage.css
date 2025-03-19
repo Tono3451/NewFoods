@@ -1,33 +1,52 @@
-#wrapper {
-    font-family: "Times New Roman", Times, serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    margin-bottom: 5%;
-    margin-top: 5%;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding-bottom: 1%;
+@media screen and (min-width: 40em) {
+    #wrapper {
+        font-family: "Times New Roman", Times, serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        margin: 5% 10%;
+        padding-bottom: 1%;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .section-group {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #button-finish-form {
+        margin-bottom: 10%;
+        text-align: center;
+    }
+
+    .input-nutricional-information {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-left: 5%;
+    }
 }
 
-h1 {
-    text-align: center;
-}
+@media screen and (max-width: 40em) {
+    #wrapper {
+        margin: 5%;
+        padding: 2%;
+        width: 90%;
+    }
 
-.section-group {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
+    .input-nutricional-information {
+        flex-direction: column;
+        margin-left: 0;
+        text-align: center;
+    }
 
-#button-finish-form {
-    margin-bottom: 10%;
-    text-align: center;
-}
-
-.input-nutricional-information {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-left: 5%;
+    #button-finish-form {
+        margin-bottom: 10%;
+        text-align: center;
+        justify-self: center;
+    }
 }
