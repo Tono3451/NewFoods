@@ -101,6 +101,11 @@
 
 @media screen and (max-width: 40em) {
 
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
     main {
         max-width: 100%;
         margin: 10px;

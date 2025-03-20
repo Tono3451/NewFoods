@@ -45,6 +45,12 @@
 }
 
 @media screen  and (max-width: 40em) {
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
     .register_container {
         width: 90%;
         padding: 15px;
