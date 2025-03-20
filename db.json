@@ -2,7 +2,7 @@
   "recipes": [
     {
       "id": 1,
-      "image": "https://via.placeholder.com/150",
+      "image": "https://imag.bonviveur.com/ensalada-mediterranea.jpg",
       "title": "Ensalada Mediterránea",
       "subtitle": "Fresca y saludable",
       "description": "Una deliciosa ensalada con ingredientes frescos como tomate, pepino, aceitunas y queso feta.",
@@ -10,7 +10,7 @@
     },
     {
       "id": 2,
-      "image": "https://via.placeholder.com/150",
+      "image": "https://recetasdecocina.elmundo.es/wp-content/uploads/2024/09/espaguetis-a-la-carbonara-1024x683.jpg",
       "title": "Pasta Carbonara",
       "subtitle": "Clásico italiano",
       "description": "Pasta al dente con una cremosa salsa de huevo, queso y panceta crujiente.",
@@ -18,7 +18,7 @@
     },
     {
       "id": 3,
-      "image": "https://via.placeholder.com/150",
+      "image": "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/0749D9BC-260D-40F4-A07F-54814C4A82B4/Derivates/767f991e-a7c5-4c72-a88e-5023afa3ccc8.jpg",
       "title": "Sushi Variado",
       "subtitle": "Delicia japonesa",
       "description": "Una selección de nigiri, maki y sashimi con pescado fresco y arroz perfectamente sazonado.",
@@ -26,7 +26,7 @@
     },
     {
       "id": 4,
-      "image": "https://via.placeholder.com/150",
+      "image": "https://imag.bonviveur.com/presentacion-principal-de-los-tacos-mexicanos-de-carne.jpg",
       "title": "Tacos al Pastor",
       "subtitle": "Sabor mexicano",
       "description": "Tacos de cerdo marinado con piña, cebolla y cilantro, servidos en tortillas de maíz.",
@@ -34,7 +34,7 @@
     },
     {
       "id": 5,
-      "image": "https://via.placeholder.com/150",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI4Hw1tYONFPTzh90JZBNmUF9Jv6Bptzuj3Q&s.jpg",
       "title": "Paella Valenciana",
       "subtitle": "Tradición española",
       "description": "Arroz con mariscos, pollo y verduras, sazonado con azafrán y cocinado a la perfección.",
@@ -42,7 +42,7 @@
     },
     {
       "id": 6,
-      "image": "https://via.placeholder.com/150",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/NCI_Visuals_Food_Hamburger.jpg/640px-NCI_Visuals_Food_Hamburger.jpg",
       "title": "Hamburguesa Gourmet",
       "subtitle": "Clásico reinventado",
       "description": "Carne de res jugosa con queso cheddar, bacon crujiente y salsa especial en pan brioche.",
