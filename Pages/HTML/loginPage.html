@@ -19,12 +19,12 @@
 
         <div class="input-group">
             <h3 id="email">Lorem ipsum</h3>
-            <div class="input-container" xlu-include-file="../../Templates/HTML/TextInput.html"></div>
+            <div class="input-container" id = "correo" xlu-include-file="../../Templates/HTML/TextInput.html"></div>
         </div>
 
         <div class="input-group">
             <h3 id="password">Lorem ipsum</h3>
-            <div class="input-container" xlu-include-file="../../Templates/HTML/TextInput.html"></div>
+            <div class="input-container" id = "contraseña" xlu-include-file="../../Templates/HTML/TextInput.html"></div>
         </div>
 
         <a href="/index.html">
@@ -42,19 +42,14 @@
 
 <script>
     setTimeout(function () {
-        fetch('/login.json')
-            .then(response => response.json())
-            .then(data => {
-                const loginData = data.login;
-
-                document.querySelector('#login-title').textContent = loginData.title;
-                document.querySelector('#email').textContent = loginData.email;
-                document.querySelector('#password').textContent = loginData.password;
-                document.getElementById('login-button').querySelector('.button').textContent = loginData["log-in-button"];
-                document.getElementById('create-account-button').querySelector('.button').textContent = loginData["create-account-button"];
-            })
-            .catch(error => console.error('Error cargando datos del login:', error));
-    }, 30);
+                document.querySelector('#login-title').textContent = "Inicia sesión";
+                document.querySelector('#email').textContent = "correo";
+                document.querySelector('#password').textContent = "contraseña";
+                document.getElementById('login-button').querySelector('.button').textContent = "Iniciar Sesión";
+                document.getElementById('create-account-button').querySelector('.button').textContent = "Crear cuenta";
+                document.getElementById('correo').querySelector('.text-input').placeholder = "correo@gmail.com"
+                document.getElementById('contraseña').querySelector('.text-input').placeholder = "123456789"
+    }, 50);
 </script>
 
 </body>
