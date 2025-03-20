@@ -1,4 +1,10 @@
 @media screen and (min-width: 40em) {
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
     #wrapper {
         font-family: "Times New Roman", Times, serif;
         display: flex;
@@ -24,18 +30,26 @@
     }
 
     .input-nutricional-information {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-left: 5%;
+        flex-direction: column;
+        margin-left: 0;
+        text-align: center;
     }
 }
 
 @media screen and (max-width: 40em) {
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
     #wrapper {
         margin: 5%;
         padding: 2%;
         width: 90%;
+    }
+    h1 {
+        text-align: center;
     }
 
     .input-nutricional-information {

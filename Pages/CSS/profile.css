@@ -1,9 +1,25 @@
 @media screen and (min-width: 40em) {
 
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
     #avatar {
         position: relative;
         top: 10px;
         left: 10px;
+    }
+    #avatar-container {
+        display: flex;
+        align-items: center;
+        gap: 25px; /* Espacio entre el avatar y el username */
+        margin-top: 20px;
+    }
+
+    #username {
+        font-size: 1.5rem; /* Tamaño del texto del username */
+        font-weight: bold;
     }
 
     .gallery {
@@ -64,10 +80,26 @@
 
 @media screen and (max-width: 40em) {
 
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
     #avatar {
         position: relative;
         top: 10px;
         left: 10px;
+    }
+    #avatar-container {
+        display: flex;
+        align-items: center;
+        gap: 25px; /* Espacio entre el avatar y el username */
+        margin-top: 20px;
+    }
+
+    #username {
+        font-size: 1.5rem; /* Tamaño del texto del username */
+        font-weight: bold;
     }
 
     .labels {
