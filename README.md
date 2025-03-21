@@ -32,6 +32,7 @@ Además, gracias a nuestro sistema inteligente de análisis nutricional, recibir
     - Los usuarios podrán ver, a partir del itinerario semanal, las calorías que consumirán esa semana y a partir de los datos del usuario (peso, altura) las calorías recomendadas que debería consumir.
 
 ## Listado de páginas html, Mockups y Stroyboard:
+### Desktop
 ### Storyboard:
 ![Storyboard](/mockups/storyboard.png)
 ### Mockups:
@@ -62,6 +63,67 @@ Además, gracias a nuestro sistema inteligente de análisis nutricional, recibir
 ##### Implementado por: recipePage.html
 ![Ver receta](/mockups/ver-receta.png)
 
+### Movil:
+### Storyboard:
+![Storyboard](/mockups/Movil/Storyboard.png)
+### Mockups:
+#### Main
+##### Implementado por: index.html
+![Index.html](/mockups/Movil/index.png)
+#### Perfil
+##### Implementado por: profile.html
+![Perfil](/mockups//Movil/profile.png)
+##### Implementado por: profile.html
+![Perfil](/mockups/Movil/profile.png)
+##### Implementado por: profile2.html
+![Perfil](/mockups/Movil/profile2.png)
+#### Búsqueda
+##### Implementado por: searchPage.html
+![Búsqueda](/mockups//Movil/search.png)
+##### Implementado por: resultsPage.html
+![Búsqueda](/mockups/Movil/results.png)
+#### Login y Registro
+##### Implementado por: loginPage.html
+![Login](/mockups/Movil/login.png)
+##### Implementado por: registerPage.html
+![Registro](/mockups/Movil/register.png)
+#### Crear receta
+##### Implementado por: CreateRecipePage.html
+![Crear receta](/mockups/Movil/crear-receta.png)
+#### Ver receta
+##### Implementado por: recipePage.html
+![Ver receta](/mockups/Movil/receta.png)
+
+### Tablet:
+### Storyboard:
+![Storyboard](/mockups/Tablet/storyboard.png)
+### Mockups:
+#### Main
+##### Implementado por: index.html
+![Index.html](/mockups/Tablet/index.png)
+#### Perfil
+##### Implementado por: profile.html
+![Perfil](/mockups//Tablet/profile.png)
+##### Implementado por: profile.html
+![Perfil](/mockups/Tablet/profile.png)
+##### Implementado por: profile2.html
+![Perfil](/mockups/Tablet/profile2.png)
+#### Búsqueda
+##### Implementado por: searchPage.html
+![Búsqueda](/mockups/Tablet/search.png)
+##### Implementado por: resultsPage.html
+![Búsqueda](/mockups/Tablet/results.png)
+#### Login y Registro
+##### Implementado por: loginPage.html
+![Login](/mockups/Tablet/login.png)
+##### Implementado por: registerPage.html
+![Registro](/mockups/Tablet/register.png)
+#### Crear receta
+##### Implementado por: CreateRecipePage.html
+![Crear receta](/mockups/Tablet/crear-recetas.png)
+#### Ver receta
+##### Implementado por: recipePage.html
+![Ver receta](/mockups/Tablet/recetas.png)
 
 ## Listado de templates:
 ### Header:
