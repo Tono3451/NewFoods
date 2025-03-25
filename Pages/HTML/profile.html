@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Profile Page</title>
-  <script src="../../Templates/Script/xlu-include-file.js"></script>
   <link rel="stylesheet" href="../../Templates/CSS/header.css">
   <link rel="stylesheet" href="../../Templates/CSS/footer.css">
   <link rel="stylesheet" href="../../Templates/CSS/avatar.css">
   <link rel="stylesheet" href="../../Templates/CSS/ImageTemplate.css">
   <link rel="stylesheet" href="../CSS/profile.css">
+  <script src="../../loadTemplate.js"></script>
 </head>
 <body>
 
-<header id="main_header" xlu-include-file="/Templates/HTML/header.html"></header>
+<header id="main_header"></header>
 
 <section id="avatar-container">
-  <div id="avatar" xlu-include-file="/Templates/HTML/avatar.html"></div>
+  <div id="avatar"></div>
   <div id="username">
     <p>Username</p>
   </div>
@@ -34,22 +34,37 @@
   </div>
 </section>
 <section class="grid">
-  <div class="image" id="image1" xlu-include-file="/Templates/HTML/ImageTemplate.html"></div>
-  <div class="image" id="image2" xlu-include-file="/Templates/HTML/ImageTemplate.html"></div>
-  <div class="image" id="image3" xlu-include-file="/Templates/HTML/ImageTemplate.html"></div>
-  <div class="image" id="image4" xlu-include-file="/Templates/HTML/ImageTemplate.html"></div>
-  <div class="image" id="image5" xlu-include-file="/Templates/HTML/ImageTemplate.html"></div>
-  <div class="image" id="image6" xlu-include-file="/Templates/HTML/ImageTemplate.html"></div>
+  <div class="image" id="image1"></div>
+  <div class="image" id="image2"></div>
+  <div class="image" id="image3"></div>
+  <div class="image" id="image4"></div>
+  <div class="image" id="image5"></div>
+  <div class="image" id="image6"></div>
 </section>
 
-<footer id="main_footer" xlu-include-file="/Templates/HTML/footer.html"></footer>
-
-
+<footer id="main_footer"></footer>
 
 <script>
+  document.addEventListener('DOMContentLoaded', init);
 
-  xLuIncludeFile();
+  function init() {
 
+
+    loadTemplate('../../Templates/HTML/header.html', 'main_header');
+
+    loadTemplate('../../Templates/HTML/avatar.html', 'avatar');
+
+    loadTemplate('../../Templates/HTML/ImageTemplate.html', 'image1');
+    loadTemplate('../../Templates/HTML/ImageTemplate.html', 'image2');
+    loadTemplate('../../Templates/HTML/ImageTemplate.html', 'image3');
+    loadTemplate('../../Templates/HTML/ImageTemplate.html', 'image4');
+    loadTemplate('../../Templates/HTML/ImageTemplate.html', 'image5');
+    loadTemplate('../../Templates/HTML/ImageTemplate.html', 'image6');
+
+    loadTemplate('../../Templates/HTML/footer.html', 'main_footer');
+
+
+  }
 </script>
 
 </body>
