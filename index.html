@@ -2,11 +2,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="description" content="Main page">
   <meta name="keywords" content="HTML5, CSS3, JavaScript">
 
+
   <title>Main page</title>
+
 
   <script src="Templates/Script/xlu-include-file.js"></script>
   <link rel="stylesheet" href="index.css">
@@ -15,107 +17,126 @@
   <link rel="stylesheet" href="Templates/CSS/button.css">
   <link rel="stylesheet" href="Templates/CSS/ImageTitleTextHorizontal.css">
 
+
 </head>
 <body>
 <div id="wrapper">
   <header id="main_header"></header>
 
-  <main>
-  <div class="button-container">
-    <a href="index.html">
-      <div id="button1"></div>
-    </a>
-    <a href="index.html">
-      <div id="button2"></div>
-    </a>
-    <a href="index.html">
-      <div id="button3"></div>
-    </a>
-  </div>
 
-  <div class="image-container">
-    <div id="image-text"></div>
-  </div>
+  <main>
+    <div class="button-container">
+      <a href="index.html">
+        <div id="button1"></div>
+      </a>
+      <a href="index.html">
+        <div id="button2"></div>
+      </a>
+      <a href="index.html">
+        <div id="button3"></div>
+      </a>
+    </div>
+
+
+    <div class="image-container">
+      <div id="image-text"></div>
+    </div>
   </main>
 
-<footer id="footer"></footer>
+
+  <footer id="footer"></footer>
 </div>
 </body>
 
+
 <script>
-    document.addEventListener('DOMContentLoaded', init);
-
-    const supportsTemplate = function () {
-      //create a template element and make sure it has a 'content' property
-      return 'content' in document.createElement('template');
-    }
-
-    function loadTemplate(fileName, id, callback) {
-
-      fetch(fileName).then((res) => {
-        return res.text();
-      }).then((text) => {
-        document.getElementById(id).innerHTML = text;
-        //console.log(text)
-
-        if(callback){
-          callback();
-        }
-      })
-    }
+  document.addEventListener('DOMContentLoaded', init);
 
 
-    function init() {
 
-      loadTemplate('Templates/HTML/header.html', 'main_header');
 
-      loadTemplate('Templates/HTML/button.html', 'button1');
-      loadTemplate('Templates/HTML/button.html', 'button2');
-      loadTemplate('Templates/HTML/button.html', 'button3');
+  function loadTemplate(fileName, id, callback) {
 
-      loadTemplate('Templates/HTML/ImageTitleTextHorizontal.html"', 'image-text', addRecipes);
-      loadTemplate('Templates/HTML/footer.html', 'footer');
 
-    }
+    fetch(fileName).then((res) => {
+      return res.text();
+    }).then((text) => {
+      document.getElementById(id).innerHTML = text;
 
-    function addRecipes() {
-      fetch('/db.json')
-              .then(response => response.json())
-              .then(data => {
-                const container = document.querySelector('.image-container');
-                container.innerHTML = ''; // Limpia contenido previo
 
-                data.recipes.forEach(recipe => {
-                  fetch('Templates/HTML/ImageTitleTextHorizontal.html')
-                          .then(response => response.text())
-                          .then(template => {
-                            const tempDiv = document.createElement('div');
-                            tempDiv.innerHTML = template.trim();
+      if(callback){
+        callback();
+      }
+    })
+  }
 
-                            const cardLink = tempDiv.querySelector('.card-link');
-                            cardLink.href = recipe.link;
-                            cardLink.querySelector('img').src = recipe.image;
-                            cardLink.querySelector('img').alt = recipe.title;
-                            cardLink.querySelector('h3').textContent = recipe.title;
-                            cardLink.querySelector('.subtitle').textContent = recipe.subtitle;
-                            cardLink.querySelector('.text').textContent = recipe.description;
 
-                            container.appendChild(cardLink);
-                          });
-                });
-              })
-              .catch(error => console.error('Error cargando recetas:', error));
-    }
+
+
+  function init() {
+
+
+    loadTemplate('Templates/HTML/header.html', 'main_header');
+
+
+    loadTemplate('Templates/HTML/button.html', 'button1');
+    loadTemplate('Templates/HTML/button.html', 'button2');
+    loadTemplate('Templates/HTML/button.html', 'button3');
+
+
+    loadTemplate('Templates/HTML/ImageTitleTextHorizontal.html"', 'image-text', addRecipes);
+    loadTemplate('Templates/HTML/footer.html', 'footer');
+
+
+  }
+
+
+  function addRecipes() {
+    fetch('/db.json')
+            .then(response => response.json())
+            .then(data => {
+              const container = document.querySelector('.image-container');
+              container.innerHTML = '';
+
+
+              data.recipes.forEach(recipe => {
+                fetch('Templates/HTML/ImageTitleTextHorizontal.html')
+                        .then(response => response.text())
+                        .then(template => {
+                          const tempDiv = document.createElement('div');
+                          tempDiv.innerHTML = template.trim();
+
+
+                          const cardLink = tempDiv.querySelector('.card-link');
+                          cardLink.href = recipe.link;
+                          cardLink.querySelector('img').src = recipe.image;
+                          cardLink.querySelector('img').alt = recipe.title;
+                          cardLink.querySelector('h3').textContent = recipe.title;
+                          cardLink.querySelector('.subtitle').textContent = recipe.subtitle;
+                          cardLink.querySelector('.text').textContent = recipe.description;
+
+
+                          container.appendChild(cardLink);
+                        });
+              });
+            })
+            .catch(error => console.error('Error cargando recetas:', error));
+  }
+
 
 </script>
 
-  <script>
-    setTimeout(function () {
-                document.getElementById('button1').querySelector('.button').textContent = "Populares";
-                document.getElementById('button2').querySelector('.button').textContent = "Recientes";
-                document.getElementById('button3').querySelector('.button').textContent = "Mas vistas";
-    }, 50);
-  </script>
+
+<script>
+  setTimeout(function () {
+    document.getElementById('button1').querySelector('.button').textContent = "Populares";
+    document.getElementById('button2').querySelector('.button').textContent = "Recientes";
+    document.getElementById('button3').querySelector('.button').textContent = "Mas vistas";
+  }, 100);
+</script>
+
+
+
 
 
 

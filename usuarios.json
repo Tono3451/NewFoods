@@ -1,0 +1,22 @@
+{
+  "usuarios": [
+    {
+      "id": "994f",
+      "nombre": "Prueba3",
+      "correo": "prueba3@gmail.com",
+      "contraseña": "prueba3contraseña"
+    },
+    {
+      "id": "1257",
+      "nombre": "Prueba4",
+      "correo": "prueba4@gmail.com",
+      "contraseña": "prueba4contraseña"
+    },
+    {
+      "id": "64ef",
+      "nombre": "prueba6",
+      "correo": "prueba6@gmail.com",
+      "contraseña": "prueba6contraseña"
+    }
+  ]
+}
