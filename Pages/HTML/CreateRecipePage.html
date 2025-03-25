@@ -6,10 +6,11 @@
   <meta name="keywords" content="HTML5, CSS3, JavaScript">
   <title>Login page</title>
   <script src="../../Templates/Script/xlu-include-file.js"></script>
+  <script src="../../loadTemplate.js"></script>
   <link rel="stylesheet" href="../CSS/CreateRecipePage.css">
 </head>
 <body>
-  <header id="main_header" xlu-include-file="../../Templates/HTML/header.html"></header>
+  <header id="main_header"></header>
 
   <div id="wrapper">
     <!-- Titulo de crear una receta -->
@@ -18,19 +19,19 @@
     <!-- Insertar imagen -->
     <div class="section-group">
       <h2>Subir imagen</h2>
-      <div class="image-input-container" xlu-include-file="../../Templates/HTML/GetImage.html"></div>
+      <div class="image-input-container" id="get_image"></div>
     </div>
 
     <!-- Descricion de la receta -->
     <div class="section-group">
       <h2>Breve descripción</h2>
-      <div class="description-text" xlu-include-file="../../Templates/HTML/TextInput2.html"></div>
+      <div class="description-text" id="description-text1"></div>
     </div>
 
     <!-- Ingredientes -->
     <div class="section-group">
       <h2>Ingredientes</h2>
-      <div class="add-text-block" xlu-include-file="../../Templates/HTML/BlockAddText.html"></div>
+      <div class="add-text-block" id="add-text-block"></div>
     </div>
 
     <!-- Información nutricional -->
@@ -39,41 +40,41 @@
       <!-- Carbohidratos -->
       <div class="input-nutricional-information">
         <h3>Carbohidratos:</h3>
-        <div class="num-input" xlu-include-file="../../Templates/HTML/NumberInput.html"></div>
+        <div class="num-input" id="num_input1"></div>
       </div>
       <!-- Proteinas -->
       <div class="input-nutricional-information">
         <h3>Proteinas:</h3>
-        <div class="num-input" xlu-include-file="../../Templates/HTML/NumberInput.html"></div>
+        <div class="num-input" id="num_input2"></div>
       </div>
       <!-- Grasas -->
       <div class="input-nutricional-information">
         <h3>Grasas:</h3>
-        <div class="num-input" xlu-include-file="../../Templates/HTML/NumberInput.html"></div>
+        <div class="num-input" id="num_input3"></div>
       </div>
       <!-- Fibras -->
       <div class="input-nutricional-information">
         <h3>Fibras:</h3>
-        <div class="num-input" xlu-include-file="../../Templates/HTML/NumberInput.html"></div>
+        <div class="num-input" id="num_input4"></div>
       </div>
       <!-- Calorias -->
       <div class="input-nutricional-information">
         <h3>Calorias:</h3>
-        <div class="num-input" xlu-include-file="../../Templates/HTML/NumberInput.html"></div>
+        <div class="num-input" id="num_input5"></div>
       </div>
     </div>
 
     <!-- Descricion de la receta -->
     <div class="section-group">
       <h2>Pasos a seguir</h2>
-      <div class="description-text" xlu-include-file="../../Templates/HTML/TextInput2.html"></div>
+      <div class="description-text" id="description-text2"></div>
     </div>
 
   </div>
-  <div id="button-finish-form" xlu-include-file="../../Templates/HTML/button.html"></div>
+  <div class="button-finish-form" id="button1"></div>
 
 
-  <footer id="main_footer" xlu-include-file="../../Templates/HTML/footer.html"></footer>
+  <footer id="main_footer"></footer>
 
 
 </body>
@@ -82,6 +83,41 @@
   setTimeout(function () {
     document.getElementById('button-finish-form').querySelector('.button').textContent = "Crear";
   }, 200);
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', init);
+
+
+
+
+  function init() {
+
+
+    loadTemplate('../../Templates/HTML/header.html', 'main_header');
+
+    loadTemplate('../../Templates/HTML/GetImage.html', 'get_image');
+
+    loadTemplate('../../Templates/HTML/TextInput2.html', 'description-text1');
+
+    loadTemplate('../../Templates/HTML/BlockAddText.html', 'add-text-block');
+
+    loadTemplate('../../Templates/HTML/NumberInput.html', 'num_input1');
+    loadTemplate('../../Templates/HTML/NumberInput.html', 'num_input2');
+    loadTemplate('../../Templates/HTML/NumberInput.html', 'num_input3');
+    loadTemplate('../../Templates/HTML/NumberInput.html', 'num_input4');
+    loadTemplate('../../Templates/HTML/NumberInput.html', 'num_input5');
+
+    loadTemplate('../../Templates/HTML/TextInput2.html', 'description-text2');
+
+    loadTemplate('../../Templates/HTML/button.html', 'button1');
+
+    loadTemplate('../../Templates/HTML/footer.html', 'main_footer');
+
+
+  }
+
+
 </script>
 
 <script>

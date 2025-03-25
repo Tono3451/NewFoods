@@ -24,7 +24,7 @@
         gap: 20px;
     }
 
-    #button-finish-form {
+    .button-finish-form {
         margin-bottom: 10%;
         text-align: center;
     }
@@ -58,7 +58,7 @@
         text-align: center;
     }
 
-    #button-finish-form {
+    .button-finish-form {
         margin-bottom: 10%;
         text-align: center;
         justify-self: center;
