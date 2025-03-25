@@ -172,6 +172,9 @@ Además, gracias a nuestro sistema inteligente de análisis nutricional, recibir
 ## Otros aspectos:
 
 
+SPRINT 1:
+Iniciar el JSON server: json-server --watch usuarios.json --port 3000
+
 
 ## Enlaces a Figma y Trello:
   - Figma: https://www.figma.com/design/bK7M1tboeV8ZKdchaRtuKr/Recetas?node-id=0-1&p=f&t=uPeROiFIFouw5bg3-0
