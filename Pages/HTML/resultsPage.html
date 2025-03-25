@@ -8,7 +8,7 @@
 
   <title>Results page</title>
 
-  <script src="../../Templates/Script/xlu-include-file.js"></script>
+  <script src="../../loadTemplate.js"></script>
   <link rel="stylesheet" href="../../Templates/CSS/header.css">
   <link rel="stylesheet" href="../../Templates/CSS/footer.css">
   <link rel="stylesheet" href="../../Templates/CSS/ImageTitleTextHorizontal.css">
@@ -16,21 +16,28 @@
 </head>
 <body>
 <div id="wrapper">
-  <header id="main_header" xlu-include-file="/Templates/HTML/header.html"></header>
+  <header id="main_header"></header>
   <h2>Resultados</h2>
   <div class="image-container">
-    <div xlu-include-file="/Templates/HTML/ImageTitleTextHorizontal.html"></div>
-    <div xlu-include-file="/Templates/HTML/ImageTitleTextHorizontal.html"></div>
+    <div id = "recipe1"></div>
+    <div id = "recipe2"></div>
   </div>
 
 
-<footer id="main_footer" xlu-include-file="/Templates/HTML/footer.html"></footer>
+<footer id="main_footer"></footer>
 </div>
 
 <script>
+  document.addEventListener('DOMContentLoaded', init);
 
-  xLuIncludeFile();
+  function init() {
 
+    loadTemplate('../../Templates/HTML/header.html', 'main_header');
+    loadTemplate('../../Templates/HTML/ImageTitleTextHorizontal.html', 'recipe1');
+    loadTemplate('../../Templates/HTML/ImageTitleTextHorizontal.html', 'recipe2');
+    loadTemplate('../../Templates/HTML/footer.html', 'main_footer');
+
+  }
 </script>
 
 </body>
