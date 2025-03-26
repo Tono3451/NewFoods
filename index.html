@@ -104,7 +104,16 @@
 </script>
 
 
+<script>
+    //Redirigir en caso de que no haya un usuario logueado
+    const usuarioGuardado = localStorage.getItem("usuarioActual");
 
+    const usuarioActual = usuarioGuardado ? JSON.parse(usuarioGuardado) : null;
+
+    if (!usuarioActual) {
+        window.location.href = "Pages/HTML/loginPage.html";
+    }
+</script>
 
 
 
