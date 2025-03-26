@@ -18,10 +18,8 @@
 <div id="wrapper">
   <header id="main_header"></header>
   <h2>Resultados</h2>
-  <div class="image-container">
-    <div id = "recipe1"></div>
-    <div id = "recipe2"></div>
-  </div>
+
+  <div id="resultsContainer" class="image-container"></div>
 
 
 <footer id="main_footer"></footer>
@@ -38,6 +36,58 @@
     loadTemplate('../../Templates/HTML/footer.html', 'main_footer');
 
   }
+
+  // Obtener parámetros de búsqueda de la URL
+  const params = new URLSearchParams(window.location.search);
+  const nombre = params.get("nombre") ? params.get("nombre").toLowerCase() : "";
+  const ingredientes = params.get("ingredientes") ? params.get("ingredientes").toLowerCase() : "";
+
+  // Cargar recetas desde JSON
+  fetch("/NewFoods/db.json")
+          .then(response => response.json())
+          .then(data => {
+            const recipes = data.recipes;
+
+            const filteredRecipes = recipes.filter(recipe => {
+              const recipeTitle = recipe.title.toLowerCase().trim();
+              const recipeIngredients = recipe.ingredientes ? recipe.ingredientes.join(" ").toLowerCase().trim() : "";
+
+              return (
+                      (!nombre || recipeTitle.includes(nombre)) &&
+                      (!ingredientes || recipeIngredients.includes(ingredientes))
+              );
+            });
+
+            // Renderizar los resultados
+            renderResults(filteredRecipes);
+          })
+          .catch(error => console.error("Error al cargar las recetas:", error))
+
+  function renderResults(filteredRecipes) {
+    const container = document.querySelector(".image-container");
+    container.innerHTML = ""; // Limpiar resultados anteriores
+
+    filteredRecipes.forEach((recipe, index) => {
+      // Crear un div para contener la receta
+      const recipeDiv = document.createElement("div");
+      recipeDiv.id = `recipe-${index}`;
+      container.appendChild(recipeDiv);
+
+      // Cargar el template en el div creado
+      loadTemplate("/Templates/HTML/ImageTitleTextHorizontal.html", recipeDiv.id, () => {
+        const tempDiv = document.getElementById(recipeDiv.id);
+
+        // Modificar los valores en el template cargado
+        tempDiv.querySelector("img").src = recipe.image;
+        tempDiv.querySelector("img").alt = recipe.title;
+        tempDiv.querySelector("h3").textContent = recipe.title;
+        tempDiv.querySelector(".subtitle").textContent = recipe.subtitle;
+        tempDiv.querySelector(".text").textContent = recipe.description;
+        tempDiv.querySelector(".card-link").href = recipe.link;
+      });
+    });
+  }
+
 </script>
 
 </body>
