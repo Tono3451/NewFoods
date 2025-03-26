@@ -93,8 +93,9 @@
                 alert("Error al registrar usuario.");
             }
 
+            let usuarioLocal = { nombre, correo };
             let usuariosLocal = JSON.parse(localStorage.getItem("usuarios")) || [];
-            usuariosLocal.push(nuevoUsuario);
+            usuariosLocal.push(usuarioLocal);
             localStorage.setItem("usuarios", JSON.stringify(usuariosLocal));
 
             alert("Registro exitoso. Ahora puedes iniciar sesión.");
