@@ -31,6 +31,7 @@
         gap: 30px;
         width: 100%;
         justify-content: center;
+        padding: 20px;
     }
 
     h2 {
@@ -46,6 +47,10 @@
     #main_footer {
         text-align: center;
         padding: 10px;
+    }
+
+    #dificultad.input-container {
+        text-align: left;
     }
 
 }

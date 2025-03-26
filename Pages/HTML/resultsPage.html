@@ -8,7 +8,7 @@
 
   <title>Results page</title>
 
-  <script src="../../Templates/Script/xlu-include-file.js"></script>
+  <script src="../../loadTemplate.js"></script>
   <link rel="stylesheet" href="../../Templates/CSS/header.css">
   <link rel="stylesheet" href="../../Templates/CSS/footer.css">
   <link rel="stylesheet" href="../../Templates/CSS/ImageTitleTextHorizontal.css">
@@ -16,20 +16,77 @@
 </head>
 <body>
 <div id="wrapper">
-  <header id="main_header" xlu-include-file="/Templates/HTML/header.html"></header>
+  <header id="main_header"></header>
   <h2>Resultados</h2>
-  <div class="image-container">
-    <div xlu-include-file="/Templates/HTML/ImageTitleTextHorizontal.html"></div>
-    <div xlu-include-file="/Templates/HTML/ImageTitleTextHorizontal.html"></div>
-  </div>
+
+  <div id="resultsContainer" class="image-container"></div>
 
 
-<footer id="main_footer" xlu-include-file="/Templates/HTML/footer.html"></footer>
+<footer id="main_footer"></footer>
 </div>
 
 <script>
+  document.addEventListener('DOMContentLoaded', init);
 
-  xLuIncludeFile();
+  function init() {
+
+    loadTemplate('../../Templates/HTML/header.html', 'main_header');
+    loadTemplate('../../Templates/HTML/ImageTitleTextHorizontal.html', 'recipe1');
+    loadTemplate('../../Templates/HTML/ImageTitleTextHorizontal.html', 'recipe2');
+    loadTemplate('../../Templates/HTML/footer.html', 'main_footer');
+
+  }
+
+  // Obtener parámetros de búsqueda de la URL
+  const params = new URLSearchParams(window.location.search);
+  const nombre = params.get("nombre") ? params.get("nombre").toLowerCase() : "";
+  const ingredientes = params.get("ingredientes") ? params.get("ingredientes").toLowerCase() : "";
+
+  // Cargar recetas desde JSON
+  fetch("/NewFoods/db.json")
+          .then(response => response.json())
+          .then(data => {
+            const recipes = data.recipes;
+
+            const filteredRecipes = recipes.filter(recipe => {
+              const recipeTitle = recipe.title.toLowerCase().trim();
+              const recipeIngredients = recipe.ingredientes ? recipe.ingredientes.join(" ").toLowerCase().trim() : "";
+
+              return (
+                      (!nombre || recipeTitle.includes(nombre)) &&
+                      (!ingredientes || recipeIngredients.includes(ingredientes))
+              );
+            });
+
+            // Renderizar los resultados
+            renderResults(filteredRecipes);
+          })
+          .catch(error => console.error("Error al cargar las recetas:", error))
+
+  function renderResults(filteredRecipes) {
+    const container = document.querySelector(".image-container");
+    container.innerHTML = ""; // Limpiar resultados anteriores
+
+    filteredRecipes.forEach((recipe, index) => {
+      // Crear un div para contener la receta
+      const recipeDiv = document.createElement("div");
+      recipeDiv.id = `recipe-${index}`;
+      container.appendChild(recipeDiv);
+
+      // Cargar el template en el div creado
+      loadTemplate("/Templates/HTML/ImageTitleTextHorizontal.html", recipeDiv.id, () => {
+        const tempDiv = document.getElementById(recipeDiv.id);
+
+        // Modificar los valores en el template cargado
+        tempDiv.querySelector("img").src = recipe.image;
+        tempDiv.querySelector("img").alt = recipe.title;
+        tempDiv.querySelector("h3").textContent = recipe.title;
+        tempDiv.querySelector(".subtitle").textContent = recipe.subtitle;
+        tempDiv.querySelector(".text").textContent = recipe.description;
+        tempDiv.querySelector(".card-link").href = recipe.link;
+      });
+    });
+  }
 
 </script>
 

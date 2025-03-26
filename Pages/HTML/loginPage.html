@@ -5,7 +5,7 @@
     <meta name="description" content="Login page">
     <meta name="keywords" content="HTML5, CSS3, JavaScript">
     <title>Login</title>
-    <script src="../../Templates/Script/xlu-include-file.js"></script>
+    <script src="../../loadTemplate.js"></script>
     <link rel="stylesheet" href="../../Templates/CSS/TextInput.css">
     <link rel="stylesheet" href="../../Templates/CSS/button.css">
     <link rel="stylesheet" href="../../Templates/CSS/footer.css">
@@ -33,10 +33,19 @@
         </form>
     </div>
 
-    <footer id="main_footer" xlu-include-file="/Templates/HTML/footer.html"></footer>
+    <footer id="main_footer"></footer>
 </div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', init);
 
+
+    function init() {
+
+        loadTemplate('../../Templates/HTML/footer.html', 'main_footer');
+
+    }
+</script>
 
 <script>
     document.getElementById("login-form").addEventListener("submit", async function(event) {
@@ -71,7 +80,6 @@
     });
 </script>
 
-<script> xLuIncludeFile(); </script>
 
 </body>
 </html>

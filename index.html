@@ -6,11 +6,9 @@
   <meta name="description" content="Main page">
   <meta name="keywords" content="HTML5, CSS3, JavaScript">
 
-
   <title>Main page</title>
 
-
-  <script src="Templates/Script/xlu-include-file.js"></script>
+  <script src="loadTemplate.js"></script>
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="Templates/CSS/header.css">
   <link rel="stylesheet" href="Templates/CSS/footer.css">
@@ -22,7 +20,6 @@
 <body>
 <div id="wrapper">
   <header id="main_header"></header>
-
 
   <main>
     <div class="button-container">
@@ -37,59 +34,31 @@
       </a>
     </div>
 
-
     <div class="image-container">
       <div id="image-text"></div>
     </div>
   </main>
 
-
   <footer id="footer"></footer>
 </div>
 </body>
-
 
 <script>
   document.addEventListener('DOMContentLoaded', init);
 
 
-
-
-  function loadTemplate(fileName, id, callback) {
-
-
-    fetch(fileName).then((res) => {
-      return res.text();
-    }).then((text) => {
-      document.getElementById(id).innerHTML = text;
-
-
-      if(callback){
-        callback();
-      }
-    })
-  }
-
-
-
-
   function init() {
 
-
     loadTemplate('Templates/HTML/header.html', 'main_header');
-
 
     loadTemplate('Templates/HTML/button.html', 'button1');
     loadTemplate('Templates/HTML/button.html', 'button2');
     loadTemplate('Templates/HTML/button.html', 'button3');
 
-
     loadTemplate('Templates/HTML/ImageTitleTextHorizontal.html"', 'image-text', addRecipes);
     loadTemplate('Templates/HTML/footer.html', 'footer');
 
-
   }
-
 
   function addRecipes() {
     fetch('/db.json')
@@ -97,7 +66,6 @@
             .then(data => {
               const container = document.querySelector('.image-container');
               container.innerHTML = '';
-
 
               data.recipes.forEach(recipe => {
                 fetch('Templates/HTML/ImageTitleTextHorizontal.html')

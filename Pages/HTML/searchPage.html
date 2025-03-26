@@ -19,6 +19,7 @@
     <header id="main_header" xlu-include-file="/Templates/HTML/header.html"></header>
 
     <div class="search_container">
+        <form id="searchForm">
         <div class="input-group">
             <h2 id="text1">Lorem ipsum</h2>
             <div class="input-container" id="nombre" xlu-include-file="/Templates/HTML/TextInput.html"></div>
@@ -45,6 +46,8 @@
         </div>
         </a>
 
+        </form>
+
     </div>
 
     <footer id="main_footer" xlu-include-file="/Templates/HTML/footer.html"></footer>
@@ -61,6 +64,26 @@
         document.getElementById('nombre').querySelector('.text-input').placeholder = "Tortilla de patatas";
         document.getElementById('ingredientes').querySelector('.text-input').placeholder = "Cebolla";
     }, 200);
+</script>
+
+<script>
+    document.getElementById("searchForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Evitamos el envío normal del formulario
+
+        // Obtener valores de los campos
+        const nombre = document.getElementById("nombre").value;
+        const ingredientes = document.getElementById("ingredientes").value;
+        const dificultad = document.getElementById("dificultad").value;
+
+        // Crear parámetros de URL
+        const params = new URLSearchParams();
+        if (nombre) params.append("nombre", nombre);
+        if (ingredientes) params.append("ingredientes", ingredientes);
+        if (dificultad) params.append("dificultad", dificultad);
+
+        // Redirigir a resultsPage.html con los parámetros de búsqueda
+        window.location.href = `resultsPage.html?${params.toString()}`;
+    });
 </script>
 
 <script>

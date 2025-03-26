@@ -34,34 +34,34 @@ Además, gracias a nuestro sistema inteligente de análisis nutricional, recibir
 ## Listado de páginas html, Mockups y Stroyboard:
 ### Desktop
 ### Storyboard:
-![Storyboard](/mockups/storyboard.png)
+![Storyboard](/mockups/Desktop/storyboard.png)
 ### Mockups:
 #### Main
 ##### Implementado por: index.html
-![Index.html](/mockups/main.png)
+![Index.html](/mockups/Desktop/main.png)
 #### Perfil
 ##### Implementado por: profile.html
-![Perfil](/mockups/perfil1.png)
+![Perfil](/mockups/Desktop/perfil1.png)
 ##### Implementado por: profile.html
-![Perfil](/mockups/perfil2.png)
+![Perfil](/mockups/Desktop/perfil2.png)
 ##### Implementado por: profile2.html
-![Perfil](/mockups/perfil3.png)
+![Perfil](/mockups/Desktop/perfil3.png)
 #### Búsqueda
 ##### Implementado por: searchPage.html
-![Búsqueda](/mockups/busqueda.png)
+![Búsqueda](/mockups/Desktop/busqueda.png)
 ##### Implementado por: resultsPage.html
-![Búsqueda](/mockups/resultados.png)
+![Búsqueda](/mockups/Desktop/resultados.png)
 #### Login y Registro
 ##### Implementado por: loginPage.html
-![Login](/mockups/login.png)
+![Login](/mockups/Desktop/login.png)
 ##### Implementado por: registerPage.html
-![Registro](/mockups/register.png)
+![Registro](/mockups/Desktop/register.png)
 #### Crear receta
 ##### Implementado por: CreateRecipePage.html
-![Crear receta](/mockups/crear-receta.png)
+![Crear receta](/mockups/Desktop/crear-receta.png)
 #### Ver receta
 ##### Implementado por: recipePage.html
-![Ver receta](/mockups/ver-receta.png)
+![Ver receta](/mockups/Desktop/ver-receta.png)
 
 ### Movil:
 ### Storyboard:
@@ -72,14 +72,14 @@ Además, gracias a nuestro sistema inteligente de análisis nutricional, recibir
 ![Index.html](/mockups/Movil/index.png)
 #### Perfil
 ##### Implementado por: profile.html
-![Perfil](/mockups//Movil/profile.png)
+![Perfil](/mockups/Movil/profile.png)
 ##### Implementado por: profile.html
 ![Perfil](/mockups/Movil/profile.png)
 ##### Implementado por: profile2.html
 ![Perfil](/mockups/Movil/profile2.png)
 #### Búsqueda
 ##### Implementado por: searchPage.html
-![Búsqueda](/mockups//Movil/search.png)
+![Búsqueda](/mockups/Movil/search.png)
 ##### Implementado por: resultsPage.html
 ![Búsqueda](/mockups/Movil/results.png)
 #### Login y Registro
@@ -103,7 +103,7 @@ Además, gracias a nuestro sistema inteligente de análisis nutricional, recibir
 ![Index.html](/mockups/Tablet/index.png)
 #### Perfil
 ##### Implementado por: profile.html
-![Perfil](/mockups//Tablet/profile.png)
+![Perfil](/mockups/Tablet/profile.png)
 ##### Implementado por: profile.html
 ![Perfil](/mockups/Tablet/profile.png)
 ##### Implementado por: profile2.html
