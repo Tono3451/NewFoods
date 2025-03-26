@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Profile Itinerary</title>
-    <script src="../../Templates/Script/xlu-include-file.js"></script>
+    <script src="../../loadTemplate.js"></script>
     <link rel="stylesheet" href="../../Templates/CSS/ImageTitleVertical.css">
     <link rel="stylesheet" href="../../Templates/CSS/header.css">
     <link rel="stylesheet" href="../../Templates/CSS/footer.css">
@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<header id="main_header" xlu-include-file="/Templates/HTML/header.html"></header>
+<header id="main_header"></header>
 <div class="labels">
     <a href="profile.html">
         <button class="button-label">Recetas guardadas</button>
@@ -41,43 +41,73 @@
     <tbody>
     <tr>
         <th>Desayuno</th>
-        <td><figure><div class="image" id="itinerary-img1" xlu-include-file="/Templates/HTML/ImageTitleVertical.html"></div></figure></td>
-        <td><figure><div class="image" id="itinerary-img2" xlu-include-file="/Templates/HTML/ImageTitleVertical.html"></div></figure></td>
-        <td><figure><div class="image" id="itinerary-img3" xlu-include-file="/Templates/HTML/ImageTitleVertical.html"></div></figure></td>
-        <td><figure><div class="image" id="itinerary-img4" xlu-include-file="/Templates/HTML/ImageTitleVertical.html"></div></figure></td>
-        <td><figure><div class="image" id="itinerary-img5" xlu-include-file="/Templates/HTML/ImageTitleVertical.html"></div></figure></td>
-        <td><figure><div class="image" id="itinerary-img6" xlu-include-file="/Templates/HTML/ImageTitleVertical.html"></div></figure></td>
-        <td><figure><div class="image" id="itinerary-img7" xlu-include-file="/Templates/HTML/ImageTitleVertical.html"></div></figure></td>
+        <td><figure><div class="image" id="itinerary-img1" ></div></figure></td>
+        <td><figure><div class="image" id="itinerary-img2" ></div></figure></td>
+        <td><figure><div class="image" id="itinerary-img3" ></div></figure></td>
+        <td><figure><div class="image" id="itinerary-img4" ></div></figure></td>
+        <td><figure><div class="image" id="itinerary-img5" ></div></figure></td>
+        <td><figure><div class="image" id="itinerary-img6" ></div></figure></td>
+        <td><figure><div class="image" id="itinerary-img7" ></div></figure></td>
     </tr>
     <tr>
         <th>Almuerzo</th>
-        <td><figure><div class="image" id="itinerary-img8" xlu-include-file="/Templates/HTML/ImageTitleVertical.html"></div></figure></td>
-        <td><figure><div class="image" id="itinerary-img9" xlu-include-file="/Templates/HTML/ImageTitleVertical.html"></div></figure></td>
-        <td><figure><div class="image" id="itinerary-img10" xlu-include-file="/Templates/HTML/ImageTitleVertical.html"></div></figure></td>
-        <td><figure><div class="image" id="itinerary-img11" xlu-include-file="/Templates/HTML/ImageTitleVertical.html"></div></figure></td>
-        <td><figure><div class="image" id="itinerary-img12" xlu-include-file="/Templates/HTML/ImageTitleVertical.html"></div></figure></td>
-        <td><figure><div class="image" id="itinerary-img13" xlu-include-file="/Templates/HTML/ImageTitleVertical.html"></div></figure></td>
-        <td><figure><div class="image" id="itinerary-img14" xlu-include-file="/Templates/HTML/ImageTitleVertical.html"></div></figure></td>
+        <td><figure><div class="image" id="itinerary-img8"></div></figure></td>
+        <td><figure><div class="image" id="itinerary-img9"></div></figure></td>
+        <td><figure><div class="image" id="itinerary-img10"></div></figure></td>
+        <td><figure><div class="image" id="itinerary-img11"></div></figure></td>
+        <td><figure><div class="image" id="itinerary-img12"></div></figure></td>
+        <td><figure><div class="image" id="itinerary-img13"></div></figure></td>
+        <td><figure><div class="image" id="itinerary-img14"></div></figure></td>
     </tr>
     <tr>
         <th>Cena</th>
-        <td><figure><div class="image" id="itinerary-img15" xlu-include-file="/Templates/HTML/ImageTitleVertical.html"></div></figure></td>
-        <td><figure><div class="image" id="itinerary-img16" xlu-include-file="/Templates/HTML/ImageTitleVertical.html"></div></figure></td>
-        <td><figure><div class="image" id="itinerary-img17" xlu-include-file="/Templates/HTML/ImageTitleVertical.html"></div></figure></td>
-        <td><figure><div class="image" id="itinerary-img18" xlu-include-file="/Templates/HTML/ImageTitleVertical.html"></div></figure></td>
-        <td><figure><div class="image" id="itinerary-img19" xlu-include-file="/Templates/HTML/ImageTitleVertical.html"></div></figure></td>
-        <td><figure><div class="image" id="itinerary-img20" xlu-include-file="/Templates/HTML/ImageTitleVertical.html"></div></figure></td>
-        <td><figure><div class="image" id="itinerary-img21" xlu-include-file="/Templates/HTML/ImageTitleVertical.html"></div></figure></td>
+        <td><figure><div class="image" id="itinerary-img15"></div></figure></td>
+        <td><figure><div class="image" id="itinerary-img16"></div></figure></td>
+        <td><figure><div class="image" id="itinerary-img17"></div></figure></td>
+        <td><figure><div class="image" id="itinerary-img18"></div></figure></td>
+        <td><figure><div class="image" id="itinerary-img19"></div></figure></td>
+        <td><figure><div class="image" id="itinerary-img20"></div></figure></td>
+        <td><figure><div class="image" id="itinerary-img21"></div></figure></td>
     </tr>
     </tbody>
 </table>
 
-<footer id="main_footer" xlu-include-file="/Templates/HTML/footer.html"></footer>
+<footer id="main_footer"></footer>
 
 <script>
+    document.addEventListener('DOMContentLoaded', init);
 
-    xLuIncludeFile();
+    function init() {
 
+
+        loadTemplate('../../Templates/HTML/header.html', 'main_header');
+
+        loadTemplate('../../Templates/HTML/ImageTitleVertical.html', 'itinerary-img1');
+        loadTemplate('../../Templates/HTML/ImageTitleVertical.html', 'itinerary-img2');
+        loadTemplate('../../Templates/HTML/ImageTitleVertical.html', 'itinerary-img3');
+        loadTemplate('../../Templates/HTML/ImageTitleVertical.html', 'itinerary-img4');
+        loadTemplate('../../Templates/HTML/ImageTitleVertical.html', 'itinerary-img5');
+        loadTemplate('../../Templates/HTML/ImageTitleVertical.html', 'itinerary-img6');
+        loadTemplate('../../Templates/HTML/ImageTitleVertical.html', 'itinerary-img7');
+        loadTemplate('../../Templates/HTML/ImageTitleVertical.html', 'itinerary-img8');
+        loadTemplate('../../Templates/HTML/ImageTitleVertical.html', 'itinerary-img9');
+        loadTemplate('../../Templates/HTML/ImageTitleVertical.html', 'itinerary-img10');
+        loadTemplate('../../Templates/HTML/ImageTitleVertical.html', 'itinerary-img11');
+        loadTemplate('../../Templates/HTML/ImageTitleVertical.html', 'itinerary-img12');
+        loadTemplate('../../Templates/HTML/ImageTitleVertical.html', 'itinerary-img13');
+        loadTemplate('../../Templates/HTML/ImageTitleVertical.html', 'itinerary-img14');
+        loadTemplate('../../Templates/HTML/ImageTitleVertical.html', 'itinerary-img15');
+        loadTemplate('../../Templates/HTML/ImageTitleVertical.html', 'itinerary-img16');
+        loadTemplate('../../Templates/HTML/ImageTitleVertical.html', 'itinerary-img17');
+        loadTemplate('../../Templates/HTML/ImageTitleVertical.html', 'itinerary-img18');
+        loadTemplate('../../Templates/HTML/ImageTitleVertical.html', 'itinerary-img19');
+        loadTemplate('../../Templates/HTML/ImageTitleVertical.html', 'itinerary-img20');
+        loadTemplate('../../Templates/HTML/ImageTitleVertical.html', 'itinerary-img21');
+
+        loadTemplate('../../Templates/HTML/footer.html', 'main_footer');
+
+
+    }
 </script>
 </body>
 </html>
