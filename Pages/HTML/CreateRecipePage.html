@@ -27,6 +27,18 @@
       <div class="description-text" id="description-text1"></div>
     </div>
 
+    <!-- Dificultad -->
+    <div class="section-group">
+      <h2>Dificultad</h2>
+      <div class="difficulty-input" id="difficulty-input"></div>
+    </div>
+
+    <!-- Duración -->
+    <div class="section-group">
+      <h2>Duración (minutos)</h2>
+      <div class="duration-input" id="duration-input"></div>
+    </div>
+
     <!-- Ingredientes -->
     <div class="section-group">
       <h2>Ingredientes</h2>
@@ -99,6 +111,8 @@
 
     loadTemplate('../../Templates/HTML/TextInput2.html', 'description-text1');
 
+    loadTemplate('../../Templates/HTML/dropdownInput.html', 'difficulty-input');
+    loadTemplate('../../Templates/HTML/NumberInput.html', 'duration-input');
     loadTemplate('../../Templates/HTML/BlockAddText.html', 'add-text-block');
 
     loadTemplate('../../Templates/HTML/NumberInput.html', 'num_input1');
