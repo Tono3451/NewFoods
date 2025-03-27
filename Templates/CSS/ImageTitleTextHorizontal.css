@@ -57,6 +57,18 @@ h3 {
     margin: 4px 0;
 }
 
+.info {
+    font-size: 14px;
+    color: #555;
+    background: #f8f8f8;
+    padding: 8px;
+    border-radius: 6px;
+    margin: 10px 0;
+    display: inline-block;
+    width: fit-content;
+    border: 1px solid #ddd;
+}
+
 .text {
     font-size: 14px;
     color: #444;
@@ -110,5 +122,10 @@ h3 {
 
     .content {
         padding-left: 0;
+    }
+
+    .info {
+        text-align: center;
+        width: auto;
     }
 }

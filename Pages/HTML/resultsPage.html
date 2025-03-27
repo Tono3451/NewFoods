@@ -19,7 +19,9 @@
   <header id="main_header"></header>
   <h2>Resultados</h2>
 
-  <div id="resultsContainer" class="image-container"></div>
+  <div class="image-container">
+    <div id="image-text"></div>
+  </div>
 
 
 <footer id="main_footer"></footer>
@@ -31,62 +33,47 @@
   function init() {
 
     loadTemplate('../../Templates/HTML/header.html', 'main_header');
-    loadTemplate('../../Templates/HTML/ImageTitleTextHorizontal.html', 'recipe1');
-    loadTemplate('../../Templates/HTML/ImageTitleTextHorizontal.html', 'recipe2');
+    loadTemplate('../../Templates/HTML/ImageTitleTextHorizontal.html', 'image-text', addRecipes);
     loadTemplate('../../Templates/HTML/footer.html', 'main_footer');
 
   }
 
-  // Obtener parámetros de búsqueda de la URL
-  const params = new URLSearchParams(window.location.search);
-  const nombre = params.get("nombre") ? params.get("nombre").toLowerCase() : "";
-  const ingredientes = params.get("ingredientes") ? params.get("ingredientes").toLowerCase() : "";
+  function addRecipes() {
+    fetch('/db.json')
+            .then(response => response.json())
+            .then(data => {
+              const container = document.querySelector('.image-container');
+              container.innerHTML = '';
 
-  // Cargar recetas desde JSON
-  fetch("/NewFoods/db.json")
-          .then(response => response.json())
-          .then(data => {
-            const recipes = data.recipes;
+              data.recipes.forEach(recipe => {
+                fetch('/NewFoods/Templates/HTML/ImageTitleTextHorizontal.html')
+                        .then(response => response.text())
+                        .then(template => {
+                          const tempDiv = document.createElement('div');
+                          tempDiv.innerHTML = template.trim();
 
-            const filteredRecipes = recipes.filter(recipe => {
-              const recipeTitle = recipe.title.toLowerCase().trim();
-              const recipeIngredients = recipe.ingredientes ? recipe.ingredientes.join(" ").toLowerCase().trim() : "";
 
-              return (
-                      (!nombre || recipeTitle.includes(nombre)) &&
-                      (!ingredientes || recipeIngredients.includes(ingredientes))
-              );
-            });
+                          const cardLink = tempDiv.querySelector('.card-link');
 
-            // Renderizar los resultados
-            renderResults(filteredRecipes);
-          })
-          .catch(error => console.error("Error al cargar las recetas:", error))
+                          cardLink.href = `/NewFoods/Pages/HTML/recipePage.html?id=${recipe.id}`;
+                          cardLink.querySelector('img').src = recipe.image;
+                          cardLink.querySelector('img').alt = recipe.title;
+                          cardLink.querySelector('h3').textContent = recipe.title;
+                          cardLink.querySelector('.subtitle').textContent = recipe.subtitle;
+                          cardLink.querySelector('.text').textContent = recipe.description;
+                          cardLink.querySelector('.difficulty').textContent = recipe.difficulty;
+                          cardLink.querySelector('.duration').textContent = recipe.duration;
 
-  function renderResults(filteredRecipes) {
-    const container = document.querySelector(".image-container");
-    container.innerHTML = ""; // Limpiar resultados anteriores
-
-    filteredRecipes.forEach((recipe, index) => {
-      // Crear un div para contener la receta
-      const recipeDiv = document.createElement("div");
-      recipeDiv.id = `recipe-${index}`;
-      container.appendChild(recipeDiv);
-
-      // Cargar el template en el div creado
-      loadTemplate("/Templates/HTML/ImageTitleTextHorizontal.html", recipeDiv.id, () => {
-        const tempDiv = document.getElementById(recipeDiv.id);
-
-        // Modificar los valores en el template cargado
-        tempDiv.querySelector("img").src = recipe.image;
-        tempDiv.querySelector("img").alt = recipe.title;
-        tempDiv.querySelector("h3").textContent = recipe.title;
-        tempDiv.querySelector(".subtitle").textContent = recipe.subtitle;
-        tempDiv.querySelector(".text").textContent = recipe.description;
-        tempDiv.querySelector(".card-link").href = recipe.link;
-      });
-    });
+                          container.appendChild(cardLink);
+                        });
+              });
+            })
+            .catch(error => console.error('Error cargando recetas:', error));
   }
+
+
+</script>
+
 
 </script>
 

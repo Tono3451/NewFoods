@@ -27,7 +27,7 @@
 
     <div class="recipe-section">
       <div class="ingredients-lists">
-        <h3>Lorem ipsum</h3>
+        <h3>Ingredientes</h3>
         <ul>
           <li>Lorem ipsum dolor sit amet</li>
           <li>Lorem ipsum dolor sit amet</li>
@@ -37,7 +37,7 @@
         </ul>
       </div>
       <div class="ingredients-lists">
-        <h3>Lorem ipsum</h3>
+        <h3>Información nutricional</h3>
         <ul>
           <li>Lorem ipsum dolor sit amet</li>
           <li>Lorem ipsum dolor sit amet</li>
@@ -77,6 +77,61 @@
 
   }
 </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const params = new URLSearchParams(window.location.search);
+    const recipeId = params.get('id');
+
+    if (!recipeId) {
+      alert("Receta no encontrada.");
+      window.location.href = "/NewFoods/index.html";
+      return;
+    }
+
+    fetch('/db.json')
+            .then(response => response.json())
+            .then(data => {
+              const recipe = data.recipes.find(r => r.id == recipeId);
+
+              if (!recipe) {
+                alert("Receta no encontrada.");
+                window.location.href = "/NewFoods/index.html";
+                return;
+              }
+
+              // Actualizar contenido en la página con la información de la receta
+              document.querySelector("h2").textContent = recipe.title;
+              document.querySelector(".image-placeholder img").src = recipe.image;
+              document.querySelector(".image-placeholder img").alt = recipe.title;
+              document.querySelector("main > p").textContent = recipe.description;
+
+              // Cargar ingredientes
+              const ingredientLists = document.querySelectorAll(".ingredients-lists ul");
+              ingredientLists[0].innerHTML = recipe.ingredients.map(item => `<li>${item}</li>`).join("");
+
+              // Cargar información nutricional
+              ingredientLists[1].innerHTML = `
+                <li><strong>Calorías:</strong> ${recipe.nutrition.calories}</li>
+                <li><strong>Carbohidratos:</strong> ${recipe.nutrition.carbohydrates}</li>
+                <li><strong>Proteínas:</strong> ${recipe.nutrition.proteins}</li>
+                <li><strong>Grasas:</strong> ${recipe.nutrition.fats}</li>
+                <li><strong>Fibra:</strong> ${recipe.nutrition.fiber}</li>
+              `;
+
+              // Cargar pasos de preparación
+              const stepsList = document.querySelector("ol");
+              stepsList.innerHTML = recipe.steps.map(step => `<li>${step}</li>`).join("");
+            })
+            .catch(error => {
+              console.error("Error al cargar la receta:", error);
+              alert("No se pudo cargar la receta.");
+            });
+  });
+
+</script>
+
+
 
 </body>
 </html>

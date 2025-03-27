@@ -76,12 +76,15 @@
 
 
                           const cardLink = tempDiv.querySelector('.card-link');
-                          cardLink.href = recipe.link;
+
+                          cardLink.href = `/NewFoods/Pages/HTML/recipePage.html?id=${recipe.id}`;
                           cardLink.querySelector('img').src = recipe.image;
                           cardLink.querySelector('img').alt = recipe.title;
                           cardLink.querySelector('h3').textContent = recipe.title;
                           cardLink.querySelector('.subtitle').textContent = recipe.subtitle;
                           cardLink.querySelector('.text').textContent = recipe.description;
+                          cardLink.querySelector('.difficulty').textContent = recipe.difficulty;
+                          cardLink.querySelector('.duration').textContent = recipe.duration;
 
 
                           container.appendChild(cardLink);
