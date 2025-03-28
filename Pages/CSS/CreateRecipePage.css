@@ -39,6 +39,10 @@
     }
 }
 
+    .description-input{
+        height: 100px;
+        width: 100%;
+    }
 @media screen and (max-width: 40em) {
 
     body {
@@ -66,4 +70,10 @@
         text-align: center;
         justify-self: center;
     }
+
+    .description-input{
+        height: 100px;
+        width: 100%;
+    }
+
 }
