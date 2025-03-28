@@ -58,7 +58,7 @@
         document.getElementById('text1').textContent = "Nombre receta";
         document.getElementById('text2').textContent = "Ingredientes";
         document.getElementById('text3').textContent = "Dificultad";
-        document.getElementById('text4').textContent = "Duración";
+        document.getElementById('text4').textContent = "Duración (Máxima)";
         document.getElementById('buscar').querySelector('.button').textContent = "Buscar";
         document.getElementById('nombre').querySelector('.text-input').placeholder = "Tortilla de patatas";
         document.getElementById('ingredientes').querySelector('.text-input').placeholder = "Cebolla";
@@ -112,7 +112,7 @@
         loadTemplate('../../Templates/HTML/TextInput.html', 'ingredientes');
 
         loadTemplate('../../Templates/HTML/dropdownInput.html', 'dificultad');
-        loadTemplate('../../Templates/HTML/NumberInput.html', 'duración');
+        loadTemplate('../../Templates/HTML/slider.html', 'duración');
         loadTemplate('../../Templates/HTML/button.html', 'buscar');
 
         loadTemplate('../../Templates/HTML/footer.html', 'main_footer');
@@ -120,5 +120,27 @@
     }
 
 </script>
+
+<script>
+    const slider = document.getElementById("myRange");
+    const sliderValue = document.getElementById("sliderValue");
+
+    slider.addEventListener("input", function() {
+        sliderValue.textContent = `${this.value}min`;
+    });
+</script>
+
+<script>
+    //modificar el texto del slider
+    setTimeout(function () {
+        const slider = document.getElementById("duración").querySelector(".PB-range-slider");
+        const sliderValue = document.getElementById("duración").querySelector(".PB-range-slidervalue");
+
+        slider.addEventListener("input", function() {
+            sliderValue.textContent = `${this.value}min`;
+        });
+    }, 200);
+</script>
+
 </body>
 </html>
