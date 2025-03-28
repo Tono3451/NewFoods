@@ -5,7 +5,7 @@
     <meta name="description" content="Search page">
     <meta name="keywords" content="HTML5, CSS3, JavaScript">
     <title>Search_page</title>
-    <script src="../../Templates/Script/xlu-include-file.js"></script>
+    <script src="../../loadTemplate.js"></script>
     <link rel="stylesheet" href="../../Templates/CSS/header.css">
     <link rel="stylesheet" href="../../Templates/CSS/TextInput.css">
     <link rel="stylesheet" href="../../Templates/CSS/dropdownInput.css">
@@ -16,32 +16,32 @@
 </head>
 <body>
 <div id="wrapper">
-    <header id="main_header" xlu-include-file="/Templates/HTML/header.html"></header>
+    <header id="main_header"></header>
 
     <div class="search_container">
         <form id="searchForm">
         <div class="input-group">
             <h2 id="text1">Lorem ipsum</h2>
-            <div class="input-container" id="nombre" xlu-include-file="/Templates/HTML/TextInput.html"></div>
+            <div class="input-container" id="nombre"></div>
         </div>
 
         <div class="input-group">
             <h2 id="text2">Lorem ipsum</h2>
-            <div class="input-container" id="ingredientes" xlu-include-file="/Templates/HTML/TextInput.html"></div>
+            <div class="input-container" id="ingredientes"></div>
         </div>
 
         <div class="input-group">
             <h2 id="text3">Lorem ipsum</h2>
-            <div class="input-container" id="dificultad" xlu-include-file="/Templates/HTML/dropdownInput.html"></div>
+            <div class="input-container" id="dificultad"></div>
         </div>
 
         <div class="input-group">
             <h2 id="text4">Lorem ipsum</h2>
-            <div class="input-container" id="duración" xlu-include-file="/Templates/HTML/slider.html"></div>
+            <div class="input-container" id="duración"></div>
         </div>
 
         <div class="input-group">
-            <div class="input-container" id="buscar" xlu-include-file="/Templates/HTML/button.html"></div>
+            <div class="input-container" id="buscar"></div>
         </div>
 
 
@@ -49,7 +49,7 @@
 
     </div>
 
-    <footer id="main_footer" xlu-include-file="/Templates/HTML/footer.html"></footer>
+    <footer id="main_footer"></footer>
 
 </div>
 
@@ -97,7 +97,28 @@
 </script>
 
 <script>
-    xLuIncludeFile();
+    document.addEventListener('DOMContentLoaded', init);
+
+
+
+
+    function init() {
+
+
+        loadTemplate('../../Templates/HTML/header.html', 'main_header');
+
+        loadTemplate('../../Templates/HTML/TextInput.html', 'nombre');
+
+        loadTemplate('../../Templates/HTML/TextInput.html', 'ingredientes');
+
+        loadTemplate('../../Templates/HTML/dropdownInput.html', 'dificultad');
+        loadTemplate('../../Templates/HTML/NumberInput.html', 'duración');
+        loadTemplate('../../Templates/HTML/button.html', 'buscar');
+
+        loadTemplate('../../Templates/HTML/footer.html', 'main_footer');
+
+    }
+
 </script>
 </body>
 </html>
