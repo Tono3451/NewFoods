@@ -40,11 +40,10 @@
             <div class="input-container" id="duración" xlu-include-file="/Templates/HTML/slider.html"></div>
         </div>
 
-        <a href="resultsPage.html">
         <div class="input-group">
             <div class="input-container" id="buscar" xlu-include-file="/Templates/HTML/button.html"></div>
         </div>
-        </a>
+
 
         </form>
 
@@ -67,23 +66,34 @@
 </script>
 
 <script>
-    document.getElementById("searchForm").addEventListener("submit", function(event) {
+    setTimeout(function () {
+        // Selecciona el botón dentro del contenedor "buscar"
+        const searchButton = document.querySelector("#buscar .button");
+
+        if (searchButton) {
+            searchButton.addEventListener("click", function(event) {
         event.preventDefault(); // Evitamos el envío normal del formulario
 
         // Obtener valores de los campos
-        const nombre = document.getElementById("nombre").value;
-        const ingredientes = document.getElementById("ingredientes").value;
-        const dificultad = document.getElementById("dificultad").value;
+        const nombre = document.getElementById("nombre").querySelector("input").value;
+        const ingredientes = document.getElementById("ingredientes").querySelector("input").value;
+        const dificultad = document.getElementById("dificultad").querySelector("input").value;
+        const duración = document.getElementById("duración").querySelector("input").value;
+
 
         // Crear parámetros de URL
         const params = new URLSearchParams();
         if (nombre) params.append("nombre", nombre);
         if (ingredientes) params.append("ingredientes", ingredientes);
         if (dificultad) params.append("dificultad", dificultad);
+        if (duración) params.append("duración", duración);
+        console.log(params.toString());
 
         // Redirigir a resultsPage.html con los parámetros de búsqueda
         window.location.href = `resultsPage.html?${params.toString()}`;
-    });
+            });
+        }
+    }, 200);
 </script>
 
 <script>

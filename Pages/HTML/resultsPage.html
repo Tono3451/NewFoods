@@ -40,33 +40,75 @@
   }
 
   function addRecipes() {
+    // Obtener los parámetros de la URL
+    const params = new URLSearchParams(window.location.search);
+    const searchName = params.get("nombre")?.toLowerCase() || "";
+    const searchIngredients = params.get("ingredientes")?.toLowerCase().split(",") || [];
+    const searchDifficulty = params.get("dificultad")?.toLowerCase() || "";
+    const searchDuration = parseInt(params.get("duración")) || Infinity; // Si no hay duración, no filtrar
+
     fetch('/db.json')
             .then(response => response.json())
             .then(data => {
               const container = document.querySelector('.image-container');
               container.innerHTML = '';
 
-              data.recipes.forEach(recipe => {
-                fetch('/NewFoods/Templates/HTML/ImageTitleTextHorizontal.html')
-                        .then(response => response.text())
-                        .then(template => {
-                          const tempDiv = document.createElement('div');
-                          tempDiv.innerHTML = template.trim();
+              data.recipes
+                      .filter(recipe => {
+                        // Convertir valores a minúsculas para comparación insensible a mayúsculas
+                        const recipeTitle = recipe.title.toLowerCase();
+                        const recipeDifficulty = recipe.difficulty.toLowerCase();
+                        const recipeDuration = parseInt(recipe.duration); // Convertir a número
+
+                        // Normalizar los ingredientes quitando cantidades, caracteres extra y reduciendo a singular
+                        const normalizeIngredient = ing => {
+                          return ing
+                                  .replace(/[\d½¼¾/]+/g, "") // Eliminar números y fracciones
+                                  .replace(/g|kg|ml|l|tbsp|tsp|cda|cdta|pizca/g, "") // Eliminar unidades de medida comunes
+                                  .trim()
+                                  .replace(/s$/, ""); // Convertir plurales simples a singular (tomates → tomate)
+                        };
+
+                        const recipeIngredients = recipe.ingredients.map(ing => normalizeIngredient(ing));
+
+                        // Filtro de nombre: debe contener la palabra clave en el título
+                        const nameMatch = searchName ? recipeTitle.includes(searchName) : true;
+
+                        // Filtro de ingredientes: debe tener al menos uno de los ingredientes buscados
+                        const ingredientsMatch = searchIngredients.length > 0
+                                ? searchIngredients.some(ing => recipeIngredients.includes(ing))
+                                : true;
+
+                        // Filtro de dificultad: debe coincidir exactamente
+                        const difficultyMatch = searchDifficulty ? recipeDifficulty === searchDifficulty : true;
+
+                        // Filtro de duración: la receta debe durar igual o menos del tiempo indicado
+                        const durationMatch = recipeDuration <= searchDuration;
+
+                        // La receta es válida si pasa todos los filtros
+                        return nameMatch && ingredientsMatch && difficultyMatch && durationMatch;
+                      })
+                      .forEach(recipe => {
+                        fetch('/NewFoods/Templates/HTML/ImageTitleTextHorizontal.html')
+                          .then(response => response.text())
+                          .then(template => {
+                            const tempDiv = document.createElement('div');
+                            tempDiv.innerHTML = template.trim();
 
 
-                          const cardLink = tempDiv.querySelector('.card-link');
+                            const cardLink = tempDiv.querySelector('.card-link');
 
-                          cardLink.href = `/NewFoods/Pages/HTML/recipePage.html?id=${recipe.id}`;
-                          cardLink.querySelector('img').src = recipe.image;
-                          cardLink.querySelector('img').alt = recipe.title;
-                          cardLink.querySelector('h3').textContent = recipe.title;
-                          cardLink.querySelector('.subtitle').textContent = recipe.subtitle;
-                          cardLink.querySelector('.text').textContent = recipe.description;
-                          cardLink.querySelector('.difficulty').textContent = recipe.difficulty;
-                          cardLink.querySelector('.duration').textContent = recipe.duration;
+                            cardLink.href = `/NewFoods/Pages/HTML/recipePage.html?id=${recipe.id}`;
+                            cardLink.querySelector('img').src = recipe.image;
+                            cardLink.querySelector('img').alt = recipe.title;
+                            cardLink.querySelector('h3').textContent = recipe.title;
+                            cardLink.querySelector('.subtitle').textContent = recipe.subtitle;
+                            cardLink.querySelector('.text').textContent = recipe.description;
+                            cardLink.querySelector('.difficulty').textContent = recipe.difficulty;
+                            cardLink.querySelector('.duration').textContent = recipe.duration;
 
-                          container.appendChild(cardLink);
-                        });
+                            container.appendChild(cardLink);
+                          });
               });
             })
             .catch(error => console.error('Error cargando recetas:', error));
@@ -75,8 +117,6 @@
 
 </script>
 
-
-</script>
 
 </body>
 </html>
