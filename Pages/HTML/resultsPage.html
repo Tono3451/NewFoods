@@ -95,6 +95,13 @@
                             const tempDiv = document.createElement('div');
                             tempDiv.innerHTML = template.trim();
 
+                            document.querySelectorAll(".icon-save, .icon-like").forEach(button => {
+                              button.addEventListener("click", event => {
+                                event.preventDefault(); // Evita que el enlace se active
+                                event.stopPropagation(); // Detiene la propagación del evento
+
+                              });
+                            });
 
                             const cardLink = tempDiv.querySelector('.card-link');
 
@@ -107,11 +114,41 @@
                             cardLink.querySelector('.difficulty').textContent = recipe.difficulty;
                             cardLink.querySelector('.duration').textContent = recipe.duration;
 
+                            // Actualizar valores de likes y saved
+                            const likeButton = tempDiv.querySelector('.icon-like');
+                            const saveButton = tempDiv.querySelector('.icon-save');
+
+                            likeButton.querySelector('.like-count').textContent = recipe.likes;
+                            saveButton.querySelector('.save-count').textContent = recipe.saved;
+
+                            // Eventos para actualizar JSON Server
+                            likeButton.addEventListener("click", () => updateRecipeStat(recipe.id, "likes", likeButton.querySelector('.like-count')));
+                            saveButton.addEventListener("click", () => updateRecipeStat(recipe.id, "saved", saveButton.querySelector('.save-count')));
+
                             container.appendChild(cardLink);
                           });
               });
             })
             .catch(error => console.error('Error cargando recetas:', error));
+
+    function updateRecipeStat(recipeId, field, countElement) {
+      fetch(`http://localhost:3000/recipes/${recipeId}`)
+              .then(response => response.json())
+              .then(recipe => {
+                const updatedValue = recipe[field] + 1;
+
+                return fetch(`http://localhost:3000/recipes/${recipeId}`, {
+                  method: "PATCH",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ [field]: updatedValue })
+                });
+              })
+              .then(response => response.json())
+              .then(updatedRecipe => {
+                countElement.textContent = updatedRecipe[field];
+              })
+              .catch(error => console.error("Error actualizando la receta:", error));
+    }
   }
 
 

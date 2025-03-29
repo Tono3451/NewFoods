@@ -65,7 +65,9 @@
         "proteins": "6g",
         "fats": "10g",
         "fiber": "3g"
-      }
+      },
+      "likes": 1,
+      "saved": 2
     },
     {
       "id": "2",
@@ -97,7 +99,9 @@
         "proteins": "22g",
         "fats": "20g",
         "fiber": "3g"
-      }
+      },
+      "likes": 2,
+      "saved": 7
     },
     {
       "id": "3",
@@ -129,7 +133,9 @@
         "proteins": "20g",
         "fats": "5g",
         "fiber": "2g"
-      }
+      },
+      "likes": 7,
+      "saved": 3
     },
     {
       "id": "4",
@@ -162,7 +168,9 @@
         "proteins": "30g",
         "fats": "15g",
         "fiber": "5g"
-      }
+      },
+      "likes": 1,
+      "saved": 1
     },
     {
       "id": "5",
@@ -196,7 +204,9 @@
         "proteins": "25g",
         "fats": "12g",
         "fiber": "4g"
-      }
+      },
+      "likes": 4,
+      "saved": 1
     },
     {
       "id": "6",
@@ -227,7 +237,9 @@
         "proteins": "40g",
         "fats": "35g",
         "fiber": "3g"
-      }
+      },
+      "likes": 3,
+      "saved": 2
     }
   ]
 }
