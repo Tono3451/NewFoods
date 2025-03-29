@@ -75,3 +75,13 @@ a {
 #configuration_button:active {
     transform: scale(0.95);
 }
+
+.icon-logout {
+    position: absolute;
+    top: 9px;
+    right: 45px;
+    cursor: pointer;
+    display: flex;
+    border-radius: 6px;
+}
+
