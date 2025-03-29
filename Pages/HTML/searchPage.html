@@ -21,22 +21,22 @@
     <div class="search_container">
         <form id="searchForm">
         <div class="input-group">
-            <h2 id="text1">Lorem ipsum</h2>
+            <h2 id="text1"></h2>
             <div class="input-container" id="nombre"></div>
         </div>
 
         <div class="input-group">
-            <h2 id="text2">Lorem ipsum</h2>
+            <h2 id="text2"></h2>
             <div class="input-container" id="ingredientes"></div>
         </div>
 
         <div class="input-group">
-            <h2 id="text3">Lorem ipsum</h2>
+            <h2 id="text3"></h2>
             <div class="input-container" id="dificultad"></div>
         </div>
 
         <div class="input-group">
-            <h2 id="text4">Lorem ipsum</h2>
+            <h2 id="text4"></h2>
             <div class="input-container" id="duración"></div>
         </div>
 
@@ -62,7 +62,7 @@
         document.getElementById('buscar').querySelector('.button').textContent = "Buscar";
         document.getElementById('nombre').querySelector('.text-input').placeholder = "Tortilla de patatas";
         document.getElementById('ingredientes').querySelector('.text-input').placeholder = "Cebolla";
-    }, 200);
+    }, 150);
 </script>
 
 <script>
@@ -128,9 +128,7 @@
     slider.addEventListener("input", function() {
         sliderValue.textContent = `${this.value}min`;
     });
-</script>
 
-<script>
     //modificar el texto del slider
     setTimeout(function () {
         const slider = document.getElementById("duración").querySelector(".PB-range-slider");

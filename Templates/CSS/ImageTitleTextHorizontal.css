@@ -81,9 +81,9 @@ h3 {
     justify-content: flex-end;
 }
 
-.icon {
-    width: 36px;
-    height: 36px;
+.icon-save {
+    width: auto;
+    height: auto;
     border: 1px solid #444;
     display: flex;
     justify-content: center;
@@ -94,13 +94,35 @@ h3 {
     font-size: 18px;
 }
 
-.icon:hover {
+.icon-save:hover {
     background: #e0e0e0;
 }
 
-.icon:active {
+.icon-save:active {
     transform: scale(0.95);
 }
+
+.icon-like {
+    width: auto;
+    height: auto;
+    border: 1px solid #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    cursor: pointer;
+    background: white;
+    font-size: 18px;
+}
+
+.icon-like:hover {
+    background: #e0e0e0;
+}
+
+.icon-like:active {
+    transform: scale(0.95);
+}
+
 
 
 @media screen and (max-width: 40em) {
@@ -127,5 +149,54 @@ h3 {
     .info {
         text-align: center;
         width: auto;
+    }
+
+    .icons {
+        margin-top: 12px;
+        display: flex;
+        gap: 8px;
+        justify-content: flex-end;
+    }
+
+    .icon-save {
+        width: auto;
+        height: auto;
+        border: 1px solid #444;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6px;
+        cursor: pointer;
+        background: white;
+        font-size: 18px;
+    }
+
+    .icon-save:hover {
+        background: #e0e0e0;
+    }
+
+    .icon-save:active {
+        transform: scale(0.95);
+    }
+
+    .icon-like {
+        width: auto;
+        height: auto;
+        border: 1px solid #444;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6px;
+        cursor: pointer;
+        background: white;
+        font-size: 18px;
+    }
+
+    .icon-like:hover {
+        background: #e0e0e0;
+    }
+
+    .icon-like:active {
+        transform: scale(0.95);
     }
 }
