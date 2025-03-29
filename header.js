@@ -8,7 +8,7 @@ if (logoutButton) {
 
         localStorage.removeItem('usuarioActual');
 
-        window.location.href = `loginPage.html`;
+        window.location.href = `Pages/HTML/loginPage.html`;
     });
 }
 }, 300);

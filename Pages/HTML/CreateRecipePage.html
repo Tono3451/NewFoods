@@ -230,7 +230,15 @@
   }
 
   async function sendRecipe(id, title, subtitle, description, difficulty, duration, ingredients, steps, nutrition, likes, saved, image) {
-    const recipe = { id, title, subtitle, description, difficulty, duration, ingredients, steps, nutrition, likes, saved, image };
+    const usuarioGuardado = localStorage.getItem("usuarioActual");
+    const usuarioActual = usuarioGuardado ? JSON.parse(usuarioGuardado) : null;
+
+    if (!usuarioActual) {
+      alert("No hay usuario logueado");
+      return;
+    }
+
+    const recipe = {id, title, subtitle, description, difficulty, duration, ingredients, steps, nutrition, likes, saved, image, userId: usuarioActual.id};
 
     try {
       const response = await fetch('http://localhost:3000/recipes', {
