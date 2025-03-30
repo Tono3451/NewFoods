@@ -60,23 +60,24 @@
                         const recipeDifficulty = recipe.difficulty.toLowerCase();
                         const recipeDuration = parseInt(recipe.duration); // Convertir a número
 
-                        // Normalizar los ingredientes quitando cantidades, caracteres extra y reduciendo a singular
-                        const normalizeIngredient = ing => {
-                          return ing
-                                  .replace(/[\d½¼¾/]+/g, "") // Eliminar números y fracciones
-                                  .replace(/g|kg|ml|l|tbsp|tsp|cda|cdta|pizca/g, "") // Eliminar unidades de medida comunes
+                          // Normalizar los ingredientes quitando cantidades, caracteres extra y reduciendo a singular
+                          const normalizeIngredient = ing => {
+                              return ing
+                                  .replace(/[\d½¼¾/]+/g, "") // Remove numbers and fractions
                                   .trim()
-                                  .replace(/s$/, ""); // Convertir plurales simples a singular (tomates → tomate)
-                        };
+                                  .replace(/s$/, "") // Convert simple plurals to singular
+                                  .split(" ") // Split into individual words
+                                  .filter(word => word.length > 0) // Remove empty words
+                                  .map(word => word.trim().toLowerCase()); // Trim each word
+                          };
+                        const recipeIngredients = recipe.ingredients.flatMap(ing => normalizeIngredient(ing));
 
-                        const recipeIngredients = recipe.ingredients.map(ing => normalizeIngredient(ing));
-
-                        // Filtro de nombre: debe contener la palabra clave en el título
+                          // Filtro de nombre: debe contener la palabra clave en el título
                         const nameMatch = searchName ? recipeTitle.includes(searchName) : true;
 
                         // Filtro de ingredientes: debe tener al menos uno de los ingredientes buscados
                         const ingredientsMatch = searchIngredients.length > 0
-                                ? searchIngredients.some(ing => recipeIngredients.includes(ing))
+                                ? searchIngredients.every(ing => recipeIngredients.includes(ing))
                                 : true;
 
                         // Filtro de dificultad: debe coincidir exactamente
