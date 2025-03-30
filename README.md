@@ -44,7 +44,7 @@ Como otra opción, se pueden crear usuarios en la página de registro introducie
 ### **En caso de fallo**:<br>
 En caso de que no se pueda iniciar sesión por algún motivo, revisar los datos de usuarios en el fichero _db.json_
 ### Datos en los inputs de la página CreateRecipePage:
-Para añadir ingredientes a una receta, a la hora de escribirlos, escribir uno por linea. Ejemplo:
+Para añadir ingredientes a una receta, a la hora de escribirlos, escribir uno por linea. Ejemplo:<br>
 Ingrediente1<br>
 Ingrediente2<br>
 Ingrediente3<br>
@@ -52,7 +52,7 @@ Ingrediente3<br>
 .<br>
 .<br>
 
-De misma forma para los pasos a seguir para crear la receta
+De misma forma para los pasos a seguir para crear la receta<br>
 Paso1: ....<br>
 Paso2: ....<br>
 .<br>
