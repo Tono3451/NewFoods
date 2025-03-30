@@ -22,7 +22,7 @@ Además, gracias a nuestro sistema inteligente de análisis nutricional, recibir
     - Los usuarios deben poder realizar búsquedas, categorías, filtros y palabras clave.
     - Los resultados se deben mostrar según los criterios seleccionados.
   - Exhibición de recetas:
-    - Las recetas  deben ser mostrados con imágenes, descripciones y detalles del proceso elaborativo.
+    - Las recetas deben ser mostrados con imágenes, descripciones y detalles del proceso elaborativo.
   - Sistema de valoración y archivado de publicaciones:
     - Los usuarios pueden calificar los productos con la opción de dar un "me gusta".
     - Los usuarios pueden guardar una receta para poder acceder a ella posteriormente mediante una lista de "guardadas".
@@ -30,6 +30,34 @@ Además, gracias a nuestro sistema inteligente de análisis nutricional, recibir
     - Los usuarios podrán configurar su perfil para añadir una foto y una pequeña descripción.
     - Se podrán visualizar las publicaciones subidas por el usuario, las guardadas y un itinerario semanal con las recetas de las comidas diarias.
     - Los usuarios podrán ver, a partir del itinerario semanal, las calorías que consumirán esa semana y a partir de los datos del usuario (peso, altura) las calorías recomendadas que debería consumir.
+   
+## **IMPORTANTE**:
+### Renombrar el fichero descargado de github:
+Se debe modificar el nombre del directorio raíz obtenido al extraer el ZIP, cambiando **NewFoods-sprint2** por **NewFoods**, eliminando la referencia a la rama previamente a abrir el proyecto para que las rutas funcionen correctamente, en caso de no realizar este paso, el enrutamiento entre páginas puede experimentar errores.
+### Para iniciar el servidor JSON y simular una API REST con los datos de db.json, utiliza el siguiente comando en la terminal:
+`json-server --watch db.json --port 3000 `
+## Iniciar Sesión y Crear usuarios:
+Al abrir el _index.html_, el usuario será redirigido a la página de login. Aquí se pueden tomar dos acciones, la primera es iniciar sesión con un usuario ya existente, aquí una cuenta de usuario válida:<br>
+**correo: prueba3@gmail.com<br>
+contraseña: prueba3contraseña**<br>
+Como otra opción, se pueden crear usuarios en la página de registro introduciendo un nombre, correo y contraseña. Una vez confirmados los datos, se puede iniciar sesión con el usuario recién creado.<br>
+### **En caso de fallo**:<br>
+En caso de que no se pueda iniciar sesión por algún motivo, revisar los datos de usuarios en el fichero _db.json_
+### Datos en los inputs de la página CreateRecipePage:
+Para añadir ingredientes a una receta, a la hora de escribirlos, escribir uno por linea. Ejemplo:
+Ingrediente1<br>
+Ingrediente2<br>
+Ingrediente3<br>
+.<br>
+.<br>
+.<br>
+
+De misma forma para los pasos a seguir para crear la receta
+Paso1: ....<br>
+Paso2: ....<br>
+.<br>
+.<br>
+.<br>
 
 ## Listado de páginas html, Mockups y Stroyboard:
 ### Desktop
@@ -168,12 +196,6 @@ Además, gracias a nuestro sistema inteligente de análisis nutricional, recibir
 ### Entrada de texto 2:
 #### Archivos donde se carga ->  CreateRecipePage.html
 ![Entrada de texto 2](/images/Text-input2.png)
-
-## Otros aspectos:
-
-
-SPRINT 1:
-Iniciar el JSON server: json-server --watch usuarios.json --port 3000
 
 
 ## Enlaces a Figma y Trello:
