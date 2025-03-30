@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="../../Templates/CSS/footer.css">
   <link rel="stylesheet" href="../../Templates/CSS/avatar.css">
   <link rel="stylesheet" href="../../Templates/CSS/ImageTemplate.css">
+  <link rel="stylesheet" href="/Templates/CSS/ImageTitleTextHorizontal.css">
   <link rel="stylesheet" href="../CSS/profile.css">
   <script src="../../loadTemplate.js"></script>
 </head>
@@ -19,28 +20,20 @@
   <div id="username">
     <p id="usernameParagraph">Username</p>
   </div>
+</section>
 
-</section><section class="gallery">
+<section class="gallery">
   <div class="labels">
-    <a href="profile.html">
-      <button class="button-label">Recetas guardadas</button>
-    </a>
-    <a href="profile.html">
-      <button class="button-label">Recetas subidas</button>
-    </a>
+    <button class="button-label" id="savedRecipesBtn">Recetas guardadas</button>
+    <button class="button-label" id="uploadedRecipesBtn">Recetas subidas</button>
     <a href="profile2.html">
       <button class="button-label">Planning semanal</button>
     </a>
   </div>
 </section>
-<section class="grid">
-  <div class="image" id="image1"></div>
-  <div class="image" id="image2"></div>
-  <div class="image" id="image3"></div>
-  <div class="image" id="image4"></div>
-  <div class="image" id="image5"></div>
-  <div class="image" id="image6"></div>
-</section>
+
+<section id="recipesGrid"></section>
+
 
 <footer id="main_footer"></footer>
 
@@ -53,13 +46,6 @@
     loadTemplate('../../Templates/HTML/header.html', 'main_header');
 
     loadTemplate('../../Templates/HTML/avatar.html', 'avatar');
-
-    loadTemplate('../../Templates/HTML/ImageTemplate.html', 'image1');
-    loadTemplate('../../Templates/HTML/ImageTemplate.html', 'image2');
-    loadTemplate('../../Templates/HTML/ImageTemplate.html', 'image3');
-    loadTemplate('../../Templates/HTML/ImageTemplate.html', 'image4');
-    loadTemplate('../../Templates/HTML/ImageTemplate.html', 'image5');
-    loadTemplate('../../Templates/HTML/ImageTemplate.html', 'image6');
 
     loadTemplate('../../Templates/HTML/footer.html', 'main_footer');
 
@@ -80,6 +66,99 @@
         }
     });
 </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const usuarioGuardado = localStorage.getItem("usuarioActual");
+      const usuarioActual = usuarioGuardado ? JSON.parse(usuarioGuardado) : null;
+
+      if (!usuarioActual) {
+        window.location.href = "../../Pages/HTML/loginPage.html";
+        return;
+      }
+
+      document.getElementById('savedRecipesBtn').addEventListener('click', () => loadUserRecipes("saved"));
+      document.getElementById('uploadedRecipesBtn').addEventListener('click', () => loadUserRecipes("uploaded"));
+
+      // Cargar recetas subidas por defecto
+      loadUserRecipes("uploaded");
+    });
+
+    function loadUserRecipes(type) {
+      const usuarioGuardado = localStorage.getItem("usuarioActual");
+      const usuarioActual = usuarioGuardado ? JSON.parse(usuarioGuardado) : null;
+
+      if (!usuarioActual) return;
+
+      if (type === "saved") {
+        fetch(`http://localhost:3000/usuarios/${usuarioActual.id}`)
+                .then(response => response.json())
+                .then(user => {
+                  if (!user.savedRecipes || user.savedRecipes.length === 0) {
+                    document.getElementById("recipesGrid").innerHTML = "<p>No tienes recetas guardadas.</p>";
+                    return;
+                  }
+
+                  fetch('http://localhost:3000/recipes')
+                          .then(response => response.json())
+                          .then(recipes => {
+                            const savedRecipes = recipes.filter(recipe => user.savedRecipes.includes(recipe.id));
+                            displayRecipes(savedRecipes);
+                          })
+                          .catch(error => console.error("Error obteniendo recetas:", error));
+                })
+                .catch(error => console.error("Error obteniendo usuario:", error));
+      } else {
+        fetch('http://localhost:3000/recipes')
+                .then(response => response.json())
+                .then(recipes => {
+                  const userRecipes = recipes.filter(recipe => recipe.userId === usuarioActual.id);
+                  displayRecipes(userRecipes);
+                })
+                .catch(error => console.error("Error cargando recetas:", error));
+      }
+    }
+
+    function displayRecipes(recipes) {
+      const container = document.getElementById("recipesGrid");
+      container.innerHTML = "";
+
+      if (recipes.length === 0) {
+        container.innerHTML = "<p>No hay recetas disponibles.</p>";
+        return;
+      }
+
+      recipes.forEach(recipe => {
+        const recipeCard = document.createElement("a");
+        recipeCard.href = `/NewFoods/Pages/HTML/recipePage.html?id=${recipe.id}`;
+        recipeCard.classList.add("card-link");
+
+        recipeCard.innerHTML = `
+        <div class="card">
+            <div class="image-container">
+                <img src="${recipe.image}" alt="${recipe.title}">
+            </div>
+            <div class="content">
+                <h3>${recipe.title}</h3>
+                <p class="subtitle">${recipe.subtitle}</p>
+                <p class="text">${recipe.description}</p>
+                <p class="info">
+                    <strong>Dificultad:</strong> <span class="difficulty">${recipe.difficulty}</span> |
+                    <strong>Tiempo:</strong> <span class="duration">${recipe.duration}</span><span> min</span>
+                </p>
+                <div class="icons">
+                    <button class="icon-save">🔖 <span class="save-count">${recipe.saved || 0}</span></button>
+                    <button class="icon-like">❤️ <span class="like-count">${recipe.likes || 0}</span></button>
+                </div>
+            </div>
+        </div>
+      `;
+
+        container.appendChild(recipeCard);
+      });
+    }
+  </script>
+
 
 </body>
 

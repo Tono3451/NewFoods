@@ -113,7 +113,7 @@
 
                           // Eventos para actualizar JSON Server
                           likeButton.addEventListener("click", () => updateRecipeStat(recipe.id, "likes", likeButton.querySelector('.like-count')));
-                          saveButton.addEventListener("click", () => updateRecipeStat(recipe.id, "saved", saveButton.querySelector('.save-count')));
+                          saveButton.addEventListener("click", () => saveRecipeForUser(recipe.id, saveButton.querySelector('.save-count')));
 
                           container.appendChild(cardLink);
                         });
@@ -139,6 +139,39 @@
               countElement.textContent = updatedRecipe[field];
             })
             .catch(error => console.error("Error actualizando la receta:", error));
+  }
+
+  function saveRecipeForUser(recipeId, countElement) {
+    const usuarioGuardado = localStorage.getItem("usuarioActual");
+    const usuarioActual = usuarioGuardado ? JSON.parse(usuarioGuardado) : null;
+
+    if (!usuarioActual) {
+      alert("Debes iniciar sesión para guardar recetas.");
+      return;
+    }
+
+    fetch(`http://localhost:3000/usuarios/${usuarioActual.id}`)
+            .then(response => response.json())
+            .then(user => {
+              let savedRecipes = user.savedRecipes || [];
+
+              if (!savedRecipes.includes(recipeId)) {
+                savedRecipes.push(recipeId);
+              } else {
+                savedRecipes = savedRecipes.filter(id => id !== recipeId);
+              }
+
+              return fetch(`http://localhost:3000/usuarios/${usuarioActual.id}`, {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ savedRecipes })
+              });
+            })
+            .then(() => {
+              alert("Receta guardada correctamente.");
+              countElement.textContent = parseInt(countElement.textContent) + 1;
+            })
+            .catch(error => console.error("Error al guardar receta:", error));
   }
 </script>
 

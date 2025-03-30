@@ -79,7 +79,7 @@
             }
 
             // Guardar usuario en JSON Server
-            let nuevoUsuario = { nombre, correo, contraseña };
+            let nuevoUsuario = { nombre, correo, contraseña, savedRecipes: []};
 
             let saveResponse = await fetch("http://localhost:3000/usuarios", {
                 method: "POST",
