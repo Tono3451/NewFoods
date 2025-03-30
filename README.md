@@ -22,7 +22,7 @@ Además, gracias a nuestro sistema inteligente de análisis nutricional, recibir
     - Los usuarios deben poder realizar búsquedas, categorías, filtros y palabras clave.
     - Los resultados se deben mostrar según los criterios seleccionados.
   - Exhibición de recetas:
-    - Las recetas  deben ser mostrados con imágenes, descripciones y detalles del proceso elaborativo.
+    - Las recetas deben ser mostrados con imágenes, descripciones y detalles del proceso elaborativo.
   - Sistema de valoración y archivado de publicaciones:
     - Los usuarios pueden calificar los productos con la opción de dar un "me gusta".
     - Los usuarios pueden guardar una receta para poder acceder a ella posteriormente mediante una lista de "guardadas".
@@ -33,7 +33,7 @@ Además, gracias a nuestro sistema inteligente de análisis nutricional, recibir
    
 ## **IMPORTANTE**:
 ### Renombrar el fichero descargado de github:
-Renombrar el fichero raíz como **NewFoods** para que las rutas funcionen correctamente, en caso de no realizar este paso, el enrrutamiento entre páginas puede experimentar errores.
+Se debe modificar el nombre del directorio raíz obtenido al extraer el ZIP, cambiando **NewFoods-sprint2** por **NewFoods**, eliminando la referencia a la rama previamente a abrir el proyecto para que las rutas funcionen correctamente, en caso de no realizar este paso, el enrutamiento entre páginas puede experimentar errores.
 ### Para iniciar el servidor JSON y simular una API REST con los datos de db.json, utiliza el siguiente comando en la terminal:
 `json-server --watch db.json --port 3000 `
 ## Iniciar Sesión y Crear usuarios:
