@@ -33,11 +33,11 @@ Además, gracias a nuestro sistema inteligente de análisis nutricional, recibir
    
 ## **IMPORTANTE**:
 ### Renombrar el fichero descargado de github:
-Renombrar el fichero como **NewFoods** para que las rutas funcionen correctamente, en caso de no realizar este paso, el enrrutamiento entre páginas puede experimentar errores.
+Renombrar el fichero raíz como **NewFoods** para que las rutas funcionen correctamente, en caso de no realizar este paso, el enrrutamiento entre páginas puede experimentar errores.
 ### Para iniciar el servidor JSON y simular una API REST con los datos de db.json, utiliza el siguiente comando en la terminal:
 `json-server --watch db.json --port 3000 `
 ## Iniciar Sesión y Crear usuarios:
-Al abrir el _index.htm_, el usuario será redirigido a la página de login. Aquí se pueden tomar dos acciones, la primera es iniciar sesión con un usuario ya existente, aquí una cuenta de usuario válida:<br>
+Al abrir el _index.html_, el usuario será redirigido a la página de login. Aquí se pueden tomar dos acciones, la primera es iniciar sesión con un usuario ya existente, aquí una cuenta de usuario válida:<br>
 **correo: prueba3@gmail.com<br>
 contraseña: prueba3contraseña**<br>
 Como otra opción, se pueden crear usuarios en la página de registro introduciendo un nombre, correo y contraseña. Una vez confirmados los datos, se puede iniciar sesión con el usuario recién creado.<br>
