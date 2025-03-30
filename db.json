@@ -135,7 +135,7 @@
         "fiber": "2g"
       },
       "likes": 10,
-      "saved": 4
+      "saved": 5
     },
     {
       "id": "4",
@@ -240,6 +240,320 @@
       },
       "likes": 5,
       "saved": 5
+    },
+    {
+      "id": "7",
+      "image": "https://www.divinacocina.es/wp-content/uploads/lasana-bolonesa-en-una-fuente.jpg",
+      "title": "Lasaña Boloñesa",
+      "subtitle": "Cremosa y deliciosa",
+      "description": "Capas de pasta intercaladas con carne en salsa boloñesa y bechamel, gratinadas con queso.",
+      "difficulty": "Alta",
+      "duration": "60",
+      "ingredients": [
+        "12 láminas de lasaña",
+        "300g de carne molida",
+        "1 cebolla",
+        "2 dientes de ajo",
+        "500ml de salsa de tomate",
+        "200ml de bechamel",
+        "100g de queso parmesano",
+        "Aceite de oliva",
+        "Sal y pimienta al gusto"
+      ],
+      "steps": [
+        "Sofríe la cebolla y el ajo picado en aceite de oliva.",
+        "Añade la carne y cocina hasta dorar.",
+        "Vierte la salsa de tomate y cocina a fuego lento.",
+        "Cocina las láminas de lasaña según las instrucciones.",
+        "Arma la lasaña alternando capas de pasta, salsa y bechamel.",
+        "Espolvorea con queso y hornea a 180°C por 30 minutos.",
+        "Deja reposar y sirve caliente."
+      ],
+      "nutrition": {
+        "calories": "600 kcal",
+        "carbohydrates": "60g",
+        "proteins": "30g",
+        "fats": "25g",
+        "fiber": "5g"
+      },
+      "likes": 8,
+      "saved": 6
+    },
+    {
+      "id": "8",
+      "image": "https://images.aws.nestle.recipes/resized/2020_05_11T08_52_30_mrs_ImageRecipes_136478lrg_1200_628.jpg",
+      "title": "Sopa de Frijoles Negros",
+      "subtitle": "Nutritiva y reconfortante",
+      "description": "Sopa espesa y sabrosa hecha con frijoles negros, especias y vegetales.",
+      "difficulty": "Media",
+      "duration": "50",
+      "ingredients": [
+        "250g de frijoles negros",
+        "1 zanahoria",
+        "1 cebolla",
+        "2 dientes de ajo",
+        "1 pimiento verde",
+        "1 hoja de laurel",
+        "Caldo de verduras",
+        "Sal y pimienta al gusto"
+      ],
+      "steps": [
+        "Remoja los frijoles durante la noche.",
+        "Sofríe la cebolla, el ajo, la zanahoria y el pimiento.",
+        "Añade los frijoles, el caldo y la hoja de laurel.",
+        "Cocina a fuego lento hasta que los frijoles estén tiernos.",
+        "Sazona al gusto y sirve caliente."
+      ],
+      "nutrition": {
+        "calories": "350 kcal",
+        "carbohydrates": "45g",
+        "proteins": "20g",
+        "fats": "5g",
+        "fiber": "10g"
+      },
+      "likes": 7,
+      "saved": 4
+    },
+    {
+      "id": "9",
+      "image": "https://recetasdecocina.elmundo.es/wp-content/uploads/2016/11/brownie-de-chocolate.jpg",
+      "title": "Brownie de Chocolate",
+      "subtitle": "Dulce irresistible",
+      "description": "Un delicioso brownie con un interior húmedo y un exterior crujiente.",
+      "difficulty": "Media",
+      "duration": "45",
+      "ingredients": [
+        "200g de chocolate negro",
+        "150g de mantequilla",
+        "150g de azúcar",
+        "3 huevos",
+        "80g de harina",
+        "1 cucharadita de esencia de vainilla",
+        "Nueces opcionales"
+      ],
+      "steps": [
+        "Derrite el chocolate con la mantequilla.",
+        "Añade el azúcar y mezcla bien.",
+        "Incorpora los huevos uno a uno.",
+        "Añade la harina tamizada y la esencia de vainilla.",
+        "Vierte la mezcla en un molde engrasado.",
+        "Hornea a 180°C durante 25 minutos.",
+        "Deja enfriar y corta en porciones."
+      ],
+      "nutrition": {
+        "calories": "450 kcal",
+        "carbohydrates": "55g",
+        "proteins": "6g",
+        "fats": "25g",
+        "fiber": "4g"
+      },
+      "likes": 9,
+      "saved": 5
+    },
+    {
+      "id": "10",
+      "image": "https://www.annarecetasfaciles.com/files/tarta-de-queso-de-la-vina.jpg",
+      "title": "Tarta de Queso",
+      "subtitle": "Suave y cremosa",
+      "description": "Deliciosa tarta de queso con base de galleta y un relleno cremoso.",
+      "difficulty": "Media",
+      "duration": "60",
+      "ingredients": [
+        "200g de galletas",
+        "100g de mantequilla",
+        "500g de queso crema",
+        "200ml de nata",
+        "150g de azúcar",
+        "3 huevos",
+        "1 cucharadita de vainilla"
+      ],
+      "steps": [
+        "Tritura las galletas y mézclalas con la mantequilla derretida.",
+        "Presiona la mezcla en un molde y refrigera.",
+        "Bate el queso crema con la nata, el azúcar, los huevos y la vainilla.",
+        "Vierte la mezcla sobre la base y hornea a 180°C por 45 minutos.",
+        "Deja enfriar y refrigera antes de servir."
+      ],
+      "nutrition": {
+        "calories": "350 kcal",
+        "carbohydrates": "40g",
+        "proteins": "6g",
+        "fats": "18g",
+        "fiber": "2g"
+      },
+      "likes": 7,
+      "saved": 9
+    },
+    {
+      "id": "11",
+      "image": "https://cdn.elcocinerocasero.com/imagen/receta/1000/2022-10-15-17-44-54/croquetas-de-jamon-serrano.jpeg",
+      "title": "Croquetas de Jamón",
+      "subtitle": "Crujientes y cremosas",
+      "description": "Croquetas de bechamel con jamón serrano, perfectas como aperitivo.",
+      "difficulty": "Media",
+      "duration": "45",
+      "ingredients": [
+        "100g de jamón serrano",
+        "50g de mantequilla",
+        "100g de harina",
+        "500ml de leche",
+        "Nuez moscada",
+        "Sal y pimienta",
+        "Pan rallado",
+        "Huevo",
+        "Aceite para freír"
+      ],
+      "steps": [
+        "Derrite la mantequilla y añade la harina.",
+        "Vierte la leche poco a poco, removiendo constantemente.",
+        "Añade el jamón picado y condimenta.",
+        "Enfría la masa y forma croquetas.",
+        "Pásalas por huevo y pan rallado y fríe hasta dorar."
+      ],
+      "nutrition": {
+        "calories": "250 kcal",
+        "carbohydrates": "20g",
+        "proteins": "10g",
+        "fats": "15g",
+        "fiber": "2g"
+      },
+      "likes": 8,
+      "saved": 7
+    },
+    {
+      "id": "12",
+      "image": "https://recetasdecocina.elmundo.es/wp-content/uploads/2023/08/pollo-al-ajillo.jpg",
+      "title": "Pollo al Ajillo",
+      "subtitle": "Sabroso y aromático",
+      "description": "Trozos de pollo dorados en aceite con ajo y vino blanco, una receta clásica española.",
+      "difficulty": "Baja",
+      "duration": "40",
+      "ingredients": [
+        "500g de pollo troceado",
+        "4 dientes de ajo",
+        "100ml de vino blanco",
+        "Aceite de oliva",
+        "Sal y pimienta",
+        "Perejil fresco"
+      ],
+      "steps": [
+        "Dora los ajos en una sartén con aceite de oliva.",
+        "Añade el pollo y cocina hasta que esté dorado.",
+        "Vierte el vino blanco y deja reducir.",
+        "Cocina a fuego lento hasta que el pollo esté tierno.",
+        "Espolvorea con perejil y sirve caliente."
+      ],
+      "nutrition": {
+        "calories": "320 kcal",
+        "carbohydrates": "2g",
+        "proteins": "40g",
+        "fats": "15g",
+        "fiber": "1g"
+      },
+      "likes": 6,
+      "saved": 5
+    },
+    {
+      "id": "13",
+      "image": "https://imag.bonviveur.com/empanada-gallega-casera.jpg",
+      "title": "Empanada Gallega",
+      "subtitle": "Relleno jugoso y crujiente",
+      "description": "Empanada tradicional gallega con relleno de atún, cebolla y pimiento.",
+      "difficulty": "Media",
+      "duration": "60",
+      "ingredients": [
+        "500g de masa para empanada",
+        "200g de atún en conserva",
+        "1 pimiento rojo",
+        "1 cebolla",
+        "2 huevos cocidos",
+        "Aceite de oliva",
+        "Sal y pimienta"
+      ],
+      "steps": [
+        "Sofríe la cebolla y el pimiento en aceite de oliva.",
+        "Añade el atún desmenuzado y los huevos picados.",
+        "Extiende la mitad de la masa y coloca el relleno encima.",
+        "Cubre con la otra mitad de la masa y sella los bordes.",
+        "Hornea a 180°C durante 40 minutos hasta dorar."
+      ],
+      "nutrition": {
+        "calories": "450 kcal",
+        "carbohydrates": "50g",
+        "proteins": "20g",
+        "fats": "18g",
+        "fiber": "3g"
+      },
+      "likes": 7,
+      "saved": 6
+    },
+    {
+      "id": "14",
+      "image": "https://recetasdecocina.elmundo.es/wp-content/uploads/2022/08/tiramisu-postre-italiano.jpg",
+      "title": "Tiramisú",
+      "subtitle": "Postre italiano clásico",
+      "description": "Capas de bizcocho empapado en café con crema de mascarpone y cacao.",
+      "difficulty": "Media",
+      "duration": "30",
+      "ingredients": [
+        "250g de queso mascarpone",
+        "200ml de nata",
+        "100g de azúcar",
+        "2 huevos",
+        "200ml de café",
+        "Bizcochos de soletilla",
+        "Cacao en polvo"
+      ],
+      "steps": [
+        "Bate las yemas con el azúcar hasta que blanqueen.",
+        "Añade el mascarpone y mezcla bien.",
+        "Monta las claras a punto de nieve e incorpóralas suavemente.",
+        "Empapa los bizcochos en café y coloca una capa en el molde.",
+        "Cubre con la crema de mascarpone y repite las capas.",
+        "Refrigera durante 4 horas y espolvorea con cacao antes de servir."
+      ],
+      "nutrition": {
+        "calories": "380 kcal",
+        "carbohydrates": "45g",
+        "proteins": "7g",
+        "fats": "18g",
+        "fiber": "2g"
+      },
+      "likes": 9,
+      "saved": 8
+    },
+    {
+      "id": "15",
+      "image": "https://chocolatestorras.com/wp-content/uploads/2022/12/como-hacer-chocolate-para-churros.jpg",
+      "title": "Churros con Chocolate",
+      "subtitle": "Dulce tradicional",
+      "description": "Crujientes churros acompañados de un espeso chocolate caliente.",
+      "difficulty": "Media",
+      "duration": "45",
+      "ingredients": [
+        "250g de harina",
+        "250ml de agua",
+        "1 pizca de sal",
+        "Aceite para freír",
+        "100g de azúcar",
+        "200g de chocolate negro",
+        "200ml de leche"
+      ],
+      "steps": [
+        "Hierve el agua con la sal y añade la harina de golpe, removiendo hasta formar una masa.",
+        "Introduce la masa en una manga pastelera con boquilla de estrella.",
+        "Forma los churros y fríelos en aceite caliente hasta que estén dorados.",
+        "Espolvorea con azúcar y acompaña con chocolate caliente hecho con leche y chocolate negro derretido."
+      ],
+      "nutrition": {
+        "calories": "450 kcal",
+        "carbohydrates": "70g",
+        "proteins": "6g",
+        "fats": "18g",
+        "fiber": "4g"
+      },
+      "likes": 9,
+      "saved": 7
     }
   ]
 }
