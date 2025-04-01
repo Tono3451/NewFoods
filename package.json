@@ -2,11 +2,11 @@
   "name": "new-foods",
   "version": "0.0.0",
   "scripts": {
-    "ng": "NewFoods/node_modules/.bin/ng",
-    "start": "NewFoods/node_modules/.bin/ng serve",
-    "build": "NewFoods/node_modules/.bin/ng build",
-    "watch": "NewFoods/node_modules/.bin/ng build --watch --configuration development",
-    "test": "NewFoods/node_modules/.bin/ng test"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {

@@ -156,46 +156,46 @@ Paso2: ....<br>
 ## Listado de templates:
 ### Header:
 #### Archivos donde se carga ->  index.html, profile.html, profile2.html, searchPage.html, resultsPage.html, CreateRecipePage.html, recipePage.html
-![Header](/images/header.png)
+![Header](/old/images/header.png)
 ### Footer:
 #### Archivos donde se carga ->  index.html, profile.html, profile2.html, searchPage.html, resultsPage.html, CreateRecipePage.html, recipePage.html
-![Footer](/images/footer.png)
+![Footer](/old/images/footer.png)
 ### Avatar:
 #### Archivos donde se carga ->  profile.html, profile2.html
-![Avatar](/images/avatar.png)
+![Avatar](/old/images/avatar.png)
 ### Bloque y texto:
 #### Archivos donde se carga ->  CreateRecipePage.html
-![Create Recipe Page](/images/block-add-text.png)
+![Create Recipe Page](/old/images/block-add-text.png)
 ### Botón:
 #### Archivos donde se carga ->  index.html, searchPage.html, loginPage.html, registerPage.html
-![Header](/images/boton.png)
+![Header](/old/images/boton.png)
 ### Entrada desplegable:
 #### Archivos donde se carga ->  searchPage.html
-![Drop down input](/images/drop-down-input.png)
+![Drop down input](/old/images/drop-down-input.png)
 ### Subir imágenes:
 #### Archivos donde se carga ->  CreateRecipePage.html
-![Subir imágenes](/images/get-image.png)
+![Subir imágenes](/old/images/get-image.png)
 ### Imagen:
 #### Archivos donde se carga -> profile.html
-![Image](/images/image.png)
+![Image](/old/images/image.png)
 ### Texto horizontal con imagen:
 #### Archivos donde se carga ->  index.html, resultsPage.html
-![Texto horizontal](/images/image-text-horizontal.png)
+![Texto horizontal](/old/images/image-text-horizontal.png)
 ### Texto vertical con imagen:
 #### Archivos donde se carga ->  profile2.html
-![Texto vertical con imagen](/images/image-title-vertical.png)
+![Texto vertical con imagen](/old/images/image-title-vertical.png)
 ### Entrada numérica:
 #### Archivos donde se carga ->  searchPage.html
-![Entrada numérica](/images/Number-input.png)
+![Entrada numérica](/old/images/Number-input.png)
 ### Barra deslizante:
 #### Archivos donde se carga ->  searchPage.html
-![Barra deslizante](/images/slider.png)
+![Barra deslizante](/old/images/slider.png)
 ### Entrada de texto:
 #### Archivos donde se carga -> searchPage.html, loginPage.html, registerPage.html
-![Entrada de texto](/images/text-input1.png)
+![Entrada de texto](/old/images/text-input1.png)
 ### Entrada de texto 2:
 #### Archivos donde se carga ->  CreateRecipePage.html
-![Entrada de texto 2](/images/Text-input2.png)
+![Entrada de texto 2](/old/images/Text-input2.png)
 
 
 ## Enlaces a Figma y Trello:

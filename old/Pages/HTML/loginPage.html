@@ -69,7 +69,7 @@
                 const usuarioSinContraseña = {  id: usuarioValido.id, nombre: usuarioValido.nombre, correo: usuarioValido.correo };
                 localStorage.setItem("usuarioActual", JSON.stringify(usuarioSinContraseña));
 
-                window.location.href = "/NewFoods/index.html"; // Redirigir a la página principal
+                window.location.href = "../../../src/index.html"; // Redirigir a la página principal
             } else {
                 alert("Correo o contraseña incorrectos.");
             }
