@@ -1,0 +1,29 @@
+#main_footer {
+  position: relative;
+  background-color: #900C3F;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: auto;
+  width: 100%;
+}
+
+#redes-sociales {
+  margin-bottom: 10px;
+}
+
+.icono {
+  color: white;
+  margin: 0 10px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.icono:hover {
+  color: #ddd;
+}
+
+#text {
+  font-size: 14px;
+  margin-top: 10px;
+}
