@@ -1,0 +1,17 @@
+.PB-range-slider-div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.PB-range-slider {
+  flex-grow: 1;
+}
+
+.PB-range-slidervalue {
+  margin: 0;
+  width: 50px;
+  text-align: right;
+}
