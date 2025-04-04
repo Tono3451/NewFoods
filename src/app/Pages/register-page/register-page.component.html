@@ -1,0 +1,34 @@
+<body>
+<div id="wrapper">
+
+  <div class="register_container">
+    <h2 id="register-title">Crear una cuenta</h2>
+    <form id="register-form">
+      <div class="input-group">
+        <label for="nombre">Nombre de usuario:</label>
+        <input type="text" id="nombre" name="nombre" class="text-input" placeholder="Ej: Juan Pérez" required>
+      </div>
+
+      <div class="input-group">
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" class="text-input" placeholder="correo@gmail.com" required>
+      </div>
+
+      <div class="input-group">
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" name="contraseña" class="text-input" placeholder="Mínimo 8 caracteres" minlength="8" required>
+      </div>
+
+      <div class="input-group">
+        <label for="confirmar">Confirmar contraseña:</label>
+        <input type="password" id="confirmar" name="confirmar" class="text-input" placeholder="Repite la contraseña" minlength="8" required>
+      </div>
+
+      <button type="submit" class="button">Crear cuenta</button>
+    </form>
+  </div>
+
+  <app-footer id="main_footer"></app-footer>
+</div>
+
+</body>
