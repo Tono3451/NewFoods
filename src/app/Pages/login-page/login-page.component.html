@@ -1,0 +1,26 @@
+<body>
+<div id="wrapper">
+  <div class="login_container">
+    <h2 id="login-title">Iniciar sesión</h2>
+    <form id="login-form">
+      <div class="input-group">
+        <label for="email">Correo:</label>
+        <input type="email" id="email" name="email" class="text-input" placeholder="correo@gmail.com" required>
+      </div>
+
+      <div class="input-group">
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" class="text-input" placeholder="12345678" minlength="8" required>
+      </div>
+
+      <div class="button-group">
+        <app-buttom buttonText="Iniciar Sesión" buttonAction="submit"></app-buttom>
+        <p>¿No tienes cuenta? <a href="/register">Regístrate</a></p> <!-- Esta redireccion no funciona todavia -->
+      </div>
+    </form>
+  </div>
+
+  <app-footer id="main_footer"></app-footer>
+</div>
+
+</body>
