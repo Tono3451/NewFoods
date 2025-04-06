@@ -1,17 +1,15 @@
-@media screen and (min-width: 40em) {
+body {
+  background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  font-family: 'Arial', sans-serif;
+}
 
-  html,body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
+@media screen and (min-width: 40em) {
 
   #wrapper {
     flex: 1;
     display: flex;
     flex-direction: column;
+    height: 100vh;
   }
 
   .register_container {
@@ -34,7 +32,7 @@
     gap: 15px;
     width: 80%;
     justify-content: center;
-    margin: auto;
+    margin-bottom: 2%;
   }
 
   .input-group label {
@@ -51,20 +49,6 @@
     font-size: 16px;
   }
 
-  .button {
-    background-color: #581845;
-    border: none;
-    color: white;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: bold;
-    width: 200px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    gap: 33px;
-  }
-
   .button:hover {
     background: #566573;
   }
@@ -73,28 +57,19 @@
     transform: scale(0.95);
   }
 
-  #main_footer {
-    text-align: center;
-    padding: 10px;
-    position: relative;
+  #wrapper > #main_footer {
+    margin-top: auto;
   }
 }
 
 
 @media screen and (max-width: 40em) {
 
-  html,body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
   #wrapper {
     flex: 1;
     display: flex;
     flex-direction: column;
+    height: 100vh;
   }
 
   .register_container {
@@ -118,7 +93,6 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-
     display: flex;
     margin: auto;
   }
@@ -147,21 +121,6 @@
     position: relative;
   }
 
-  .button {
-    background-color: #581845;
-    border: none;
-    color: white;
-    padding: 15px;
-    font-size: 16px;
-    font-weight: bold;
-    width: auto;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    gap: 33px;
-    margin-top: 20px;
-  }
-
   .button:hover {
     background: #566573;
   }
@@ -170,10 +129,8 @@
     transform: scale(0.95);
   }
 
-  #main_footer {
-    text-align: center;
-    padding: 10px;
-    position: relative;
+  #wrapper > #main_footer {
+    margin-top: auto;
   }
 }
 

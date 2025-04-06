@@ -6,7 +6,6 @@ import {ButtomComponent} from '../../Templates/buttom/buttom.component';
 @Component({
   selector: 'app-register-page',
   imports: [
-    HeaderComponent,
     FooterComponent,
     ButtomComponent
   ],
