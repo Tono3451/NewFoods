@@ -1,0 +1,54 @@
+<body>
+<div id="wrapper">
+  <header>
+    <app-header id="main_header"></app-header>
+  </header>
+
+  <div class="search_container">
+    <form id="searchForm">
+      <div class="input-group">
+        <h2 #text1 id="text1"></h2>
+        <div class="input-container">
+          <app-text-input #nombre id="nombre"></app-text-input>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <h2 #text2 id="text2"></h2>
+        <div class="input-container">
+          <app-text-input #ingredientes id="ingredientes"></app-text-input>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <h2 #text3 id="text3"></h2>
+        <div class="input-container">
+          <app-dropdown-input #dificultad id="dificultad"></app-dropdown-input>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <h2 #text4 id="text4"></h2>
+        <div class="input-container">
+          <app-slider #duracionSliderValue id="duración"></app-slider>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <div class="input-container">
+          <app-buttom #buscar id="buscar" (clicked)="handleBuscarClick($event)"></app-buttom>
+        </div>
+      </div>
+
+
+    </form>
+
+  </div>
+
+  <footer>
+    <app-footer id="main_footer"></app-footer>
+  </footer>
+
+</div>
+</body>
+

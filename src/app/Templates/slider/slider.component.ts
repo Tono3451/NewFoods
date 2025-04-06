@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -9,4 +9,5 @@ import { FormsModule } from '@angular/forms';
 })
 export class SliderComponent {
   valorSlider: number = 0;
+  @ViewChild('inputRef') inputRef!: ElementRef<HTMLInputElement>;
 }

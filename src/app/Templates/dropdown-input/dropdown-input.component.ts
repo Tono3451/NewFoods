@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-dropdown-input',
@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './dropdown-input.component.css'
 })
 export class DropdownInputComponent {
-
+  @ViewChild('inputRef') inputRef!: ElementRef<HTMLInputElement>;
 }
