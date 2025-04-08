@@ -1,17 +1,11 @@
 @media screen and (min-width: 40em) {
 
-  body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
 
   #wrapper {
     flex: 1;
     display: flex;
     flex-direction: column;
+    height: 100vh;
   }
 
   .search_container {
@@ -44,9 +38,8 @@
     flex: 1;
   }
 
-  #main_footer {
-    text-align: center;
-    padding: 10px;
+  #wrapper > #main_footer {
+    margin-top: auto;
   }
 
   #dificultad.input-container {
@@ -56,15 +49,10 @@
 }
 
 @media screen and (max-width: 40em) {
-  body {
-    margin: 0;
-    padding: 0;
-  }
 
   .search_container {
     padding: 40px;
     gap: 40px;
-    width: 90%;
   }
 
   .input-group {
@@ -78,6 +66,10 @@
     width: 100%;
     text-align: center;
     font-size: 1.2em;
+  }
+
+  #wrapper > #main_footer {
+    margin-top: auto;
   }
 
 }
