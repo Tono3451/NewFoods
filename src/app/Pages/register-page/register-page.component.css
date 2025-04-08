@@ -115,12 +115,6 @@ body {
     font-size: 12px;
   }
 
-  #main_footer {
-    text-align: center;
-    padding: 10px;
-    position: relative;
-  }
-
   .button:hover {
     background: #566573;
   }
