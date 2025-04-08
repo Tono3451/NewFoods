@@ -5,6 +5,7 @@ import { DropdownInputComponent } from '../../Templates/dropdown-input/dropdown-
 import { SliderComponent } from '../../Templates/slider/slider.component';
 import { ButtomComponent } from '../../Templates/buttom/buttom.component';
 import { FooterComponent } from '../../Templates/footer/footer.component';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-search-page',
@@ -33,8 +34,7 @@ export class SearchPageComponent implements AfterViewChecked {
   @ViewChild('duracionr') duracionSlider!: SliderComponent;
   @ViewChild('duracionSliderValue') duracionSliderValue!: SliderComponent;
 
-  constructor() {
-  }
+  constructor(private router: Router) {}
 
   private initialized = false;
 
@@ -76,7 +76,13 @@ export class SearchPageComponent implements AfterViewChecked {
     if (duracion) params.append('duracion', duracion.toString());
 
     // Redirección
-    window.location.href = `resultsPage.html?${params.toString()}`;
+    this.router.navigate(['/resultsPage'], { queryParams: {
+        nombre,
+        ingredientes,
+        dificultad,
+        duracion
+      }});
+
   }
 }
 
