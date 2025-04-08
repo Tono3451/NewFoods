@@ -1,0 +1,26 @@
+<body>
+
+<header id="main_header"><app-header></app-header></header>
+
+<section id="avatar-container">
+  <div id="avatar"><app-avatar></app-avatar></div>
+  <div id="username">
+    <p id="usernameParagraph">Username</p>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="labels">
+    <button class="button-label" id="savedRecipesBtn">Recetas guardadas</button>
+    <button class="button-label" id="uploadedRecipesBtn">Recetas subidas</button>
+    <a [routerLink]="['/profilePage2']">
+      <button class="button-label">Planning semanal</button>
+    </a>
+  </div>
+</section>
+
+<section id="recipesGrid"></section>
+
+
+<footer id="main_footer"><app-footer></app-footer></footer>
+</body>
