@@ -1,0 +1,93 @@
+<body>
+<app-header id="main_header"></app-header>
+
+<div id="wrapper">
+  <!-- Titulo de crear una receta -->
+  <h1>Crear receta</h1>
+
+  <div class="section-group">
+    <h2>Título</h2>
+    <app-text-input2 id="recipe-title"></app-text-input2>
+  </div>
+
+  <div class="section-group">
+    <h2>Subtítulo</h2>
+    <app-text-input2 id="recipe-subtitle"></app-text-input2>
+  </div>
+
+  <!-- Insertar imagen -->
+  <div class="section-group">
+    <h2>Subir imagen</h2>
+    <app-get-image id="get_image"></app-get-image>
+  </div>
+
+  <!-- Descricion de la receta -->
+  <div class="section-group">
+    <h2>Breve descripción</h2>
+    <app-text-input2 id="description-text1"></app-text-input2>
+  </div>
+
+  <!-- Dificultad -->
+  <div class="section-group">
+    <h2>Dificultad</h2>
+    <app-dropdown-input id="difficulty-input"></app-dropdown-input>
+  </div>
+
+  <!-- Duración -->
+  <div class="section-group">
+    <h2>Duración (minutos)</h2>
+    <app-number-input id="duration-input"></app-number-input>
+  </div>
+
+  <!-- Ingredientes -->
+  <div class="section-group">
+    <h2>Ingredientes</h2>
+    <textarea class="description-input" id="add-text-block"  placeholder="Lista de ingredientes..."></textarea>
+  </div>
+
+  <!-- Información nutricional -->
+  <div class="section-group">
+    <h2>Información nutricional</h2>
+    <!-- Carbohidratos -->
+    <div class="input-nutricional-information">
+      <h3>Carbohidratos:</h3>
+      <app-number-input class="num-input"></app-number-input>
+    </div>
+    <!-- Proteinas -->
+    <div class="input-nutricional-information">
+      <h3>Proteinas:</h3>
+      <app-number-input class="num-input"></app-number-input>
+    </div>
+    <!-- Grasas -->
+    <div class="input-nutricional-information">
+      <h3>Grasas:</h3>
+      <app-number-input class="num-input"></app-number-input>
+    </div>
+    <!-- Fibras -->
+    <div class="input-nutricional-information">
+      <h3>Fibras:</h3>
+      <app-number-input class="num-input"></app-number-input>
+    </div>
+    <!-- Calorias -->
+    <div class="input-nutricional-information">
+      <h3>Calorias:</h3>
+      <app-number-input class="num-input"></app-number-input>
+    </div>
+  </div>
+
+  <!-- Descricion de la receta -->
+  <div class="section-group">
+    <h2>Pasos a seguir</h2>
+    <textarea class="description-input" id="description-text2" placeholder="Pasos de la receta..."></textarea>
+  </div>
+
+</div>
+
+<div class="button-finish-form">
+  <app-buttom buttonText="Crear" buttonAction="submit"></app-buttom>
+</div>
+
+<app-footer id = "main_footer"></app-footer>
+
+
+</body>
