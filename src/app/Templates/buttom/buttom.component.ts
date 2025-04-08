@@ -8,6 +8,7 @@ import {Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@an
 export class ButtomComponent {
   @Input() buttonText: string = 'Lorem';
   @Input() buttonAction: string = '';
+  @Input() buttonRedirection: string = '';
   @ViewChild('buttonRef') buttonRef!: ElementRef<HTMLButtonElement>;
   @Output() clicked = new EventEmitter<Event>();
 
@@ -23,6 +24,8 @@ export class ButtomComponent {
       }
     } else if (this.buttonAction === 'log') {
       console.log("Button clicked!");
+    } else if (this.buttonAction === 'redirection') {
+
     }
   }
 }

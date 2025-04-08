@@ -29,9 +29,8 @@
     justify-content: center;
   }
 
-  #main_footer {
-    text-align: center;
-    padding: 10px;
+  #wrapper > #main_footer {
+    margin-top: auto;
   }
 
   div.card {
@@ -61,9 +60,8 @@
     padding: 0;
   }
 
-  #main_header {
-    flex-shrink: 0;
-    width: 100%;
+  #wrapper > #main_footer {
+    margin-top: auto;
   }
 
   .image-container {
@@ -78,7 +76,4 @@
     font-size: 1.2em;
   }
 
-  #main_footer {
-    padding: 5px;
-  }
 }
