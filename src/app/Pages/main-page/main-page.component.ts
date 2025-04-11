@@ -7,15 +7,16 @@ import {
 } from '../../Templates/image-title-text-horizontal/image-title-text-horizontal.component';
 
 @Component({
-  selector: 'app-main-page',
-  imports: [
-    HeaderComponent,
-    FooterComponent,
-    ButtomComponent,
-    ImageTitleTextHorizontalComponent
-  ],
-  templateUrl: './main-page.component.html',
-  styleUrl: './main-page.component.css'
+    selector: 'app-main-page',
+    imports: [
+        HeaderComponent,
+        FooterComponent,
+        ButtomComponent,
+        ImageTitleTextHorizontalComponent
+    ],
+    templateUrl: './main-page.component.html',
+    standalone: true,
+    styleUrl: './main-page.component.css'
 })
 export class MainPageComponent {
 

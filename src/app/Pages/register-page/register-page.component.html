@@ -1,34 +1,31 @@
 <body>
 <div id="wrapper">
-
   <div class="register_container">
     <h2 id="register-title">Crear una cuenta</h2>
-    <form id="register-form">
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
       <div class="input-group">
         <label for="nombre">Nombre de usuario:</label>
-        <input type="text" id="nombre" name="nombre" class="text-input" placeholder="Ej: Juan Pérez" required>
+        <input type="text" id="nombre" formControlName="nombre" class="text-input" placeholder="Ej: Juan Pérez" required>
       </div>
 
       <div class="input-group">
         <label for="correo">Correo electrónico:</label>
-        <input type="email" id="correo" name="correo" class="text-input" placeholder="correo@gmail.com" required>
+        <input type="email" id="correo" formControlName="correo" class="text-input" placeholder="correo@gmail.com" required>
       </div>
 
       <div class="input-group">
         <label for="contraseña">Contraseña:</label>
-        <input type="password" id="contraseña" name="contraseña" class="text-input" placeholder="Mínimo 8 caracteres" minlength="8" required>
+        <input type="password" id="contraseña" formControlName="contraseña" class="text-input" placeholder="Mínimo 8 caracteres" minlength="8" required>
       </div>
 
       <div class="input-group">
         <label for="confirmar">Confirmar contraseña:</label>
-        <input type="password" id="confirmar" name="confirmar" class="text-input" placeholder="Repite la contraseña" minlength="8" required>
+        <input type="password" id="confirmar" formControlName="confirmar" class="text-input" placeholder="Repite la contraseña" minlength="8" required>
       </div>
 
-      <app-buttom buttonText="Registrarse" buttonAction="submit"></app-buttom>
+      <app-buttom [buttonText]="'Registrarse'" [buttonAction]="'submit'"></app-buttom>
     </form>
   </div>
-
   <app-footer id="main_footer"></app-footer>
 </div>
-
 </body>

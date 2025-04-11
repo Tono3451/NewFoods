@@ -1,9 +1,10 @@
 import {Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 
 @Component({
-  selector: 'app-buttom',
-  templateUrl: './buttom.component.html',
-  styleUrls: ['./buttom.component.css']
+    selector: 'app-buttom',
+    templateUrl: './buttom.component.html',
+    standalone: true,
+    styleUrls: ['./buttom.component.css']
 })
 export class ButtomComponent {
   @Input() buttonText: string = 'Lorem';
