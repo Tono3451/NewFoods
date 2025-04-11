@@ -3,13 +3,14 @@ import {FooterComponent} from '../../Templates/footer/footer.component';
 import {ButtomComponent} from '../../Templates/buttom/buttom.component';
 import {RegisterUserService} from '../../services/register-user.service';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register-page',
   imports: [
     FooterComponent,
     ButtomComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   templateUrl: './register-page.component.html',
   standalone: true,
@@ -20,7 +21,8 @@ export class RegisterPageComponent {
 
   constructor(
     private authService: RegisterUserService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router,
   ) {
 
     this.registerForm = this.fb.group({
@@ -37,11 +39,16 @@ export class RegisterPageComponent {
 
       if (this.registerForm.value.contraseña === this.registerForm.value.confirmar) {
         this.authService.registerUser(nombre, correo, contraseña);
+        this.redirectToLogin();
       } else {
         alert('Las contraseñas no coinciden');
       }
     } else {
       alert('Por favor, rellene todos los campos correctamente');
     }
+  }
+
+  private redirectToLogin() {
+    this.router.navigate(['/loginPage']);
   }
 }

@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {MainPageComponent} from './Pages/main-page/main-page.component';
-import {ButtomComponent} from './Templates/buttom/buttom.component';
+import {LoginPageComponent} from './Pages/login-page/login-page.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MainPageComponent, ButtomComponent],
+  imports: [RouterOutlet, LoginPageComponent],
   templateUrl: './app.component.html',
+  standalone: true,
   styleUrl: './app.component.css'
 })
 export class AppComponent {

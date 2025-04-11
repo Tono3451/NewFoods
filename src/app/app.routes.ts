@@ -5,12 +5,16 @@ import {ProfilePageComponent} from './Pages/profile-page/profile-page.component'
 import {LoginPageComponent} from './Pages/login-page/login-page.component';
 import {AuthGuard} from './guards/auth.guard';
 import {Profile2Component} from './Pages/profile2/profile2.component';
+import {MainPageComponent} from './Pages/main-page/main-page.component';
+import {RegisterPageComponent} from './Pages/register-page/register-page.component';
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'loginPage', pathMatch: 'full' },
+  { path: 'loginPage', component: LoginPageComponent },
   { path: 'resultsPage', component: ResultsPageComponent},
   { path: 'searchPage', component: SearchPageComponent},
   { path: 'profilePage', component: ProfilePageComponent, canActivate: [AuthGuard] },
-  { path: 'loginPage', component: LoginPageComponent },
   { path: 'profilePage2', component: Profile2Component, canActivate: [AuthGuard] },
-  { path: '**', redirectTo: 'login' }
+  { path: 'mainPage', component: MainPageComponent },
+  { path: 'registerPage', component: RegisterPageComponent },
 ];
