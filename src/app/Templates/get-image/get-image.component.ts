@@ -8,7 +8,7 @@ import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 })
 export class GetImageComponent implements AfterViewInit {
 
-  @ViewChild('fileInput') fileInput!: ElementRef;
+  @ViewChild('fileInput') fileInput!: ElementRef<HTMLInputElement>;
   @ViewChild('dropZone') dropZone!: ElementRef;
   @ViewChild('uploadMessage') uploadMessage!: ElementRef;
 

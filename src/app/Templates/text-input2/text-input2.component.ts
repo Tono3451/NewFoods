@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-text-input2',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './text-input2.component.css'
 })
 export class TextInput2Component {
-
+  @ViewChild('inputRef') inputRef!: ElementRef<HTMLInputElement>;
 }

@@ -1,47 +1,13 @@
 <body>
 <div class="upload-container">
-  <div class="drop-zone" id="drop-zone">
+  <div class="drop-zone" id="drop-zone" #dropZone>
     <span>Arrastra y suelta una imagen aquí</span>
     <span>o</span>
     <label for="file-input" class="file-label">Selecciona una imagen</label>
-    <input type="file" id="file-input" accept="image/*" style="display: none;">
+    <input #fileInput type="file" id="file-input" accept="image/*" style="display: none;">
   </div>
-  <p id="upload-message" style="display: none; color: green; font-weight: bold;">Imagen subida</p>
+  <p id="upload-message" style="display: none; color: green; font-weight: bold;" #uploadMessage>Imagen subida</p>
 </div>
 </body>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const fileInput = document.getElementById("file-input");
-    const dropZone = document.getElementById("drop-zone");
-    const uploadMessage = document.getElementById("upload-message");
-
-    fileInput.addEventListener("change", function(event) {
-      if (event.target.files.length > 0) {
-        showUploadMessage();
-      }
-    });
-
-    dropZone.addEventListener("dragover", function(event) {
-      event.preventDefault();
-      dropZone.classList.add("dragover");
-    });
-
-    dropZone.addEventListener("dragleave", function() {
-      dropZone.classList.remove("dragover");
-    });
-
-    dropZone.addEventListener("drop", function(event) {
-      event.preventDefault();
-      dropZone.classList.remove("dragover");
-      if (event.dataTransfer.files.length > 0) {
-        showUploadMessage();
-      }
-    });
-
-    function showUploadMessage() {
-      uploadMessage.style.display = "block"; // Muestra el mensaje
-    }
-  });
-</script>
 

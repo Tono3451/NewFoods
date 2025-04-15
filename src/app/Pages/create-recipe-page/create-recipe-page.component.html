@@ -7,36 +7,36 @@
 
   <div class="section-group">
     <h2>Título</h2>
-    <app-text-input2 id="recipe-title"></app-text-input2>
+    <app-text-input2 #recipeTitle id="recipe-title"></app-text-input2>
   </div>
 
   <div class="section-group">
     <h2>Subtítulo</h2>
-    <app-text-input2 id="recipe-subtitle"></app-text-input2>
+    <app-text-input2 #recipeSubtitle id="recipe-subtitle"></app-text-input2>
   </div>
 
   <!-- Insertar imagen -->
   <div class="section-group">
     <h2>Subir imagen</h2>
-    <app-get-image id="get_image"></app-get-image>
+    <app-get-image #getImage id="get_image"></app-get-image>
   </div>
 
   <!-- Descricion de la receta -->
   <div class="section-group">
     <h2>Breve descripción</h2>
-    <app-text-input2 id="description-text1"></app-text-input2>
+    <app-text-input2 #descriptionText1 id="description-text1"></app-text-input2>
   </div>
 
   <!-- Dificultad -->
   <div class="section-group">
     <h2>Dificultad</h2>
-    <app-dropdown-input id="difficulty-input"></app-dropdown-input>
+    <app-dropdown-input #difficultyInput id="difficulty-input"></app-dropdown-input>
   </div>
 
   <!-- Duración -->
   <div class="section-group">
     <h2>Duración (minutos)</h2>
-    <app-number-input id="duration-input"></app-number-input>
+    <app-number-input #durationInput id="duration-input"></app-number-input>
   </div>
 
   <!-- Ingredientes -->
@@ -51,27 +51,27 @@
     <!-- Carbohidratos -->
     <div class="input-nutricional-information">
       <h3>Carbohidratos:</h3>
-      <app-number-input class="num-input"></app-number-input>
+      <app-number-input #carbohydrates class="num-input"></app-number-input>
     </div>
     <!-- Proteinas -->
     <div class="input-nutricional-information">
       <h3>Proteinas:</h3>
-      <app-number-input class="num-input"></app-number-input>
+      <app-number-input #proteins class="num-input"></app-number-input>
     </div>
     <!-- Grasas -->
     <div class="input-nutricional-information">
       <h3>Grasas:</h3>
-      <app-number-input class="num-input"></app-number-input>
+      <app-number-input #fats class="num-input"></app-number-input>
     </div>
     <!-- Fibras -->
     <div class="input-nutricional-information">
       <h3>Fibras:</h3>
-      <app-number-input class="num-input"></app-number-input>
+      <app-number-input #fiber class="num-input"></app-number-input>
     </div>
     <!-- Calorias -->
     <div class="input-nutricional-information">
       <h3>Calorias:</h3>
-      <app-number-input class="num-input"></app-number-input>
+      <app-number-input #calories class="num-input"></app-number-input>
     </div>
   </div>
 
@@ -84,7 +84,7 @@
 </div>
 
 <div class="button-finish-form">
-  <app-buttom buttonText="Crear" buttonAction="submit"></app-buttom>
+  <app-buttom buttonText="Crear" buttonAction="submit" (clicked)="crearReceta()"></app-buttom>
 </div>
 
 <app-footer id = "main_footer"></app-footer>

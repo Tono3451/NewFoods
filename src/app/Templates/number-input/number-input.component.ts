@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-number-input',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './number-input.component.css'
 })
 export class NumberInputComponent {
-
+  @ViewChild('inputRef') inputRef!: ElementRef<HTMLInputElement>;
 }
