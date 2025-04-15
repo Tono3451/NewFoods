@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import {Router, RouterLink} from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, NgForm} from '@angular/forms';
 import {ButtomComponent} from '../../Templates/buttom/buttom.component';
 import {FooterComponent} from '../../Templates/footer/footer.component';
 import {LoginServiceService} from '../../services/login-service.service';
@@ -24,12 +24,19 @@ export class LoginPageComponent {
 
   constructor(private loginServiceService: LoginServiceService, private router: Router) {}
 
-  async onSubmit(form: any) {
-    this.email = form.value.email;
-    this.password = form.value.password;
-    this.loginServiceService.login(this.email, this.password)
-      .then(user => console.log('Usuario autenticado:', user))
-      .then(() => {this.router.navigate(['/mainPage']);})
-      .catch(error => console.error('Error:', error));
+  async onSubmit(form: NgForm) {
+    if (!form.valid) {
+      alert('Por favor, rellene todos los campos correctamente.');
+      return;
+    }
+
+    try {
+      const user = await this.loginServiceService.login(this.email, this.password);
+      console.log('Usuario autenticado:', user);
+      this.router.navigate(['/mainPage']);
+    } catch (error) {
+      alert('Correo o contraseña incorrectos.');
+      console.error('Error:', error);
+    }
   }
 }
