@@ -1,22 +1,22 @@
 <body>
-<a class="card-link"> <!-- Poner redireccion a receta -->
+<a class="card-link">
   <div class="card">
     <div class="image-container">
-      <img src="https://www.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600nw-1037719192.jpg" alt="Example Image">
+      <img [src]="recipe.image" alt="Recipe Image">
     </div>
     <div class="content">
-      <h3>Lorem</h3>
-      <p class="subtitle">Ipsum</p>
-      <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed gravida dolor, vel condimentum arcu. Ut nunc mi, rhoncus a elit id, ultrices mattis tellus.</p>
+      <h3>{{ recipe.title }}</h3>
+      <p class="subtitle">{{ recipe.subtitle }}</p>
+      <p class="text">{{ recipe.description }}</p>
 
       <p class="info">
-        <strong>Dificultad:</strong> <span class="difficulty">Ipsum</span> |
-        <strong>Tiempo:</strong> <span class="duration">Ipsum</span><span> min</span>
+        <strong>Dificultad:</strong> <span class="difficulty">{{ recipe.difficulty }}</span> |
+        <strong>Tiempo:</strong> <span class="duration">{{ recipe.duration }}</span><span> min</span>
       </p>
 
       <div class="icons">
-        <button class="icon-save">🔖 <span class="save-count">0</span></button>
-        <button class="icon-like">❤️ <span class="like-count">0</span></button>
+        <button class="icon-save">🔖 <span class="save-count">{{ recipe.saved }}</span></button>
+        <button class="icon-like">❤️ <span class="like-count">{{ recipe.likes }}</span></button>
       </div>
     </div>
   </div>
