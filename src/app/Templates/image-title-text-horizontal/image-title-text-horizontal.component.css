@@ -125,10 +125,8 @@ h3 {
 
 
 @media screen and (max-width: 40em) {
-
   .card {
     flex-direction: column;
-    width: 88%;
     text-align: center;
   }
 
