@@ -18,5 +18,5 @@ export const routes: Routes = [
   { path: 'profilePage2', component: Profile2Component, canActivate: [AuthGuard] },
   { path: 'mainPage', component: MainPageComponent },
   { path: 'registerPage', component: RegisterPageComponent },
-  { path: 'createRecipe', component: CreateRecipePageComponent },
+  { path: 'createRecipePage', component: CreateRecipePageComponent },
 ];

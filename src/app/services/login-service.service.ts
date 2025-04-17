@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth, signInWithEmailAndPassword } from '@angular/fire/auth';
+import { Auth, signInWithEmailAndPassword, User } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -19,5 +19,9 @@ export class LoginServiceService {
       console.error('Error al iniciar sesión:');
       throw error;
     }
+  }
+
+  getCurrentUser(): User | null {
+    return this.auth.currentUser;
   }
 }

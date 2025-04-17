@@ -1,21 +1,21 @@
 <body>
-<div id="wrapper">
-  <app-header></app-header>
+<app-header></app-header>
 
-  <main>
-    <div class="button-container">
-      <app-buttom></app-buttom>
-      <app-buttom></app-buttom>
-      <app-buttom></app-buttom>
+<main>
+  <div class="button-container">
+    <app-buttom buttonText="Recientes" buttonAction="submit"></app-buttom>
+    <app-buttom buttonText="Populares" buttonAction="submit"></app-buttom>
+    <app-buttom buttonText="Más guardadas" buttonAction="submit"></app-buttom>
+  </div>
+
+  <div class="image-container">
+    <div *ngFor="let receta of recipes">
+      <app-image-title-text-horizontal
+        [recipe]="receta"
+      ></app-image-title-text-horizontal>
     </div>
+  </div>
+</main>
 
-    <div class="image-container">
-      <app-image-title-text-horizontal></app-image-title-text-horizontal>
-    </div>
-  </main>
-
-  <app-footer></app-footer>
-</div>
+<app-footer></app-footer>
 </body>
-
-
