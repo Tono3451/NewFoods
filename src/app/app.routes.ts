@@ -8,6 +8,7 @@ import {Profile2Component} from './Pages/profile2/profile2.component';
 import {MainPageComponent} from './Pages/main-page/main-page.component';
 import {RegisterPageComponent} from './Pages/register-page/register-page.component';
 import {CreateRecipePageComponent} from './Pages/create-recipe-page/create-recipe-page.component';
+import {RecipePageComponent} from './Pages/recipe-page/recipe-page.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'loginPage', pathMatch: 'full' },
@@ -19,4 +20,6 @@ export const routes: Routes = [
   { path: 'mainPage', component: MainPageComponent },
   { path: 'registerPage', component: RegisterPageComponent },
   { path: 'createRecipePage', component: CreateRecipePageComponent },
+  { path: 'recipe/:id', component: RecipePageComponent}
+
 ];
