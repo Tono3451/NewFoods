@@ -20,6 +20,7 @@ import {RecetaService} from '../../services/create-recipe.service';
     FooterComponent
   ],
   templateUrl: './create-recipe-page.component.html',
+  standalone: true,
   styleUrl: './create-recipe-page.component.css'
 })
 export class CreateRecipePageComponent {
@@ -42,7 +43,6 @@ export class CreateRecipePageComponent {
   async crearReceta() {
     const title = this.recipeTitle.inputRef.nativeElement.value;
     const subtitle = this.recipeSubtitle.inputRef.nativeElement.value;
-    const image = this.getImage.fileInput.nativeElement.value;
     const description = this.descriptionText1.inputRef.nativeElement.value;
     const difficulty = this.difficultyInput.inputRef.nativeElement.value;
     const duration = this.durationInput.inputRef.nativeElement.value;
@@ -57,10 +57,19 @@ export class CreateRecipePageComponent {
     const ingredients = ingredientsText.split('\n').filter(i => i.trim() !== '');
     const steps = stepsText.split('\n').filter(p => p.trim() !== '');
 
+    const fileInput = this.getImage.fileInput.nativeElement;
+    const file = fileInput?.files?.[0];
+
+    let imageBase64 = '';
+
+    if (file) {
+      imageBase64 = await this.convertFileToBase64(file);
+    }
+
     const receta = {
       title,
       subtitle,
-      image,
+      image: imageBase64,
       description,
       difficulty,
       duration,
@@ -79,5 +88,14 @@ export class CreateRecipePageComponent {
 
     await this.createRecipeService.crearReceta(receta);
     alert('Receta creada correctamente');
+  }
+
+  private convertFileToBase64(file: File): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = error => reject(error);
+      reader.readAsDataURL(file);
+    });
   }
 }

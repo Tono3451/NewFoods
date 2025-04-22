@@ -1,10 +1,11 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
 
 @Component({
-  selector: 'app-number-input',
-  imports: [],
-  templateUrl: './number-input.component.html',
-  styleUrl: './number-input.component.css'
+    selector: 'app-number-input',
+    imports: [],
+    templateUrl: './number-input.component.html',
+    standalone: true,
+    styleUrl: './number-input.component.css'
 })
 export class NumberInputComponent {
   @ViewChild('inputRef') inputRef!: ElementRef<HTMLInputElement>;
