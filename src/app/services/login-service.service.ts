@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth, signInWithEmailAndPassword, User } from '@angular/fire/auth';
+import {Auth, signInWithEmailAndPassword, signOut, User} from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
 
@@ -32,5 +32,18 @@ export class LoginServiceService {
 
   getCurrentUser(): User | null {
     return this.auth.currentUser;
+  }
+
+  logout() {
+    signOut(this.auth)
+      .then(() => {
+        // Limpiar el token almacenado
+        this.authService.logout();
+        // Redirigir a la página de login
+        this.router.navigate(['/loginPage']);
+      })
+      .catch((error) => {
+        console.error('Error al cerrar sesión:', error);
+      });
   }
 }
