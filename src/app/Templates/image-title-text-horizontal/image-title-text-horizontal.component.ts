@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import {Recipe, RecipeService} from '../../services/recipe.service';
 import { Router } from '@angular/router';
 import {Auth, onAuthStateChanged, User} from '@angular/fire/auth';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-image-title-text-horizontal',
@@ -14,7 +15,7 @@ export class ImageTitleTextHorizontalComponent {
   userId: string = '';
 
   constructor(private router: Router, private recipeService: RecipeService,
-              private auth: Auth) {}
+              private auth: Auth, private userService: UserService,) {}
 
   ngOnInit() {
     onAuthStateChanged(this.auth, (user: User | null) => {
@@ -39,5 +40,11 @@ export class ImageTitleTextHorizontalComponent {
     if (!this.userId || !this.recipe?.id) return;
     const updated = await this.recipeService.toggleSave(this.recipe.id, this.userId);
     this.recipe.saved = updated.saved;
+
+    if (updated.savedBy.includes(this.userId)) {
+      await this.userService.addRecipeToSaved(this.userId, this.recipe.id);
+    } else {
+      await this.userService.removeRecipeFromSaved(this.userId, this.recipe.id);
+    }
   }
 }
