@@ -1,5 +1,4 @@
-<body>
-<a class="card-link">
+<div class="card-link" (click)="goToRecipePage()" style="cursor: pointer;">
   <div class="card">
     <div class="image-container">
       <img [src]="recipe.image" alt="Recipe Image">
@@ -15,12 +14,12 @@
       </p>
 
       <div class="icons">
-        <button class="icon-save">🔖 <span class="save-count">{{ recipe.saved }}</span></button>
-        <button class="icon-like">❤️ <span class="like-count">{{ recipe.likes }}</span></button>
+        <button class="icon-save" (click)="$event.stopPropagation(); onSaveClick()">🔖 <span class="save-count">{{ recipe.saved }}</span></button>
+        <button class="icon-like" (click)="$event.stopPropagation();onLikeClick()">❤️ <span class="like-count">{{ recipe.likes }}</span></button>
       </div>
     </div>
   </div>
-</a>
-</body>
+</div>
+
 
 
