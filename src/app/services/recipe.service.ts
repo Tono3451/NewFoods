@@ -8,7 +8,7 @@ import {
   DocumentReference,
   Firestore,
   getDoc,
-  getDocs,
+  getDocs, orderBy, query,
   updateDoc
 } from '@angular/fire/firestore';
 
@@ -98,5 +98,17 @@ export class RecipeService {
     const updatedSnap = await getDoc(ref);
     return { id: updatedSnap.id, ...updatedSnap.data() };
   }
+
+  async getRecipesOrderedBy(field: 'dateTime' | 'likes' | 'saved'): Promise<Recipe[]> {
+    const recipesRef = collection(this.firestore, 'recipes');
+    const q = query(recipesRef, orderBy(field, 'desc')); // orden descendente
+    const querySnapshot = await getDocs(q);
+
+    return querySnapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    } as Recipe));
+  }
+
 }
 

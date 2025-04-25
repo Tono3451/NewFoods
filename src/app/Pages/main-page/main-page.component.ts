@@ -24,6 +24,7 @@ import { CommonModule } from '@angular/common';
 })
 export class MainPageComponent implements OnInit {
   recipes: any[] = [];
+  selectedFilter: 'dateTime' | 'likes' | 'saved' = 'dateTime';
 
   constructor(
     private loginServiceService: LoginServiceService,
@@ -31,7 +32,7 @@ export class MainPageComponent implements OnInit {
     private recipeService: RecipeService
   ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     onAuthStateChanged(this.loginServiceService['auth'], async (user) => {
       if (user) {
         try {
@@ -48,5 +49,15 @@ export class MainPageComponent implements OnInit {
         console.log('No hay usuario autenticado.');
       }
     });
+    await this.loadRecipes();
+  }
+
+  async loadRecipes() {
+    this.recipes = await this.recipeService.getRecipesOrderedBy(this.selectedFilter);
+  }
+
+  async changeFilter(filter: 'dateTime' | 'likes' | 'saved') {
+    this.selectedFilter = filter;
+    await this.loadRecipes();
   }
 }
