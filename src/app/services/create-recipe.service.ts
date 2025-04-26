@@ -19,7 +19,7 @@ export class RecetaService {
     const recetaCollection = collection(this.firestore, 'recipes');
     const recetaDocRef = await addDoc(recetaCollection, {
       ...receta,
-      creatorId: user.uid // Guardamos el UID en la receta por referencia cruzada
+      creatorId: user.uid
     });
 
     const userRef = doc(this.firestore, 'users', user.uid);

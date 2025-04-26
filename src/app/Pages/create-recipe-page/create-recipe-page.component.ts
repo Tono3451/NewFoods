@@ -83,7 +83,8 @@ export class CreateRecipePageComponent {
         fiber
       },
       likes: 0,
-      saved: 0
+      saved: 0,
+      dateTime: new Date()
     };
 
     await this.createRecipeService.crearReceta(receta);
