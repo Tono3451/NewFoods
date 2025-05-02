@@ -7,6 +7,7 @@ import { ButtomComponent } from '../../Templates/buttom/buttom.component';
 import { FooterComponent } from '../../Templates/footer/footer.component';
 import {Router} from '@angular/router';
 
+
 @Component({
   selector: 'app-search-page',
   standalone: true,
@@ -31,7 +32,7 @@ export class SearchPageComponent implements AfterViewChecked {
   @ViewChild('nombre') nombreInput!: TextInputComponent;
   @ViewChild('ingredientes') ingredientesInput!: TextInputComponent;
   @ViewChild('dificultad') dificultadInput!: DropdownInputComponent;
-  @ViewChild('duracionr') duracionSlider!: SliderComponent;
+  @ViewChild('duración') duracionSlider!: SliderComponent;
   @ViewChild('duracionSliderValue') duracionSliderValue!: SliderComponent;
 
   constructor(private router: Router) {}
@@ -67,13 +68,17 @@ export class SearchPageComponent implements AfterViewChecked {
     const nombre = this.nombreInput.inputRef.nativeElement.value;
     const ingredientes = this.ingredientesInput.inputRef.nativeElement.value;
     const dificultad = this.dificultadInput.inputRef.nativeElement.value;
-    const duracion = this.duracionSlider?.valorSlider ?? 0;
+    const duracion = this.duracionSliderValue?.valorSlider;
+
+    console.log('Duración seleccionada en el slider:', duracion);
 
     const params = new URLSearchParams();
     if (nombre) params.append('nombre', nombre);
     if (ingredientes) params.append('ingredientes', ingredientes);
     if (dificultad) params.append('dificultad', dificultad);
-    if (duracion) params.append('duracion', duracion.toString());
+    if (duracion !== undefined && duracion > 0) {
+      params.append('duracion', duracion.toString());
+    }
 
     // Redirección
     this.router.navigate(['/resultsPage'], { queryParams: {

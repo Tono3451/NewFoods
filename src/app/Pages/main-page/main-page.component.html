@@ -3,9 +3,9 @@
 
 <main>
   <div class="button-container">
-    <app-buttom buttonText="Recientes" buttonAction="submit"></app-buttom>
-    <app-buttom buttonText="Populares" buttonAction="submit"></app-buttom>
-    <app-buttom buttonText="Más guardadas" buttonAction="submit"></app-buttom>
+    <app-buttom buttonText="Recientes" (click)="changeFilter('dateTime')" buttonAction="submit"></app-buttom>
+    <app-buttom buttonText="Populares" (click)="changeFilter('likes')" buttonAction="submit"></app-buttom>
+    <app-buttom buttonText="Más guardadas" (click)="changeFilter('saved')" buttonAction="submit"></app-buttom>
   </div>
 
   <div class="image-container">

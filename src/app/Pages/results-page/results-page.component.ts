@@ -1,153 +1,84 @@
-import { Component } from '@angular/core';
-import {HeaderComponent} from '../../Templates/header/header.component';
-import {FooterComponent} from '../../Templates/footer/footer.component';
+import { Component, OnInit } from '@angular/core';
+import { HeaderComponent } from '../../Templates/header/header.component';
+import { FooterComponent } from '../../Templates/footer/footer.component';
+import { ActivatedRoute } from '@angular/router';
+import { RecipeService, Recipe } from '../../services/recipe.service';
+import {
+  ImageTitleTextHorizontalComponent
+} from '../../Templates/image-title-text-horizontal/image-title-text-horizontal.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-results-page',
-  imports: [
-    HeaderComponent,
-    FooterComponent
-  ],
+  standalone: true,
+  imports: [HeaderComponent, FooterComponent, ImageTitleTextHorizontalComponent, CommonModule],
   templateUrl: './results-page.component.html',
-  styleUrl: './results-page.component.css'
+  styleUrls: ['./results-page.component.css']
 })
-export class ResultsPageComponent {
+export class ResultsPageComponent implements OnInit {
+  recipes: (Recipe & { id: string })[] = [];
 
-}
+  constructor(private route: ActivatedRoute, private recipeService: RecipeService) {}
 
-async function addRecipes(): Promise<void> {
-  const params = new URLSearchParams(window.location.search);
-  const searchName = params.get("nombre")?.toLowerCase() || "";
-  const searchIngredients = params.get("ingredientes")?.toLowerCase().split(",") || [];
-  const searchDifficulty = params.get("dificultad")?.toLowerCase() || "";
-  const searchDuration = parseInt(params.get("duración") || '') || Infinity;
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(async params => {
+      const nombre = params['nombre']?.toLowerCase() || '';
+      const ingredientes = params['ingredientes']?.toLowerCase().split(',') || [];
+      const dificultad = params['dificultad']?.toLowerCase() || '';
+      let duracion = Infinity;
+      if (params['duracion'] !== undefined && !isNaN(parseInt(params['duracion']))) {
+        duracion = parseInt(params['duracion']);
+      }
 
-  try {
-    const response = await fetch('/db.json');
-    const data = await response.json();
+      console.log("Parámetros recibidos:", { nombre, ingredientes, dificultad, duracion });
 
-    const container = document.querySelector('.image-container') as HTMLElement;
-    container.innerHTML = '';
-
-    const filteredRecipes = data.recipes.filter((recipe: any) => {
-      const recipeTitle = recipe.title.toLowerCase();
-      const recipeDifficulty = recipe.difficulty.toLowerCase();
-      const recipeDuration = parseInt(recipe.duration);
-
-      const normalizeIngredient = (ing: string): string[] => {
-        return ing
-          .replace(/[\d½¼¾\/]+/g, "")
-          .trim()
-          .replace(/s$/, "")
-          .split(" ")
-          .filter(word => word.length > 0)
-          .map(word => word.trim().toLowerCase());
-      };
-
-      const recipeIngredients = recipe.ingredients.flatMap((ing: string) => normalizeIngredient(ing));
-
-      const nameMatch = searchName ? recipeTitle.includes(searchName) : true;
-      const ingredientsMatch = searchIngredients.length > 0
-        ? searchIngredients.every(ing => recipeIngredients.includes(ing))
-        : true;
-      const difficultyMatch = searchDifficulty ? recipeDifficulty === searchDifficulty : true;
-      const durationMatch = recipeDuration <= searchDuration;
-
-      return nameMatch && ingredientsMatch && difficultyMatch && durationMatch;
+      await this.addRecipes(nombre, ingredientes, dificultad, duracion);
     });
+  }
 
-    for (const recipe of filteredRecipes) {
-      const templateResponse = await fetch('/NewFoods/Templates/HTML/ImageTitleTextHorizontal.html');
-      const template = await templateResponse.text();
+  async addRecipes(
+    searchName: string,
+    searchIngredients: string[],
+    searchDifficulty: string,
+    searchDuration: number
+  ): Promise<void> {
+    try {
+      const data = await this.recipeService.getAllRecipes();
+      console.log("Recetas desde Firestore:", data);
 
-      const tempDiv = document.createElement('div');
-      tempDiv.innerHTML = template.trim();
+      this.recipes = data
+        .filter((recipe: Recipe) => recipe.id !== undefined)
+        .filter((recipe: Recipe) => {
+          const recipeTitle = recipe.title?.toLowerCase() || "";
+          const recipeDifficulty = recipe.difficulty?.toLowerCase() || "";
+          const recipeDuration = Number(recipe.duration) || 0;
 
-      tempDiv.querySelectorAll(".icon-save, .icon-like").forEach(button => {
-        button.addEventListener("click", event => {
-          event.preventDefault();
-          event.stopPropagation();
-        });
-      });
+          const normalizeIngredient = (ing: string): string[] => {
+            return ing
+              .replace(/[\d½¼¾\/]+/g, "")
+              .trim()
+              .replace(/s$/, "")
+              .split(" ")
+              .filter(word => word.length > 0)
+              .map(word => word.trim().toLowerCase());
+          };
 
-      const cardLink = tempDiv.querySelector('.card-link') as HTMLAnchorElement;
+          const recipeIngredients = (recipe.ingredients || []).flatMap((ing: string) => normalizeIngredient(ing));
 
-      cardLink.href = `/NewFoods/Pages/HTML/recipePage.html?id=${recipe.id}`;
-      const img = cardLink.querySelector('img') as HTMLImageElement;
-      img.src = recipe.image;
-      img.alt = recipe.title;
+          const nameMatch = searchName ? recipeTitle.includes(searchName) : true;
+          const ingredientsMatch = searchIngredients.some(ing => ing.trim() !== '')
+            ? searchIngredients.every(ing => recipeIngredients.includes(ing.trim().toLowerCase()))
+            : true;
+          const difficultyMatch = searchDifficulty ? recipeDifficulty === searchDifficulty : true;
+          const durationMatch = recipeDuration <= searchDuration;
 
-      (cardLink.querySelector('h3') as HTMLElement).textContent = recipe.title;
-      (cardLink.querySelector('.subtitle') as HTMLElement).textContent = recipe.subtitle;
-      (cardLink.querySelector('.text') as HTMLElement).textContent = recipe.description;
-      (cardLink.querySelector('.difficulty') as HTMLElement).textContent = recipe.difficulty;
-      (cardLink.querySelector('.duration') as HTMLElement).textContent = recipe.duration;
+          return nameMatch && ingredientsMatch && difficultyMatch && durationMatch;
+        }) as (Recipe & { id: string })[];
 
-      const likeButton = tempDiv.querySelector('.icon-like') as HTMLElement;
-      const saveButton = tempDiv.querySelector('.icon-save') as HTMLElement;
+      console.log("Recetas filtradas:", this.recipes);
 
-      (likeButton.querySelector('.like-count') as HTMLElement).textContent = recipe.likes;
-      (saveButton.querySelector('.save-count') as HTMLElement).textContent = recipe.saved;
-
-      likeButton.addEventListener("click", () => updateRecipeStat(recipe.id, "likes", likeButton.querySelector('.like-count') as HTMLElement));
-      saveButton.addEventListener("click", () => saveRecipeForUser(recipe.id, saveButton.querySelector('.save-count') as HTMLElement));
-
-      container.appendChild(cardLink);
+    } catch (error) {
+      console.error('Error cargando recetas desde Firestore:', error);
     }
-  } catch (error) {
-    console.error('Error cargando recetas:', error);
   }
 }
-
-async function updateRecipeStat(recipeId: number, field: string, countElement: HTMLElement): Promise<void> {
-  try {
-    const response = await fetch(`http://localhost:3000/recipes/${recipeId}`);
-    const recipe = await response.json();
-    const updatedValue = recipe[field] + 1;
-
-    const updateResponse = await fetch(`http://localhost:3000/recipes/${recipeId}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ [field]: updatedValue })
-    });
-    const updatedRecipe = await updateResponse.json();
-
-    countElement.textContent = updatedRecipe[field];
-  } catch (error) {
-    console.error("Error actualizando la receta:", error);
-  }
-}
-
-async function saveRecipeForUser(recipeId: number, countElement: HTMLElement): Promise<void> {
-  const usuarioGuardado = localStorage.getItem("usuarioActual");
-  const usuarioActual = usuarioGuardado ? JSON.parse(usuarioGuardado) : null;
-
-  if (!usuarioActual) {
-    alert("Debes iniciar sesión para guardar recetas.");
-    return;
-  }
-
-  try {
-    const response = await fetch(`http://localhost:3000/usuarios/${usuarioActual.id}`);
-    const user = await response.json();
-    let savedRecipes: number[] = user.savedRecipes || [];
-
-    if (!savedRecipes.includes(recipeId)) {
-      savedRecipes.push(recipeId);
-    } else {
-      savedRecipes = savedRecipes.filter((id: number) => id !== recipeId);
-    }
-
-    await fetch(`http://localhost:3000/usuarios/${usuarioActual.id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ savedRecipes })
-    });
-
-    alert("Receta guardada correctamente.");
-    countElement.textContent = (parseInt(countElement.textContent || '0') + 1).toString();
-  } catch (error) {
-    console.error("Error al guardar receta:", error);
-  }
-}
-
