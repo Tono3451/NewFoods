@@ -11,15 +11,31 @@
 
 <section class="gallery">
   <div class="labels">
-    <button class="button-label" id="savedRecipesBtn">Recetas guardadas</button>
-    <button class="button-label" id="uploadedRecipesBtn">Recetas subidas</button>
-    <a [routerLink]="['/profilePage2']">
-      <button class="button-label">Planning semanal</button>
-    </a>
+    <button class="button-label" id="savedRecipesBtn" (click)="showSavedRecipes()">Recetas guardadas</button>
+    <button class="button-label" id="uploadedRecipesBtn" (click)="showCreatedRecipes()">Recetas subidas</button>
   </div>
 </section>
 
-<section id="recipesGrid"></section>
+<div *ngIf="showSavedRecipesFlag">
+  <div class="image-container">
+    <div *ngFor="let receta of recipesSaved">
+      <app-image-title-text-horizontal
+        [recipe]="receta"
+      ></app-image-title-text-horizontal>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!showSavedRecipesFlag">
+  <div class="image-container">
+    <div *ngFor="let receta of recipesCreated">
+      <app-image-title-text-horizontal
+        [recipe]="receta"
+      ></app-image-title-text-horizontal>
+    </div>
+  </div>
+</div>
+
 
 
 <footer id="main_footer"><app-footer></app-footer></footer>
