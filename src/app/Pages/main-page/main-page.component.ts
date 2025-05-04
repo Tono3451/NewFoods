@@ -39,7 +39,6 @@ export class MainPageComponent implements OnInit {
           const userData = await this.userService.getUserDataFromFirestore(user.uid);
           console.log('Datos del usuario desde Firestore:', userData);
 
-          // Obtener las recetas de todos los usuarios
           this.recipes = await this.recipeService.getAllRecipes();
           console.log('Recetas obtenidas:', this.recipes);
         } catch (error) {

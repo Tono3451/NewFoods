@@ -19,7 +19,6 @@ export class LoginServiceService {
       const userCredential = await signInWithEmailAndPassword(this.auth, email, password);
       console.log('Usuario autenticado:', userCredential.user);
 
-      // Store the user's token using AuthService
       const token = await userCredential.user.getIdToken();
       this.authService.login(token);
 
@@ -37,9 +36,7 @@ export class LoginServiceService {
   logout() {
     signOut(this.auth)
       .then(() => {
-        // Limpiar el token almacenado
         this.authService.logout();
-        // Redirigir a la página de login
         this.router.navigate(['/loginPage']);
       })
       .catch((error) => {

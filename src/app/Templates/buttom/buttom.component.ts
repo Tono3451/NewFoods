@@ -24,7 +24,6 @@ export class ButtomComponent {
         form.requestSubmit();
       }
     } else if (this.buttonAction === 'log') {
-      console.log("Button clicked!");
     } else if (this.buttonAction === 'redirection') {
 
     }

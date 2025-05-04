@@ -1,4 +1,3 @@
-// src/app/services/recipe.service.ts
 import {Injectable} from '@angular/core';
 import {
   arrayRemove,
@@ -101,7 +100,7 @@ export class RecipeService {
 
   async getRecipesOrderedBy(field: 'dateTime' | 'likes' | 'saved'): Promise<Recipe[]> {
     const recipesRef = collection(this.firestore, 'recipes');
-    const q = query(recipesRef, orderBy(field, 'desc')); // orden descendente
+    const q = query(recipesRef, orderBy(field, 'desc'));
     const querySnapshot = await getDocs(q);
 
     return querySnapshot.docs.map(doc => ({

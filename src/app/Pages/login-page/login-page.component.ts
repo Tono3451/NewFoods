@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
 import {Router, RouterLink} from '@angular/router';
 import {FormsModule, NgForm} from '@angular/forms';
 import {ButtomComponent} from '../../Templates/buttom/buttom.component';
@@ -32,7 +31,6 @@ export class LoginPageComponent {
 
     try {
       const user = await this.loginServiceService.login(this.email, this.password);
-      console.log('Usuario autenticado:', user);
       this.router.navigate(['/mainPage']);
     } catch (error) {
       alert('Correo o contraseña incorrectos.');

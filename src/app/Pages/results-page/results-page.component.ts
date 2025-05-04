@@ -30,7 +30,6 @@ export class ResultsPageComponent implements OnInit {
         duracion = parseInt(params['duracion']);
       }
 
-      console.log("Parámetros recibidos:", { nombre, ingredientes, dificultad, duracion });
 
       await this.addRecipes(nombre, ingredientes, dificultad, duracion);
     });
@@ -44,7 +43,6 @@ export class ResultsPageComponent implements OnInit {
   ): Promise<void> {
     try {
       const data = await this.recipeService.getAllRecipes();
-      console.log("Recetas desde Firestore:", data);
 
       this.recipes = data
         .filter((recipe: Recipe) => recipe.id !== undefined)
@@ -75,7 +73,6 @@ export class ResultsPageComponent implements OnInit {
           return nameMatch && ingredientsMatch && difficultyMatch && durationMatch;
         }) as (Recipe & { id: string })[];
 
-      console.log("Recetas filtradas:", this.recipes);
 
     } catch (error) {
       console.error('Error cargando recetas desde Firestore:', error);

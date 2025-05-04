@@ -42,7 +42,6 @@ export class ProfilePageComponent implements OnInit {
       if (user) {
         try {
           const userData = await this.userService.getUserDataFromFirestore(user.uid);
-          console.log('Datos del usuario desde Firestore:', userData);
 
           this.nombre = userData.nombre;
 
@@ -62,10 +61,8 @@ export class ProfilePageComponent implements OnInit {
   async getUserCreatedRecipes(recipeUIDs: string[]) {
     try {
       for (let i = 0; i < recipeUIDs.length; i++) {
-        // Usa await para esperar a que la promesa se resuelva
         const recipe = await this.recipeService.getRecipeById(recipeUIDs[i]);
 
-        // Ahora puedes acceder a las propiedades del objeto recipe
         this.recipesCreated.push(recipe);
       }
     } catch (error) {
@@ -76,10 +73,8 @@ export class ProfilePageComponent implements OnInit {
   async getUserSavedRecipes(recipeUIDs: string[]) {
     try {
       for (let i = 0; i < recipeUIDs.length; i++) {
-        // Usa await para esperar a que la promesa se resuelva
         const recipe = await this.recipeService.getRecipeById(recipeUIDs[i]);
 
-        // Ahora puedes acceder a las propiedades del objeto recipe
         this.recipesSaved.push(recipe);
       }
     } catch (error) {

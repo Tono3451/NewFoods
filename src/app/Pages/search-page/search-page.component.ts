@@ -80,7 +80,6 @@ export class SearchPageComponent implements AfterViewChecked {
       params.append('duracion', duracion.toString());
     }
 
-    // Redirección
     this.router.navigate(['/resultsPage'], { queryParams: {
         nombre,
         ingredientes,

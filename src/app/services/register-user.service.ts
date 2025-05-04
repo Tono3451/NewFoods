@@ -21,7 +21,6 @@ export class RegisterUserService {
 
       await setDoc(doc(this.firestore, 'users', uid), userData);
 
-      console.log('Usuario registrado y guardado en Firestore');
     } catch (error) {
       console.error('Error al registrar usuario:', error);
     }
