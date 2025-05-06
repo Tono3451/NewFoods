@@ -1,0 +1,7 @@
+{
+  "name": "Android",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
